@@ -1,0 +1,3 @@
+# Keep the pinned runtime's manifest hashes stable across Windows checkouts.
+third_party/webnavigator/** -text -whitespace
+third_party/agentoccam/** -text -whitespace

@@ -1,0 +1,14 @@
+stop [answer]: Finish the task and return ONE JSON object inside the action brackets.
+Keep the original response sections and ACTION command syntax. Only the answer inside stop [...] is JSON; do not replace the whole response with JSON.
+Write actual JSON syntax with double-quoted keys/strings, without Markdown fences. The object has:
+- task_type (required): "RETRIEVE", "MUTATE" or "NAVIGATE" according to the user's task.
+- status (required): "SUCCESS", "ACTION_NOT_ALLOWED_ERROR", "NOT_FOUND_ERROR", "PERMISSION_DENIED_ERROR", "DATA_VALIDATION_ERROR" or "UNKNOWN_ERROR".
+- retrieved_data: an array of the requested items for RETRIEVE, including when there is only one item; null or omitted for other tasks. Preserve the requested item keys and value types.
+- error_details: null or omitted on success; otherwise a short explanation of what could not be completed or verified.
+Choose status from observed evidence; stopping does not imply success. Do not infer absence from one empty search.
+Example command ONLY when a requested change is already visibly completed: stop [{"task_type":"MUTATE","status":"SUCCESS","retrieved_data":null}]
+Retrieval format example: stop [{"task_type":"RETRIEVE","status":"SUCCESS","retrieved_data":["observed item"]}] Replace the example item with the actual requested data from observations.
+Alternative example when the requested change cannot be verified: stop [{"task_type":"MUTATE","status":"UNKNOWN_ERROR","error_details":"The requested change could not be verified."}]
+These are alternatives, not a sequence. Never append stop to a click/type action in the same response.
+Even when the task requests no textual answer, return the object with task_type and status. Never return a bare sentence, SUCCESS, N/A, null, array, or unwrapped data object.
+Use stop only for the final answer. Put intermediate memory in NOTE. No evaluator reference answers are supplied.

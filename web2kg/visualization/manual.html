@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>web2kg · 人工核验台</title>
+    <style>
+      :root {
+        --ink: #172b46;
+        --muted: #687990;
+        --blue: #335cff;
+        --line: #dbe2ed;
+        --violet: #8056d9;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f1f4f9;
+        color: var(--ink);
+        font:
+          14px/1.7 "Segoe UI",
+          "Microsoft YaHei",
+          sans-serif;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.5;
+        cursor: wait;
+      }
+      :focus-visible {
+        outline: 2px solid var(--blue);
+        outline-offset: 4px;
+      }
+      header {
+        padding: 23px 30px;
+        background: white;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+      }
+      .brand {
+        font:
+          600 23px Bahnschrift,
+          "Segoe UI",
+          sans-serif;
+        letter-spacing: -0.7px;
+      }
+      .brand span {
+        color: var(--blue);
+      }
+      .caption {
+        font:
+          10px Consolas,
+          monospace;
+        color: var(--muted);
+        letter-spacing: 1px;
+      }
+      .chip {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 4px 11px;
+        font-size: 11px;
+        color: var(--muted);
+      }
+      main {
+        max-width: 1240px;
+        margin: auto;
+        padding: 25px 30px 70px;
+      }
+      h1 {
+        font-size: 28px;
+        letter-spacing: -1px;
+        margin: 0;
+      }
+      h2 {
+        font-size: 18px;
+        margin: 0;
+      }
+      h3 {
+        font-size: 16px;
+        margin: 0;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .intro {
+        margin-bottom: 22px;
+      }
+      .button {
+        border: 1px solid var(--line);
+        background: white;
+        color: var(--ink);
+        border-radius: 7px;
+        padding: 9px 14px;
+      }
+      .primary {
+        background: var(--blue);
+        border-color: var(--blue);
+        color: white;
+      }
+      .small {
+        padding: 5px 10px;
+        font-size: 12px;
+      }
+      .query-box,
+      .feedback {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 18px;
+        margin-bottom: 20px;
+      }
+      textarea {
+        resize: vertical;
+        min-height: 68px;
+        width: 100%;
+        border: 0;
+        background: transparent;
+        color: var(--ink);
+        line-height: 1.7;
+      }
+      input,
+      select {
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 8px 10px;
+        background: white;
+        color: var(--ink);
+      }
+      .query-bottom {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid #edf0f6;
+        padding-top: 12px;
+        margin-top: 9px;
+      }
+      .query-bottom label {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      #k {
+        width: 65px;
+      }
+      .tabs {
+        display: flex;
+        border-bottom: 1px solid var(--line);
+        gap: 25px;
+        margin-bottom: 22px;
+      }
+      .tab {
+        border: 0;
+        background: none;
+        color: var(--muted);
+        padding: 12px 0;
+        border-bottom: 3px solid transparent;
+      }
+      .tab[aria-selected="true"] {
+        color: var(--blue);
+        border-color: var(--blue);
+        font-weight: 600;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin: 12px 0 18px;
+      }
+      .cards {
+        display: grid;
+        gap: 16px;
+      }
+      .candidate {
+        border: 1px solid var(--line);
+        border-radius: 11px;
+        background: white;
+        overflow: hidden;
+      }
+      .card-heading {
+        display: flex;
+        gap: 12px;
+        padding: 15px 18px;
+        border-bottom: 1px solid #eef1f7;
+        align-items: center;
+      }
+      .rank {
+        background: #edf0ff;
+        color: var(--blue);
+        font:
+          600 16px Consolas,
+          monospace;
+        width: 35px;
+        height: 35px;
+        display: grid;
+        place-items: center;
+        border-radius: 7px;
+        flex-shrink: 0;
+      }
+      .score {
+        margin-left: auto;
+        color: var(--muted);
+        font:
+          11px Consolas,
+          monospace;
+        white-space: nowrap;
+      }
+      .url {
+        color: var(--muted);
+        font:
+          11px/1.7 Consolas,
+          monospace;
+        overflow-wrap: anywhere;
+      }
+      .card-body {
+        display: grid;
+        grid-template-columns: 32% minmax(0, 1fr);
+        gap: 20px;
+        padding: 18px;
+      }
+      .image-button {
+        width: 100%;
+        border: 1px solid var(--line);
+        padding: 0;
+        background: #f5f7fb;
+        border-radius: 5px;
+        cursor: zoom-in;
+        overflow: hidden;
+        display: block;
+        height: 210px;
+      }
+      .image-button img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+      .index-title {
+        font-size: 11px;
+        color: var(--violet);
+        margin-bottom: 5px;
+        letter-spacing: 0.5px;
+      }
+      .index-text {
+        margin: 0;
+        background: #f7f8fc;
+        border: 1px solid #edf0f6;
+        padding: 10px 12px;
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        max-height: 185px;
+        overflow: auto;
+        font:
+          11px/1.65 Consolas,
+          "Microsoft YaHei",
+          monospace;
+      }
+      .card-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 12px;
+      }
+      .path-details {
+        margin: 0 18px 16px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      summary {
+        cursor: pointer;
+      }
+      .empty {
+        border: 1px dashed #bcc9dd;
+        border-radius: 10px;
+        padding: 38px;
+        text-align: center;
+        color: var(--muted);
+        background: #f8faff;
+      }
+      .node-filter {
+        width: 100%;
+        margin-bottom: 12px;
+      }
+      .table-wrap {
+        overflow: auto;
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        background: white;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 12px;
+        text-align: left;
+      }
+      th,
+      td {
+        padding: 12px 14px;
+        border-bottom: 1px solid #edf0f6;
+        vertical-align: top;
+      }
+      th {
+        background: #eaf0f8;
+        color: #5e7590;
+        font-weight: 500;
+      }
+      td .url {
+        max-width: 370px;
+      }
+      td:first-child {
+        min-width: 150px;
+      }
+      #nodeDetail {
+        margin-top: 20px;
+      }
+      .status {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: #e9eefb;
+        border: 1px solid #ccd7f4;
+        border-radius: 8px;
+        padding: 12px 16px;
+        margin: 0 0 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--blue);
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .status.error {
+        background: #fff3ed;
+        border-color: #eecdbb;
+      }
+      .status.error .status-dot {
+        background: #d26935;
+      }
+      .status strong {
+        font-size: 12px;
+      }
+      .status small {
+        color: var(--muted);
+      }
+      .status-copy {
+        min-width: 0;
+        overflow-wrap: anywhere;
+      }
+      .feedback {
+        margin-top: 22px;
+      }
+      .feedback-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 12px 0;
+      }
+      .feedback-grid select {
+        width: 100%;
+        min-width: 0;
+      }
+      .feedback textarea {
+        border: 1px solid var(--line);
+        padding: 9px;
+        min-height: 54px;
+      }
+      .history {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 9px;
+        padding: 16px;
+        margin: 12px 0;
+      }
+      .history p {
+        margin: 8px 0;
+      }
+      .review-label {
+        font-size: 11px;
+        color: var(--violet);
+      }
+      .history-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        align-items: center;
+      }
+      .stats {
+        display: flex;
+        gap: 22px;
+        color: var(--muted);
+        font-size: 12px;
+        flex-wrap: wrap;
+      }
+      .stats b {
+        color: var(--ink);
+        font-size: 20px;
+        margin-right: 5px;
+      }
+      .file-info {
+        font-size: 11px;
+        color: var(--muted);
+        overflow-wrap: anywhere;
+      }
+      dialog {
+        border: 0;
+        border-radius: 10px;
+        padding: 0;
+        max-width: 95vw;
+        width: 1100px;
+        max-height: 92vh;
+        color: var(--ink);
+      }
+      dialog::backdrop {
+        background: #172b4699;
+      }
+      .modal-head {
+        position: sticky;
+        top: 0;
+        background: white;
+        border-bottom: 1px solid var(--line);
+        padding: 12px 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+      .modal-body {
+        overflow: auto;
+        max-height: 80vh;
+        padding: 18px;
+        background: #eef2f8;
+      }
+      .modal-body img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: auto;
+      }
+      .modal-body pre {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font:
+          13px/1.8 Consolas,
+          monospace;
+      }
+      .error-text {
+        color: #ac5029;
+      }
+      .query-context {
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 15px;
+      }
+      a {
+        color: var(--blue);
+      }
+      [hidden] {
+        display: none !important;
+      }
+      @media (max-width: 650px) {
+        header {
+          padding: 18px;
+        }
+        main {
+          padding: 20px 16px 50px;
+        }
+        .card-body {
+          grid-template-columns: 1fr;
+          gap: 13px;
+        }
+        .image-button {
+          height: 180px;
+        }
+        .query-bottom {
+          flex-wrap: wrap;
+        }
+        .feedback-grid {
+          grid-template-columns: 1fr;
+        }
+        .tabs {
+          gap: 20px;
+        }
+        .card-heading {
+          padding: 13px;
+        }
+        .score {
+          font-size: 9px;
+        }
+        .chip {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <span>web2kg</span> / 人工核验台
+        <div class="caption">RETRIEVE · INSPECT · REPLAY</div>
+      </div>
+      <span class="chip" id="dataset">加载图谱…</span>
+    </header>
+    <main>
+      <div class="intro">
+        <h1>从一个需求，检查一条路径。</h1>
+        <div class="muted">在这里选择页面，在独立的网站窗口观察到达过程。</div>
+      </div>
+      <div class="status" id="status">
+        <span class="status-dot"></span>
+        <div class="status-copy">
+          <strong id="statusText">正在连接 Python 服务</strong>
+          <div>
+            <small id="statusSub"
+              >每次体验：恢复起点 → 核验 → 按记录动作重放</small
+            >
+          </div>
+        </div>
+      </div>
+      <form id="queryForm" class="query-box">
+        <label for="query" class="index-title">你想在这个网站找到什么？</label
+        ><textarea
+          id="query"
+          required
+          maxlength="6000"
+          placeholder="例如：找到列出所有论坛标签的页面。"
+        ></textarea>
+        <div class="query-bottom">
+          <span class="muted" id="indexInfo"></span
+          ><label
+            >top-k
+            <input id="k" type="number" min="1" max="50" value="5" /></label
+          ><button class="button primary command" type="submit">
+            检索候选页面
+          </button>
+        </div>
+      </form>
+      <nav class="tabs" aria-label="核验内容">
+        <button class="tab" data-tab="candidates" aria-selected="true">
+          检索候选</button
+        ><button class="tab" data-tab="nodes" aria-selected="false">
+          浏览全部节点 <span id="nodeCount"></span></button
+        ><button class="tab" data-tab="history" aria-selected="false">
+          体验记录
+        </button>
+      </nav>
+      <section id="candidatesPanel">
+        <div class="section-head">
+          <h2 id="candidateTitle">候选页面</h2>
+          <span class="muted">相似度不是成功概率</span>
+        </div>
+        <div id="queryContext" class="query-context"></div>
+        <div id="cards" class="cards">
+          <div class="empty">
+            输入需求查看 top-k。<br />也可以先浏览全部节点，检查图谱覆盖范围。
+          </div>
+        </div>
+      </section>
+      <section id="nodesPanel" hidden>
+        <div class="section-head">
+          <h2>图谱中的全部页面</h2>
+          <span class="muted" id="filteredCount"></span>
+        </div>
+        <p class="muted">
+          top-k 没有目标时，在这里区分“图中没有”与“图中有但未检索到”。
+        </p>
+        <input
+          class="node-filter"
+          id="nodeFilter"
+          aria-label="筛选全部节点"
+          placeholder="按标题、URL 或完整节点 ID 筛选…"
+        />
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>页面 / URL</th>
+                <th>节点 ID</th>
+                <th>路径</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="nodeRows"></tbody>
+          </table>
+        </div>
+        <div id="nodeDetail"></div>
+      </section>
+      <section id="historyPanel" hidden>
+        <div class="section-head">
+          <h2>本轮核验记录</h2>
+          <a href="/api/export" download="manual_review.json">导出 JSON</a>
+        </div>
+        <div id="stats" class="stats"></div>
+        <p class="file-info" id="version"></p>
+        <div id="history"></div>
+      </section>
+      <section class="feedback" id="feedback" hidden>
+        <h3>这次查询，你的判断是？</h3>
+        <div class="muted" id="feedbackContext"></div>
+        <div class="feedback-grid">
+          <select id="verdict" aria-label="人工核验结论">
+            <option value="uncertain">暂不确定</option>
+            <option value="hit">top-k 包含目标页面</option>
+            <option value="retrieval_miss">图中存在，但 top-k 遗漏</option>
+            <option value="coverage_miss">建图没有覆盖目标页面</option></select
+          ><select id="expected" aria-label="符合需求的节点">
+            <option value="">不指定目标节点</option>
+          </select>
+        </div>
+        <textarea
+          id="note"
+          placeholder="记录判断依据，或说明到达页面是否符合预期…"
+          maxlength="4000"
+        ></textarea
+        ><button class="button command" id="saveJudgment">保存人工结论</button
+        ><span class="muted" id="saved"></span>
+      </section>
+    </main>
+    <dialog id="preview">
+      <div class="modal-head">
+        <strong id="previewTitle"></strong
+        ><button class="button small" id="closePreview">关闭预览</button>
+      </div>
+      <div class="modal-body" id="previewBody"></div>
+    </dialog>
+    <script>
+      const $ = (id) => document.getElementById(id);
+      let nodes = [],
+        byId = {},
+        current = null,
+        token = "",
+        queryId = null,
+        tab = "candidates",
+        lastJob = null,
+        lastData = "",
+        polling = false;
+      const labels = {
+        hit: "top-k 命中目标",
+        retrieval_miss: "检索遗漏",
+        coverage_miss: "建图未覆盖",
+        uncertain: "暂不确定",
+      };
+      function el(tag, text, cls) {
+        const e = document.createElement(tag);
+        if (text !== undefined) e.textContent = text;
+        if (cls) e.className = cls;
+        return e;
+      }
+      function button(text, fn, cls = "button small") {
+        const e = el("button", text, cls);
+        e.type = "button";
+        e.onclick = fn;
+        return e;
+      }
+      function activeQuery() {
+        return current?.session.queries.find((q) => q.id === queryId);
+      }
+      function switchTab(name) {
+        tab = name;
+        for (const key of ["candidates", "nodes", "history"])
+          $(key + "Panel").hidden = key !== name;
+        for (const b of document.querySelectorAll("[data-tab]"))
+          b.setAttribute("aria-selected", String(b.dataset.tab === name));
+        $("feedback").hidden = !activeQuery()?.success;
+      }
+      for (const b of document.querySelectorAll("[data-tab]"))
+        b.onclick = () => switchTab(b.dataset.tab);
+      async function request(path, options) {
+        const response = await fetch(path, options);
+        const data = await response.json();
+        if (!response.ok) throw Error(data.error || `HTTP ${response.status}`);
+        return data;
+      }
+      async function command(payload) {
+        try {
+          $("saved").textContent = "";
+          await request("/api/command", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "X-Review-Token": token,
+            },
+            body: JSON.stringify(payload),
+          });
+          await poll();
+        } catch (error) {
+          showError(error.message);
+        }
+      }
+      function showError(text) {
+        $("status").classList.add("error");
+        $("statusText").textContent = text;
+      }
+      $("queryForm").onsubmit = (e) => {
+        e.preventDefault();
+        command({
+          op: "query",
+          text: $("query").value,
+          top_k: Number($("k").value),
+        });
+      };
+      function showPreview(title, content) {
+        $("previewTitle").textContent = title;
+        $("previewBody").replaceChildren(content);
+        $("preview").showModal();
+      }
+      $("closePreview").onclick = () => $("preview").close();
+      function imagePreview(node) {
+        const img = el("img");
+        img.src = node.image;
+        img.alt = node.title;
+        img.onerror = () => {
+          $("previewBody").replaceChildren(
+            el("p", "这个节点没有可用的原始截图。", "error-text"),
+          );
+        };
+        showPreview(node.title + " · 建图时的原始截图", img);
+      }
+      function stateEvidence(node) {
+        const info = node.inspection, box = el("div", undefined, "review-label");
+        if (!info) return box;
+        box.append(el("p", `同 URL 状态 ${info.variant}/${info.variants} · ${info.ranked ? "已排序" : "尚未排序"} · ${node.id.slice(0, 12)}`));
+        if (info.entry_action) box.append(el("p", `记录入边：${info.entry_action.role} · ${info.entry_action.name}`));
+        if (info.source_restore_failures || info.path_restore_failures)
+          box.append(el("p", `⚠ 本节点源恢复失败 ${info.source_restore_failures} 次；保存路径源节点累计 ${info.path_restore_failures} 次。实际回放仍需核验。`, "error-text"));
+        if (!info.saved_path_valid) box.append(el("p", "保存路径缺失或不唯一，不能核验到达过程。", "error-text"));
+        return box;
+      }
+      function card(node, candidate, source) {
+        const article = el("article", undefined, "candidate"),
+          head = el("div", undefined, "card-heading");
+        article.dataset.node = node.id;
+        head.append(
+          el(
+            "span",
+            candidate ? String(candidate.rank).padStart(2, "0") : "图",
+            "rank",
+          ),
+        );
+        const title = el("div");
+        title.append(el("h3", node.title), el("div", node.url, "url"));
+        head.append(title);
+        if (candidate)
+          head.append(
+            el("span", `相似度 ${candidate.score.toFixed(4)}`, "score"),
+          );
+        article.append(head, stateEvidence(node));
+        const body = el("div", undefined, "card-body"),
+          left = el("div"),
+          image = el("img");
+        image.src = node.image;
+        image.alt = node.title + " 的页面截图";
+        const preview = button("", () => imagePreview(node), "image-button");
+        preview.setAttribute("aria-label", "查看截图：" + node.title);
+        preview.append(image);
+        image.onerror = () => {
+          preview.replaceChildren(el("span", "未保存截图", "muted"));
+        };
+        left.append(preview, el("div", "点击查看完整截图", "muted"));
+        if (candidate?.matched_view?.box) {
+          const box = candidate.matched_view.box;
+          left.append(el("div", `切片命中：原图 y=${box[1]}–${box[3]} px · 整图与最佳切片各占50%`, "muted"));
+          left.append(button("查看命中切片", () => {
+            const sourceImage = new Image();
+            sourceImage.onload = () => {
+              const canvas = el("canvas");
+              canvas.width = box[2] - box[0];
+              canvas.height = box[3] - box[1];
+              canvas.style.maxWidth = "100%";
+              canvas.getContext("2d").drawImage(sourceImage, ...box.slice(0, 2), canvas.width, canvas.height,
+                0, 0, canvas.width, canvas.height);
+              showPreview(`${node.title} · 原图 y=${box[1]}–${box[3]} px`, canvas);
+            };
+            sourceImage.onerror = () => showPreview("切片预览", el("p", "原始截图加载失败"));
+            sourceImage.src = node.image;
+          }));
+        }
+        const right = el("div");
+        right.append(
+          el("div", current?.session.graph.index_mode === "jina_screenshot"
+            ? (candidate?.matched_view?.box ? "页面文本 · 仅辅助核验，实际索引为原始截图及切片" : "页面文本 · 仅辅助核验，实际索引为左侧原始截图")
+            : "实际索引文本 · 保存于 index.json", "index-title"),
+        );
+        const text = candidate?.text ?? node.index_text;
+        right.append(
+          el("pre", text ?? "这个节点没有已保存的索引文本。", "index-text"),
+        );
+        const actions = el("div", undefined, "card-actions");
+        actions.append(
+          button(current?.session.graph.index_mode === "jina_screenshot" ? "展开页面文本" : "展开索引文本", () =>
+            showPreview(
+              node.title + " · 页面文本",
+              el("pre", text ?? "未建立索引"),
+            ),
+          ),
+        );
+        const visit = button(
+          "从起点体验此页",
+          () => {
+            $("expected").value = node.id;
+            command({
+              op: "visit",
+              node_id: node.id,
+              source,
+              query_id: queryId,
+            });
+          },
+          "button primary small command",
+        );
+        visit.disabled = Boolean(current?.status.busy);
+        actions.append(visit);
+        right.append(actions, el("div", node.id, "url"));
+        body.append(left, right);
+        article.append(body);
+        const path = el("details", undefined, "path-details");
+        path.append(
+          el(
+            "summary",
+            `${node.path.length} 步记录路径 · 每次先恢复并核验起点`,
+          ),
+        );
+        const list = el("ol");
+        for (const action of node.path)
+          list.append(el("li", `${action.kind} · ${action.name}`));
+        if (!node.path.length)
+          list.append(el("li", "目标就是起点，仍需恢复和核验"));
+        path.append(list);
+        article.append(path);
+        return article;
+      }
+      function renderCandidates() {
+        const q = activeQuery();
+        $("cards").replaceChildren();
+        $("candidateTitle").textContent = q
+          ? `候选页面 · ${q.candidates.length} / top-${q.top_k}`
+          : "候选页面";
+        $("queryContext").textContent = q ? `需求：${q.text}` : "";
+        if (!q) {
+          $("cards").append(
+            el("div", "输入需求，或浏览全部节点检查图谱覆盖范围。", "empty"),
+          );
+          return;
+        }
+        if (!q.success) {
+          $("cards").append(el("div", q.error || "检索进行中…", "empty"));
+          return;
+        }
+        for (const c of q.candidates)
+          $("cards").append(card(byId[c.id], c, "topk"));
+        $("feedbackContext").textContent = q.text;
+        $("feedback").hidden = false;
+      }
+      function renderNodes() {
+        const query = $("nodeFilter").value.trim().toLowerCase(),
+          matches = nodes.filter((n) =>
+            `${n.title} ${n.url} ${n.id}`.toLowerCase().includes(query),
+          );
+        $("filteredCount").textContent =
+          `${matches.length} / ${nodes.length} 个状态`;
+        $("nodeRows").replaceChildren();
+        for (const n of matches) {
+          const tr = el("tr"),
+            name = el("td");
+          name.append(el("strong", n.title), el("div", n.url, "url"), stateEvidence(n));
+          tr.append(
+            name,
+            el("td", n.id, "url"),
+            el("td", `${n.path.length} 步`),
+          );
+          const action = el("td");
+          action.append(
+            button("查看 / 体验", () => {
+              $("nodeDetail").replaceChildren(card(n, null, "all"));
+              $("nodeDetail").prepend(
+                el(
+                  "p",
+                  activeQuery()
+                    ? activeQuery().candidates.some((c) => c.id === n.id)
+                      ? "此节点在当前查询的 top-k 中"
+                      : "此节点不在当前查询的 top-k 中"
+                    : "尚未关联查询，可独立检查到达路径",
+                  "review-label",
+                ),
+              );
+              $("nodeDetail").scrollIntoView({ block: "start" });
+              $("expected").value = n.id;
+            }),
+          );
+          tr.append(action);
+          $("nodeRows").append(tr);
+        }
+      }
+      $("nodeFilter").oninput = renderNodes;
+      function attemptRow(a) {
+        const box = el("details", undefined, "history"),
+          r = a.result;
+        box.append(
+          el(
+            "summary",
+            `${byId[a.node_id].title} · ${a.status === "running" ? "执行中" : r?.success ? "状态核验通过" : "到达失败"} · ${a.source === "topk" ? "候选第 " + a.rank + " 名" : "来自全部节点"}`,
+          ),
+        );
+        box.append(
+          el(
+            "p",
+            `尝试 ${a.id.slice(0, 10)} · ${a.seconds ?? "—"} 秒 · 完成 ${r?.steps ?? 0}/${a.path.length} 步`,
+            "muted",
+          ),
+        );
+        if (r?.error)
+          box.append(
+            el(
+              "p",
+              `失败阶段：${a.phase}${r.failed_step !== null ? " · 第 " + (r.failed_step + 1) + " 步" : ""}；${r.error}`,
+              "error-text",
+            ),
+          );
+        if (r?.screenshot)
+          box.append(
+            button("查看到达现场", () => {
+              const img = el("img");
+              img.src = r.screenshot;
+              showPreview("实际浏览器现场", img);
+            }),
+          );
+        box.append(el("pre", JSON.stringify(a, null, 2), "index-text"));
+        return box;
+      }
+      function renderHistory() {
+        const data = current.session,
+          attempts = data.attempts,
+          completed = attempts.filter((a) => a.status === "completed"),
+          passed = completed.filter((a) => a.result?.success);
+        $("stats").replaceChildren();
+        for (const [count, label] of [
+          [data.queries.length, "次查询"],
+          [attempts.length, "次体验"],
+          [`${passed.length}/${completed.length}`, "到达成功"],
+          [data.judgments.length, "条人工结论"],
+        ]) {
+          const e = el("span");
+          e.append(el("b", String(count)), el("span", label));
+          $("stats").append(e);
+        }
+        $("version").textContent =
+          `图谱 ${data.graph.graph_hash.slice(0, 12)} · 索引 ${data.graph.index_files["index.json"]?.slice(0, 12) || "未建立"} · ${data.created_at}。不同方案请使用不同输出目录，按相同需求对照导出的 JSON。`;
+        $("history").replaceChildren();
+        for (const q of [...data.queries].reverse()) {
+          const box = el("article", undefined, "history"),
+            head = el("div", undefined, "history-head");
+          head.append(
+            el("strong", q.text),
+            button("查看这次候选", () => {
+              queryId = q.id;
+              $("query").value = q.text;
+              $("k").value = q.top_k;
+              renderCandidates();
+              switchTab("candidates");
+            }),
+          );
+          box.append(
+            head,
+            el(
+              "p",
+              `top-${q.top_k} · ${q.success ? "检索成功" : q.error || "检索中"} · ${q.time}`,
+              "muted",
+            ),
+          );
+          for (const j of data.judgments.filter((j) => j.query_id === q.id))
+            box.append(
+              el(
+                "p",
+                `${labels[j.verdict]}${j.expected_node_id ? " · " + byId[j.expected_node_id].title : ""}${j.note ? " · " + j.note : ""}`,
+                "review-label",
+              ),
+            );
+          for (const a of attempts.filter((a) => a.query_id === q.id))
+            box.append(attemptRow(a));
+          $("history").append(box);
+        }
+        for (const a of attempts.filter((a) => !a.query_id))
+          $("history").append(attemptRow(a));
+        if (!data.queries.length && !attempts.length)
+          $("history").append(
+            el("div", "体验后会保留查询、候选、选择与到达结果。", "empty"),
+          );
+      }
+      $("saveJudgment").onclick = () =>
+        command({
+          op: "judge",
+          query_id: queryId,
+          verdict: $("verdict").value,
+          expected_node_id: $("expected").value,
+          note: $("note").value,
+        });
+      $("verdict").onchange = () => {
+        if ($("verdict").value === "coverage_miss") $("expected").value = "";
+      };
+      async function poll() {
+        if (polling) return;
+        polling = true;
+        try {
+          const state = await request("/api/state");
+          current = state;
+          token = state.token;
+          const st = state.status;
+          $("statusText").textContent = st.message;
+          $("statusSub").textContent =
+            st.error ||
+            (st.command === "visit" && !st.busy && st.result
+              ? st.result.success
+                ? `已确认状态 ${st.result.observed_id?.slice(0, 12)}；请在网站窗口人工检查页面。`
+                : st.result.error
+              : null) ||
+            (st.busy && st.total !== undefined
+              ? `已完成 ${st.steps ?? 0}/${st.total} 步`
+              : "每次体验：恢复起点 → 核验 → 按记录动作重放");
+          $("status").classList.toggle(
+            "error",
+            Boolean(st.error) || st.result?.success === false,
+          );
+          for (const b of document.querySelectorAll(".command"))
+            b.disabled = st.busy;
+          if (!st.busy && st.job && lastJob !== st.job) {
+            lastJob = st.job;
+            if (st.command === "query") {
+              queryId = st.result?.query_id || state.session.queries.at(-1)?.id;
+              renderCandidates();
+              switchTab("candidates");
+            }
+            if (st.command === "visit" && st.result) {
+              $("statusSub").textContent = st.result.success
+                ? `已确认状态 ${st.result.observed_id?.slice(0, 12)}；请在网站窗口人工检查页面。`
+                : st.result.error;
+              renderHistory();
+            }
+            if (st.command === "judge" && !st.error)
+              $("saved").textContent = " 已保存";
+          }
+          const signature = JSON.stringify(state.session);
+          if (signature !== lastData) {
+            lastData = signature;
+            renderHistory();
+          }
+          if (!queryId && state.session.queries.length) {
+            queryId = state.session.queries.at(-1).id;
+            renderCandidates();
+          }
+        } catch (error) {
+          showError("服务连接失败：" + error.message);
+        } finally {
+          polling = false;
+        }
+      }
+      async function init() {
+        nodes = await request("/api/nodes");
+        byId = Object.fromEntries(nodes.map((n) => [n.id, n]));
+        $("nodeCount").textContent = nodes.length;
+        for (const n of nodes) {
+          const option = el("option", `${n.title} · ${n.id.slice(0, 8)}`);
+          option.value = n.id;
+          $("expected").append(option);
+        }
+        await poll();
+        const graph = current.session.graph;
+        $("dataset").textContent =
+          `${graph.nodes} 个状态 / ${new Set(nodes.map(n => n.url)).size} 个 URL · ${new URL(graph.start_url).host}`;
+        $("indexInfo").textContent = graph.index_valid
+          ? `${graph.index_mode === "jina_screenshot" ? "Jina V4 · 原始截图多向量 / Mean MaxSim" : graph.index_mode === "embedding" ? graph.index_model : "本地词法索引"} · 保留原始检索排序与同 URL 状态，不去重；相似度不保证可回放或任务匹配`
+          : "索引缺失或已过期，可先浏览全部节点";
+        renderNodes();
+        setInterval(poll, 700);
+      }
+      init().catch((error) => showError(error.message));
+    </script>
+  </body>
+</html>

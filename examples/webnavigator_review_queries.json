@@ -1,0 +1,8 @@
+[
+  {"query": "Show me the list of all forums.", "expected_path": "^/forums$", "top_k": 5},
+  {"query": "Open the AskReddit forum and its discussion list.", "expected_path": "^/f/AskReddit$", "top_k": 5},
+  {"query": "Open the books forum.", "expected_path": "^/f/books$", "top_k": 5},
+  {"query": "Read a discussion and its comments.", "expected_path": "^/f/[^/]+/[0-9]+", "top_k": 5},
+  {"query": "Open my account notifications.", "expected_path": "^/notifications$", "top_k": 5},
+  {"query": "查看所有论坛的列表", "expected_path": "^/forums$", "top_k": 10}
+]

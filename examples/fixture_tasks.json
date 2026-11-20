@@ -1,0 +1,5 @@
+[
+  {"task": "Open the product catalog.", "expected": {"path_equals": "/catalog", "text_contains": "Catalog"}},
+  {"task": "Open the Returns tab in the help center.", "expected": {"path_equals": "/help", "text_contains": "Return within 30 days."}},
+  {"task": "Open the blue ceramic mug product page.", "expected": {"path_equals": "/item/1", "text_contains": "A blue ceramic mug."}}
+]

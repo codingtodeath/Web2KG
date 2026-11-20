@@ -1,0 +1,105 @@
+logging: true
+verbose: 0
+debug: false
+logdir: ''
+logname: execution
+benchmark:
+  name: webarena
+  task_name: webarena_test
+max_steps: 30
+agent:
+  type: webNavigator
+  others:
+    max_steps: 30
+    logname: webNavigator
+    logging: true
+    verbose: 0
+    debug: false
+    logdir: ''
+  actor:
+    debug: 0
+    verbose: 0
+    number: 1
+    model: gpt-5.6-terra
+    documented_interaction_elements:
+    - url
+    - plan
+    - reason
+    - observation summary
+    - retained element ids
+    - observation highlight
+    - mode analysis
+    - navigate_think
+    - navigate_query
+    - navigate_domain
+    - page_selection_response
+    - topk_webpages
+    - target_page
+    - target_webnode
+    - webgraph
+    online_interaction_elements: []
+    input:
+    - step
+    - objective
+    - task memory
+    - interaction history
+    - current observation
+    interaction_history:
+      verbose: true
+      type:
+      - text
+      step_num: 5
+    current_observation:
+      type:
+      - text
+      - image
+    context_policy: compact-context-v1
+    input_policy: task-memory-history-v1
+    history_mode_analysis: false
+    output:
+    - observation description
+    - reason
+    - action
+    - observation highlight
+    planning_command: []
+    navigation_command:
+    - click
+    - type
+    - stop
+    - go_back
+    - optimal_navigate
+    play:
+    - step
+    - objective
+    - previous plans
+    - observation description
+    - reason
+    - action
+    - note
+    trash:
+    - objective
+    - step
+    - url
+    - instruction
+    - online input
+    - response
+    retriever:
+      model: jina-embeddings-v4
+      topk: 5
+      return_multivector: true
+    domain_paths: {}
+    selector:
+      model: gpt-5.6-terra
+    benchmark_name: webarena
+  benchmark_name: webarena
+env:
+  ax_search: true
+  fullpage: true
+  prune: true
+  obs_with_url: true
+  max_browser_rows: 500
+  headless: true
+  task_ids: all
+screenshot_storage:
+  enabled: false
+  full_page: true

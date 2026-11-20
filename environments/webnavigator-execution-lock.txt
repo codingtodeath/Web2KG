@@ -1,0 +1,17 @@
+# Tested in existing Windows Python 3.11 research venv; no downloads required here.
+gymnasium==0.29.1
+beartype==0.12.0
+PyYAML==6.0.1
+Pillow==12.2.0
+lxml==4.9.2
+nltk==3.8.1
+pandas==2.0.3
+scipy==1.10.1
+openai==2.44.0
+aiolimiter==1.1.0
+transformers==4.54.1
+tqdm==4.67.1
+numpy==1.24.4
+playwright==1.44.0
+requests==2.31.0
+python-dotenv==1.0.1

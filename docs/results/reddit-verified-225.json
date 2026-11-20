@@ -1,0 +1,762 @@
+{
+  "method": "Web2KG",
+  "model": "Qwen3.7-flash",
+  "graph_nodes": 225,
+  "diagnosis_enabled": true,
+  "successes": 75,
+  "tasks": 106,
+  "by_difficulty": {
+    "hard": {
+      "successes": 32,
+      "tasks": 42
+    },
+    "non-hard": {
+      "successes": 43,
+      "tasks": 64
+    }
+  },
+  "rows": [
+    {
+      "task_id": 27,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v1",
+      "official_record_sha256": "49f2fe7d34803fffb4268b8afb09921ed28f1c7451125cccc3852b1458619749"
+    },
+    {
+      "task_id": 28,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard22-feedback-flash-20261106-v1",
+      "official_record_sha256": "db942611f38529122d9e67f8b9b090ea358b0771d208c90cfa5f2c3b3e38dfd0"
+    },
+    {
+      "task_id": 29,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard8-cardfix-flash-20261106-v1",
+      "official_record_sha256": "e11520eeee88d9fca57eac956dfbd94c37b4bcfcdb82eba955108343d2672036"
+    },
+    {
+      "task_id": 30,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v1",
+      "official_record_sha256": "19b1cf8da4ae0cb0045e845a07da18386121ec436a4f5b7e9fc2e35f8bd6feb9"
+    },
+    {
+      "task_id": 31,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard10-225-flash-20261104-v4",
+      "official_record_sha256": "f1e56ab6e90f0b30c471f628bf237dc9ae2901f5ad44f5cba35d6ce4583aed28"
+    },
+    {
+      "task_id": 66,
+      "difficulty": "hard",
+      "official_score": 0,
+      "source_run": "reddit-hard22-feedback-flash-20261106-v1",
+      "official_record_sha256": "a02f4e46263257451beb802e6837d76c5a6048106d059bef68cbd59a204c2882"
+    },
+    {
+      "task_id": 67,
+      "difficulty": "hard",
+      "official_score": 0,
+      "source_run": "reddit-hard22-feedback-flash-20261106-v1",
+      "official_record_sha256": "25b87b4273408546c25929fbe30df66eef7388bb9e2060972c70c9ed7497443c"
+    },
+    {
+      "task_id": 68,
+      "difficulty": "hard",
+      "official_score": 0,
+      "source_run": "reddit-hard22-feedback-flash-20261106-v1",
+      "official_record_sha256": "667300e78084b9e0cd04dff6468cc4ab0579ddeff5afb6515e2ecc60e9e61f62"
+    },
+    {
+      "task_id": 69,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v1",
+      "official_record_sha256": "288143179e7df75d8dc9ee460caac104b899c5b8913e5c74fbd752c75f6facc3"
+    },
+    {
+      "task_id": 399,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard31-225-flash-20261106-v1",
+      "official_record_sha256": "dbcea942717e980aa2eb01770f5bfa931eeb22c9e23c7bca0f556b7747ea4259"
+    },
+    {
+      "task_id": 400,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard22-feedback-flash-20261106-v1",
+      "official_record_sha256": "6fdf19320ca6e72a4ed55464e0341b778e30e2d3106c510b58125116fd09671a"
+    },
+    {
+      "task_id": 401,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard31-225-flash-20261106-v1",
+      "official_record_sha256": "53498c123cfb6cc92143a928cd44a2c95c7e2fd7e03832fb520a3470ba173d12"
+    },
+    {
+      "task_id": 402,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v2",
+      "official_record_sha256": "3c8c99c030538c2ded9f7a55e6ec3c55ad5623b26de8f6b868cf66e5b7d6cc7b"
+    },
+    {
+      "task_id": 403,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v2",
+      "official_record_sha256": "bb75ecbb18d5982f839231afeaad33f47638c9ecbfd92df151b8af52a6049ead"
+    },
+    {
+      "task_id": 404,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v2",
+      "official_record_sha256": "ff7e6cdb3ac925e420d45ec4d5b9aca0a224294a90d46ce7622c241972021468"
+    },
+    {
+      "task_id": 405,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v2",
+      "official_record_sha256": "864606a38e3c8ae4e014c8847244959bed89dc142d429e4a1475645c20f3a12b"
+    },
+    {
+      "task_id": 406,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v2",
+      "official_record_sha256": "08d1d404de4078bc7dadf26adca6699eb802ff94e1692cb1f3abd2dfc39d837b"
+    },
+    {
+      "task_id": 407,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard31-225-flash-20261106-v1",
+      "official_record_sha256": "cb7a7f940c7c88f6e70617dd2111e409f409d4581f0aa6ee298f2a1372508d0b"
+    },
+    {
+      "task_id": 408,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard31-225-flash-20261106-v1",
+      "official_record_sha256": "77044350a73986a54be957669e14143cc73ebc7f752820cb5bfda83cd22a4812"
+    },
+    {
+      "task_id": 409,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard4-background-flash-20261104-v1",
+      "official_record_sha256": "b4d714b9211b0783ee701ab17e489c0ca9401b898b7ce86dc3ea4c7f35ab209b"
+    },
+    {
+      "task_id": 410,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard22-feedback-flash-20261106-v1",
+      "official_record_sha256": "fcc9824695666b2bb9171275a5bf597b2bfe183edf8bf4ce2486d565a262be15"
+    },
+    {
+      "task_id": 580,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard8-cardfix-flash-20261106-v1",
+      "official_record_sha256": "a3c55680b60cd49cfa81fada56f8708cf54f54c83ddaedc52bafe06bb5178483"
+    },
+    {
+      "task_id": 581,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard8-cardfix-flash-20261106-v1",
+      "official_record_sha256": "cce0988068c675b548df0df4a4f4127da7ffa7aa181fceca72098e6f65d0614f"
+    },
+    {
+      "task_id": 582,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v2",
+      "official_record_sha256": "114695e53e23a5be85d29415272ba01a69e57e5ba7a3cae5c5a989acce2af9d6"
+    },
+    {
+      "task_id": 583,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v2",
+      "official_record_sha256": "acf0d7b55eaf383cbb7e856542cd220a63fcf56028d93b9f9c08c5d67b22f891"
+    },
+    {
+      "task_id": 584,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard22-feedback-flash-20261106-v1",
+      "official_record_sha256": "3ba628877bdf4c445110fff66a7807e1ed9daf4f87b43d6838e49afb9394cfa6"
+    },
+    {
+      "task_id": 595,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v2",
+      "official_record_sha256": "0c161a7bf424a4d978e93dd5030d86f3ab0e625024a8b26a2c56750429da3514"
+    },
+    {
+      "task_id": 596,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard10-225-flash-20261104-v4",
+      "official_record_sha256": "c7bbae29d3d574ac9ebd0f0f91a39527feeeec9eedafe230f46d6ab6b496f1ed"
+    },
+    {
+      "task_id": 597,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard22-feedback-flash-20261106-v1",
+      "official_record_sha256": "fdc323671ea2ed3bd2a91d4f773604c9b0183e9cae76faafe71aaa05880bb392"
+    },
+    {
+      "task_id": 598,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard10-225-flash-20261104-v3",
+      "official_record_sha256": "52e40ba66e501c3a176b26348348a605c12d932f6bd6334bb30cbe9e82def181"
+    },
+    {
+      "task_id": 599,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v2",
+      "official_record_sha256": "63cc85d24adafeb5305f5b08d55cf8316ab9fb280edf2c6c0f772925f5f69803"
+    },
+    {
+      "task_id": 600,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v2",
+      "official_record_sha256": "0dd47f8dc95867a6ed59feb4e3c3556444dfa6d73cf5faaaeb9e17636f333ff7"
+    },
+    {
+      "task_id": 601,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "ec670ac44f3355da9764d21c512b1582dae553ab9cce27a5aae1a9388d83cced"
+    },
+    {
+      "task_id": 602,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "42e3820f103714b68c49c7947e49a700e392e774235407165f14d87a31ee473a"
+    },
+    {
+      "task_id": 603,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard31-225-flash-20261106-v1",
+      "official_record_sha256": "5a17adcc0b26a23ad4a80b8e0b0f57de3ff0b8ae17d652f8176a7b3cd5401a24"
+    },
+    {
+      "task_id": 604,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "f3dcbd7b3f3bc0a05592c4d381a9dda0e338e2ef4cc0c79b4f44d17fb169c4bf"
+    },
+    {
+      "task_id": 605,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "6677facd98b2340f06126e34ef700c7b27cde2318983a7ab00f0e3cd9cca594f"
+    },
+    {
+      "task_id": 606,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "a62c244c5f8b109bc093ef29ac3a257782f4d6eec009b10f767207cc09feb457"
+    },
+    {
+      "task_id": 607,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "3e47f795e138330948926f8a092e3bf4567f4a89ff985d499a705518fe141c67"
+    },
+    {
+      "task_id": 608,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "c33cc4a661bbafc23e259d55030dc9ea79001dc18b43f694cba8095079a212a9"
+    },
+    {
+      "task_id": 609,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "a02c249e3893dc235d67921f5560481dcee55e6b6c8bfce6cdd359b8126e3eca"
+    },
+    {
+      "task_id": 610,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard8-cardfix-flash-20261106-v1",
+      "official_record_sha256": "8122562dd760b41604e7bb4934329df03a81e297b1f2e8382a4adf84c370daad"
+    },
+    {
+      "task_id": 611,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "904a2b903809004c73f9b592869f9335421ee684f375574fb1b2985c5865c6f0"
+    },
+    {
+      "task_id": 612,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "b529edc2e94b0c7115d6775056efb5ec97283a268c8fea9a2c5b4c02c7c243c6"
+    },
+    {
+      "task_id": 613,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "2a2d95a25da4dff0369ff1d4c3e8df8328bac50c99f74941949801d63011a2f7"
+    },
+    {
+      "task_id": 614,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "0c61a4bf50024b51e106255b9cee288fd946495b4bb57b001a666deae44e1408"
+    },
+    {
+      "task_id": 615,
+      "difficulty": "hard",
+      "official_score": 0,
+      "source_run": "reddit-hard22-feedback-flash-20261106-v1",
+      "official_record_sha256": "e82519d51d0e9c7f2eaf9206830aff6b80e670f88dce4251e3c332e9633224c8"
+    },
+    {
+      "task_id": 616,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "ba635f0d96e26fbee7ca37fba74709a6a19274a61c788a2ad1fbad791261f589"
+    },
+    {
+      "task_id": 617,
+      "difficulty": "hard",
+      "official_score": 0,
+      "source_run": "reddit-hard22-feedback-flash-20261106-v1",
+      "official_record_sha256": "218858f28ab6280319fcbcbef91669216b251fed12e0279e405914e7e7c2d7e5"
+    },
+    {
+      "task_id": 618,
+      "difficulty": "hard",
+      "official_score": 0,
+      "source_run": "reddit-hard8-cardfix-flash-20261106-v1",
+      "official_record_sha256": "b16e6ec0e848240592edc1e66a3a145e651f72577a5657a8086da81f1d8a6779"
+    },
+    {
+      "task_id": 619,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "883d0c505af266af573262ba0a4415fb9a215c7f2e4c3300fd1824acedd01821"
+    },
+    {
+      "task_id": 620,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "59518d6694cf0699f385c3209ff03cf247736c22ea1c5ca9ef5026315ce08b4c"
+    },
+    {
+      "task_id": 621,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "0b9e803b26f91f0e124a67dfa1d858512cfd2bb22ed823bbf05563b706ceba17"
+    },
+    {
+      "task_id": 622,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "79103b70367acd8abce0a0a22589d02f9423ffd690562657b10b55d94506e023"
+    },
+    {
+      "task_id": 623,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "18006ae121acb9ae83115a6772a2ddff3fbb8754081a433c36eac0b4b4a9d3c8"
+    },
+    {
+      "task_id": 624,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard8-cardfix-flash-20261106-v1",
+      "official_record_sha256": "995375ceda05e67743d744408a0f778077faaaee7a278b320d7899e5f0a4043e"
+    },
+    {
+      "task_id": 625,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard10-225-flash-20261104-v4",
+      "official_record_sha256": "cb543d29855082e52f2a0d933c99da134a85ee766b99a96a34e8addf06451398"
+    },
+    {
+      "task_id": 626,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "7900ddbd569cc99b87dc3ad2cc6dbc5541fe13f2659de4657e68f129b7dbcfda"
+    },
+    {
+      "task_id": 627,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "d27fdaf0f65b50a4d08815c412d0e2ebbf50865f5da57a95d312119c25ea6b24"
+    },
+    {
+      "task_id": 628,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "72f3b8fc5f6fb09182f9ba017da47794704aa427a2d6daeab57aff348e099f9c"
+    },
+    {
+      "task_id": 629,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "1ea1a2b2848c34975bc29f889e7ec745d511463db237574087faa04f0d88774c"
+    },
+    {
+      "task_id": 630,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "b7c2200280b4500fee84fff5e4a3255e01d4943fbdc62da9dd7081c6da842ebe"
+    },
+    {
+      "task_id": 631,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "a6d90e235ccf7526bc7a01c0ea819c4ef49edc3cc86695b4e55a7870cf2a6e4e"
+    },
+    {
+      "task_id": 632,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "d06130028b74c15f7b874cd2866ad9aac228c06cc78b3a3d0a81fa21c7827acf"
+    },
+    {
+      "task_id": 633,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "e60ee6e5fa64f27821be3f1aeec2e3c2fb29c19ccd2cd711eb0d68db55f157e7"
+    },
+    {
+      "task_id": 634,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard31-225-flash-20261106-v1",
+      "official_record_sha256": "4604c878bd6fee9c8b3706d64b7b15eedc289d9bb0013396e1ba9047f425c58f"
+    },
+    {
+      "task_id": 635,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "8aab5ab057af4004b172059bbeadea641027b3d06384c5de471de2f708a0acc1"
+    },
+    {
+      "task_id": 636,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard31-225-flash-20261106-v1",
+      "official_record_sha256": "fe73fa0e677676554215c936c6c5658f3004baa81b8475b1cb3129a414085742"
+    },
+    {
+      "task_id": 637,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "d2729b21488685f753bba5cd4260ead639efc5d62f4789feffda0eeb32ff0389"
+    },
+    {
+      "task_id": 638,
+      "difficulty": "hard",
+      "official_score": 0,
+      "source_run": "reddit-hard22-feedback-flash-20261106-v1",
+      "official_record_sha256": "c072e80434e2492688f9fcfad075a7c2b4a4a8a08ae01c9520e30d6a54a7dcc3"
+    },
+    {
+      "task_id": 639,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "e92b9bcc8e4bb4dd02b9a52b28a052a7e09eef4fcb457c967905ef22586d1f56"
+    },
+    {
+      "task_id": 640,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard22-feedback-flash-20261106-v1",
+      "official_record_sha256": "c5423731be0165d319f1ee7ea36b5160f93cb34d25664d41ea142a58c96859a6"
+    },
+    {
+      "task_id": 641,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "ef0bc5b8f6941623f4e17e7ac4d501826a6cab9b007b613dcdea5f1308644c81"
+    },
+    {
+      "task_id": 642,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "94e7292fac987b8a6e2eace2ab0729a300e988d036cf9c167e2acea6dc7477e4"
+    },
+    {
+      "task_id": 643,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "241548654c39e4f19f784f26601b983a84e78a984e8d9e861c02ec9bc057c19d"
+    },
+    {
+      "task_id": 644,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard2-parser-flash-20261105-v1",
+      "official_record_sha256": "eeee6da1bbcdbba368c9a2818c46ba3d71478f44d1b60c7855876503703ccede"
+    },
+    {
+      "task_id": 645,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard8-cardfix-flash-20261106-v1",
+      "official_record_sha256": "7361241f60548e1d475d9d0b195ba7408d5c5613b3c6c14723d73fc6d99ffc8f"
+    },
+    {
+      "task_id": 646,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard10-225-flash-20261104-v2",
+      "official_record_sha256": "e0cf4a660e6c4d786385485716d1e3d7900feba42e252d3c2f11b0bffb15384d"
+    },
+    {
+      "task_id": 647,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard22-feedback-flash-20261106-v1",
+      "official_record_sha256": "9cd2aa41e30b5491dca158aa0c4cb4c7156c710ed73a392f77cacd1e34087e4f"
+    },
+    {
+      "task_id": 648,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "4f72219d73fac581f7fc1e3536889ae56aaf1581abf4a821440987af9a58e57d"
+    },
+    {
+      "task_id": 649,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "c75aebf9dda67e45656579e4192cccb176b720578f7b311414ac7791a877cfcc"
+    },
+    {
+      "task_id": 650,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "1d53361104b60704312608bfef63c42ef862ffb234c389b619a5ff976e4cd026"
+    },
+    {
+      "task_id": 651,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard4-background-flash-20261104-v1",
+      "official_record_sha256": "afd788ac97cd7ff4470286665b69e576f522b0bab7ee39dcd238cda31a6fd18e"
+    },
+    {
+      "task_id": 652,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "e7516ed03ed021ce1e4bf9ff4c91999ba8dcf647ce3b3d02f1abd9dd04f4e955"
+    },
+    {
+      "task_id": 714,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "632f923cfa3bc3140f986d28a0a9013d5de1c65ec2f5bed288856c26273ce543"
+    },
+    {
+      "task_id": 715,
+      "difficulty": "hard",
+      "official_score": 0,
+      "source_run": "reddit-hard22-feedback-flash-20261106-v1",
+      "official_record_sha256": "00a641936806e82271e3234d89a5980b6fe5d10bef9de98a45bae2dcf02b38aa"
+    },
+    {
+      "task_id": 716,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "0f7e8ebef55bffa9816c54c7cadf0ae4ed8633347b127f724df83e78885a51a8"
+    },
+    {
+      "task_id": 717,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v3",
+      "official_record_sha256": "a21c8d140efeb3699def2b07b24a5177e769fbea5ef9487978f96d850792a0ea"
+    },
+    {
+      "task_id": 718,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v4",
+      "official_record_sha256": "c60d0c06fc7f062c09e100f14ced0f899e027371bf42f63321011e8642842a21"
+    },
+    {
+      "task_id": 719,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v4",
+      "official_record_sha256": "b189c41823abfc4de278529c924b117269bd848958d460e681dc2553cf0a98c9"
+    },
+    {
+      "task_id": 720,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v5",
+      "official_record_sha256": "f0121c144d6cc2b3f74e578e18b37091cc27f1be5ddbab229f60867785b0d737"
+    },
+    {
+      "task_id": 721,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard10-225-flash-20261104-v4",
+      "official_record_sha256": "2f25fbfd0bad3fad2bb54e4da4de0be3f35ed0c16212e54b28cd9c20f97153f9"
+    },
+    {
+      "task_id": 722,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v5",
+      "official_record_sha256": "4c63c1a9066b056746570b55e8932dc6ff0e851ed5d5fcb961aff8b43f62a86e"
+    },
+    {
+      "task_id": 723,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v5",
+      "official_record_sha256": "316f6a20f9366e03dce640c3eac7f9c40f5366b8d81c1afb7989e463f7c42faf"
+    },
+    {
+      "task_id": 724,
+      "difficulty": "hard",
+      "official_score": 0,
+      "source_run": "reddit-hard10-225-flash-20261104-v3",
+      "official_record_sha256": "c42051deafbef550db8f2199a0f8984371b9a897faa577c5d3f3a5ef0711b3fb"
+    },
+    {
+      "task_id": 725,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v5",
+      "official_record_sha256": "057edbf3d16be938e7daedea487d24f3d079f0e2fe445509beed840ba61dd25c"
+    },
+    {
+      "task_id": 726,
+      "difficulty": "non-hard",
+      "official_score": 0,
+      "source_run": "reddit-verified-comparison-flash-20261112-v5",
+      "official_record_sha256": "7b564df22a092d1b19b12986a06410bf86a0b4d75558c659a3f1b5da154d0c47"
+    },
+    {
+      "task_id": 727,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v6",
+      "official_record_sha256": "098ae79bd6471e04109f36ece2ba0d5645b589ed87480634de9c545f0dba5288"
+    },
+    {
+      "task_id": 728,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v6",
+      "official_record_sha256": "b8a864c519ef1548b23a61ca6356902bd27d31eadacdfde83dfea4cf777b5275"
+    },
+    {
+      "task_id": 729,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v6",
+      "official_record_sha256": "7c92a1fa981cef91bd205f6bf6ad6614aa81da87aea6eaa0d2bf0ba35dd036e7"
+    },
+    {
+      "task_id": 730,
+      "difficulty": "hard",
+      "official_score": 0,
+      "source_run": "reddit-hard10-225-flash-20261104-v4",
+      "official_record_sha256": "53e422342f31bda6f7a865e2aefe3356fb9994e01231219c2e5c36296e148e3f"
+    },
+    {
+      "task_id": 731,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v6",
+      "official_record_sha256": "f15a0fd3ecae2f09eebc7958f94f2d245fa82430bcc040c259a4872b28296ced"
+    },
+    {
+      "task_id": 732,
+      "difficulty": "non-hard",
+      "official_score": 1,
+      "source_run": "reddit-verified-comparison-flash-20261112-v6",
+      "official_record_sha256": "29ac863a6024b0f90853082784c3aedaadaee6b1338bb3bd6f31595d5ca0f779"
+    },
+    {
+      "task_id": 733,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard31-225-flash-20261106-v1",
+      "official_record_sha256": "853b3b85b68014ca7f1cbff522463bf85dc9cde25e5029f876babadc161f00b3"
+    },
+    {
+      "task_id": 734,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard8-cardfix-flash-20261106-v1",
+      "official_record_sha256": "e036ef3fa7980367c9699d59e795a6d25623b7685be9c0b3ba120d93b109751a"
+    },
+    {
+      "task_id": 735,
+      "difficulty": "hard",
+      "official_score": 1,
+      "source_run": "reddit-hard31-225-flash-20261106-v1",
+      "official_record_sha256": "6d16291474cc8df0080bee7c83d5f0e4ddffa1e3bb7a8120910992ddf5eeadbf"
+    }
+  ]
+}

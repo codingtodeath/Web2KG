@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>web2kg · 项目工作台</title>
+<style>
+:root{--ink:#18342f;--muted:#677871;--line:#dce4dc;--green:#23624b;--paper:#f5f6f0;--white:#fff;--mint:#e9f2e6}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 "Segoe UI","Microsoft YaHei",sans-serif}a{color:inherit}button,a{ -webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}button:disabled{cursor:wait;opacity:.55}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #c59030;outline-offset:5px}
+.shell{max-width:1240px;margin:auto;padding:0 48px}header{display:flex;justify-content:space-between;align-items:center;padding:25px 0;border-bottom:1px solid var(--line)}.brand{text-decoration:none;font-size:22px;font-weight:750;letter-spacing:-1px}.brand span{color:var(--muted);font-size:13px;font-weight:400;letter-spacing:0;margin-left:15px}.local{font-size:12px;display:flex;align-items:center;gap:8px}.dot{width:7px;height:7px;display:inline-block;border-radius:50%;background:#45946c}.intro{display:flex;align-items:end;justify-content:space-between;padding:44px 0 30px;gap:24px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--green);font-weight:700;margin-bottom:10px}h1{font-size:38px;letter-spacing:-1.4px;line-height:1.25;margin:0 0 13px;font-weight:650}.intro p{margin:0;color:var(--muted);font-size:14px}.badge{white-space:nowrap;border:1px solid var(--line);border-radius:30px;padding:7px 14px;font-size:12px;background:#fff8}
+.overview{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.15fr;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px 0;margin-bottom:36px}.metric{padding:0 25px;border-left:1px solid var(--line);min-width:0}.metric:first-child{border:0}.label{color:var(--muted);font-size:12px;margin-bottom:7px}.value{font:32px/1.15 "Segoe UI",sans-serif;font-weight:600;letter-spacing:-1px}.value.small{font-size:19px;letter-spacing:0;padding-top:5px}.sub{font-size:11px;color:var(--muted);margin-top:8px;overflow-wrap:anywhere}.section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}h2{font-size:17px;margin:0;font-weight:650}.section-title span{font-size:12px;color:var(--muted)}.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{display:flex;flex-direction:column;min-width:0;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:25px 28px;min-height:235px;transition:border-color .2s,box-shadow .2s}.card:hover{border-color:#a9bfb0;box-shadow:0 5px 20px #19362e06}.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}.icon{display:grid;place-items:center;width:39px;height:39px;background:#eef3ed;border-radius:11px}.icon svg{width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}.number{font:12px Consolas,monospace;color:#91a197}h3{font-size:21px;margin:0 0 7px;font-weight:650}.card p{color:var(--muted);font-size:13px;margin:0 0 22px;max-width:440px}.actions{display:flex;align-items:center;gap:15px;margin-top:auto;flex-wrap:wrap}.entry{font-size:13px;text-decoration:none;font-weight:650;display:inline-flex;align-items:center;gap:15px}.entry:hover{color:#348360}.entry span{font-size:19px;font-weight:400}.review{background:var(--mint);border-color:#cbdcc5}.review .icon{background:#dbead5}.primary{background:var(--green);color:white;padding:9px 17px;border:0;border-radius:7px;font-size:13px;font-weight:600}.secondary{background:transparent;border:1px solid #a8bba7;color:var(--green);border-radius:7px;padding:8px 13px;font-size:12px}.status{font-size:11px;background:#ffffffb0;border:1px solid #d4e0cf;border-radius:20px;padding:3px 11px}.status[data-state="failed"]{background:#fff0e7;color:#9a482d;border-color:#e6c5b6}.status[data-state="running"]{color:#23624b}.review-note{margin:14px 0 0!important;font-size:12px!important}.output{font-size:11px;margin-top:7px;color:var(--muted);overflow-wrap:anywhere}.error{padding:12px 16px;border:1px solid #e5c5b3;background:#fff4eb;border-radius:8px;color:#8a3c24;margin:0 0 20px;font-size:13px}[hidden]{display:none!important}.details{margin:26px 0 32px;border:1px solid var(--line);border-radius:12px;padding:15px 22px;background:#ffffff60;font-size:12px}.details summary{cursor:pointer;color:var(--muted)}.details dl{display:grid;grid-template-columns:100px 1fr;gap:9px 18px;margin:18px 0 8px}.details dt{color:var(--muted)}.details dd{margin:0;overflow-wrap:anywhere}.details a{color:var(--green)}footer{border-top:1px solid var(--line);display:flex;justify-content:space-between;padding:20px 0 30px;color:var(--muted);font-size:11px}
+@media(max-width:720px){.shell{padding:0 20px}.brand span{display:none}.intro{padding-top:30px;align-items:start;flex-direction:column;gap:16px}h1{font-size:30px}.overview{grid-template-columns:1fr 1fr;row-gap:23px}.metric:nth-child(3){border:0}.cards{grid-template-columns:1fr}.card{padding:22px}.section-title span{display:none}.details dl{grid-template-columns:1fr;gap:4px}.details dd{margin-bottom:10px}footer{gap:20px}}
+</style>
+<div class="shell">
+<header><a class="brand" href="/">web2kg<span>图谱辅助 Web Agent</span></a><div class="local"><i class="dot"></i><span id="connection">正在连接本地服务</span></div></header>
+<main>
+<section class="intro"><div><div class="eyebrow">PROJECT WORKSPACE</div><h1>项目工作台</h1><p>查看探索结果，阅读当前说明，从真实浏览器核验每条路径。</p></div><span class="badge">离线建图 → 检索 → 路径执行</span></section>
+<div id="error" class="error" role="alert" hidden></div>
+<section class="overview" aria-label="当前图谱概览">
+<div class="metric"><div class="label">当前图谱</div><div class="value small" id="graph-name">加载中…</div><div class="sub" id="start-url">—</div></div>
+<div class="metric"><div class="label">页面状态</div><div class="value" id="nodes">—</div><div class="sub">保留实际观察到的页面</div></div>
+<div class="metric"><div class="label">交互路径</div><div class="value" id="edges">—</div><div class="sub">记录动作与状态转移</div></div>
+<div class="metric"><div class="label">页面索引</div><div class="value small" id="index">—</div><div class="sub" id="attempts">—</div></div>
+</section>
+<div class="section-title"><h2>从这里开始</h2><span>查看页面可随时打开 · 人工核验按需启动</span></div>
+<section class="cards" aria-label="项目入口">
+<article class="card"><div class="card-top"><div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="9" width="5" height="6" rx="1"/><rect x="17" y="2" width="5" height="6" rx="1"/><rect x="17" y="16" width="5" height="6" rx="1"/><path d="M7 12h5V5h5M12 12v7h5"/></svg></div><span class="number">01 / EXPLORE</span></div><h3>图谱与页面</h3><p>查看页面状态、动作连线和候选标注截图，缩放画布检查起点与终点。</p><div class="actions"><a class="entry" id="graph-link" href="/graph/viewer.html" target="_blank" rel="noopener">打开图谱 <span>↗</span></a></div></article>
+<article class="card"><div class="card-top"><div class="icon"><svg viewBox="0 0 24 24"><path d="M6 3h12a2 2 0 0 1 2 2v16H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><span class="number">02 / INSPECT</span></div><h3>探索日志</h3><p>核对每页选择了什么、点击了什么，以及失败发生在哪一步、哪个页面。</p><div class="actions"><a class="entry" id="logs-link" href="/graph/viewer.html#logs" target="_blank" rel="noopener">查看日志 <span>↗</span></a></div></article>
+<article class="card"><div class="card-top"><div class="icon"><svg viewBox="0 0 24 24"><path d="M6 4v16M10 5h10M10 12h8M10 19h10"/><circle cx="6" cy="5" r="2"/><circle cx="6" cy="12" r="2"/><circle cx="6" cy="19" r="2"/></svg></div><span class="number">03 / GUIDE</span></div><h3>说明与结果</h3><p>查看使用方法和 Reddit 评测结果。</p><div class="actions"><a class="entry" id="docs-link" href="/docs/usage.md" target="_blank" rel="noopener">使用说明 <span>↗</span></a><a class="entry" href="/docs/results.html" target="_blank" rel="noopener">Reddit 评测结果 <span>↗</span></a><a class="entry" href="/graph/reports/hard10-trajectories/index.html" target="_blank" rel="noopener">逐步轨迹 <span>↗</span></a></div></article>
+<article class="card review"><div class="card-top"><div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="13" height="13" rx="2"/><path d="M6 21h6M9 17v4M18 9h4v12h-9v-4M17 14l1.5 1.5L21 13"/></svg></div><span id="review-state" class="status" data-state="idle">未启动</span></div><h3>人工核验</h3><p>输入需求，检查 top-k 与全部节点。关闭任一核验窗口后，本次会话结束，可在这里再次打开。</p><div class="actions"><button class="primary" id="start" disabled>启动人工核验 ↗</button><a class="entry" id="review-link" target="_blank" rel="noopener" hidden>打开核验台 ↗</a><button class="secondary" id="stop" hidden>停止核验</button></div><p class="review-note" id="review-message" role="status" aria-live="polite">正在读取服务状态…</p><div class="output" id="review-output"></div></article>
+</section>
+<details class="details"><summary>运行信息与使用说明</summary><dl><dt>当前图谱</dt><dd id="directory">—</dd><dt>探索方式</dt><dd id="method">—</dd><dt>核验记录</dt><dd>每次启动独立保存查询、选择、到达结果和人工结论。停止核验不会删除记录。</dd><dt>浏览器控制</dt><dd>核验启动后打开目标网站与调试界面两个窗口，网页只发送命令，动作由 Python 执行。</dd><dt>结束运行</dt><dd>在启动脚本的控制台按 Ctrl+C，关闭总控和由它启动的核验；有操作正在执行时等待该操作结束。</dd><dt>总控日志</dt><dd id="control-log">—</dd><dt>核验启动日志</dt><dd><a href="/api/review-log" target="_blank" rel="noopener">查看本次启动输出 ↗</a></dd></dl></details>
+</main><footer><span>web2kg / 本地研究工作台</span><span>图谱提供路径，真实交互验证结果。</span></footer>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+let token=null,pending=false;
+const labels={idle:'未启动',starting:'正在启动',running:'运行中',stopping:'正在停止',stopped:'已停止',failed:'启动或运行失败'};
+function error(message){$('error').textContent=message||'';$('error').hidden=!message;}
+function render(data){
+ token=data.token;const g=data.graph,r=data.review;
+ $('graph-name').textContent=g.directory.split(/[\\/]/).pop();$('start-url').textContent=g.start_url;
+ $('nodes').textContent=g.nodes;$('edges').textContent=g.edges;$('index').textContent=g.index;
+ $('attempts').textContent=`${g.attempts} 次探索预算已使用`;$('directory').textContent=g.directory;
+ $('method').textContent=g.review_mode==='rules'?'风险规则 + 结构分组 + 受限 BFS':g.review_mode==='llm'?'规则过滤 + LLM 批量审查':g.review_mode==='llm_ranked'?'规则过滤 + LLM 功能排序 + BFS':g.review_mode;
+ $('control-log').textContent=data.control_log;
+ for(const name of ['graph','logs'])$(name+'-link').href=data.links[name];
+ $('docs-link').href=data.links.docs||'/docs/usage.md';
+ $('review-state').textContent=labels[r.state]||r.state;$('review-state').dataset.state=r.state;
+ $('review-message').textContent=r.message;$('review-output').textContent=r.directory?`记录保存于 ${r.directory}`:'';
+ $('start').hidden=r.state==='running';$('start').disabled=pending||['starting','stopping'].includes(r.state);
+ $('start').textContent=r.state==='starting'?'正在启动…':r.state==='stopping'?'等待停止…':['stopped','failed'].includes(r.state)?'重新打开人工核验 ↗':'启动人工核验 ↗';
+ $('stop').hidden=!['starting','running','stopping'].includes(r.state);$('stop').disabled=pending||r.state==='stopping';
+ $('review-link').hidden=r.state!=='running';if(r.url)$('review-link').href=r.url;
+ $('connection').textContent='本地服务已连接';
+}
+async function refresh(){
+ try{const response=await fetch('/api/state');if(!response.ok)throw Error(`读取状态失败 (${response.status})`);render(await response.json());}
+ catch(e){$('connection').textContent='服务连接中断';$('start').disabled=true;$('stop').disabled=true;error('无法连接总控服务，请检查启动脚本是否仍在运行。');}
+}
+async function command(op){
+ pending=true;$('start').disabled=true;$('stop').disabled=true;error('');
+ try{const response=await fetch('/api/review/'+op,{method:'POST',headers:{'Content-Type':'application/json','X-Control-Token':token},body:'{}'});const data=await response.json();if(!response.ok)throw Error(data.error||'命令失败');}
+ catch(e){error(e.message);}finally{pending=false;await refresh();}
+}
+$('start').onclick=()=>command('start');$('stop').onclick=()=>command('stop');
+async function poll(){await refresh();setTimeout(poll,1500);}poll();
+</script>
+</html>

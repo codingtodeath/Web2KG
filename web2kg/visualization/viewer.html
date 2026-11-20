@@ -1,0 +1,1730 @@
+<!doctype html>
+<html lang="zh-CN">
+  <meta charset="utf-8" /><meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  />
+  <title>web2kg · 探索记录</title>
+  <style>
+    :root {
+      --paper: #f3f7fa;
+      --panel: #fff;
+      --ink: #153047;
+      --muted: #617789;
+      --line: #d6e2e9;
+      --teal: #167f88;
+      --alert: #b54d20;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font:
+        14px "Segoe UI",
+        "Microsoft YaHei",
+        sans-serif;
+    }
+    button,
+    input {
+      font: inherit;
+    }
+    button {
+      cursor: pointer;
+    }
+    button:focus-visible,
+    input:focus-visible,
+    a:focus-visible {
+      outline: 3px solid var(--teal);
+      outline-offset: 3px;
+    }
+    header {
+      background: var(--ink);
+      color: white;
+      padding: 24px 30px;
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      align-items: center;
+    }
+    h1 {
+      margin: 0;
+      font:
+        600 27px "Bahnschrift",
+        "Segoe UI",
+        sans-serif;
+      letter-spacing: -1px;
+    }
+    header p {
+      margin: 6px 0 0;
+      color: #adc5d4;
+      font-size: 12px;
+    }
+    .metrics {
+      display: flex;
+      gap: 26px;
+    }
+    .metric b {
+      font:
+        500 26px "Consolas",
+        monospace;
+      display: block;
+    }
+    .metric span {
+      font-size: 11px;
+      color: #adc5d4;
+    }
+    .toolbar {
+      padding: 15px 26px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: white;
+    }
+    .toolbar input {
+      width: 280px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+    }
+    .toolbar button {
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: white;
+      padding: 9px 14px;
+      color: var(--ink);
+    }
+    .toolbar button[aria-pressed="true"] {
+      background: var(--ink);
+      color: white;
+    }
+    .toolbar small {
+      margin-left: auto;
+      color: var(--muted);
+    }
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 390px;
+      min-height: calc(100vh - 164px);
+    }
+    .workspace {
+      min-width: 0;
+      padding: 24px;
+    }
+    .section-label {
+      font:
+        11px "Consolas",
+        monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+      margin: 0 0 16px;
+    }
+    .graph-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      min-height: 460px;
+    }
+    .graph-wrap svg {
+      display: block;
+      max-width: none;
+    }
+    .node rect {
+      fill: white;
+      stroke: var(--line);
+      stroke-width: 1.5;
+    }
+    .node {
+      cursor: pointer;
+    }
+    .node:hover rect {
+      stroke: var(--teal);
+    }
+    .node.active rect {
+      fill: #e4f4f4;
+      stroke: var(--teal);
+      stroke-width: 2;
+    }
+    .node text {
+      font:
+        12px "Segoe UI",
+        sans-serif;
+      fill: var(--ink);
+    }
+    .node .sub {
+      font:
+        10px "Consolas",
+        monospace;
+      fill: var(--muted);
+    }
+    .edge {
+      fill: none;
+      stroke: #c2d1dc;
+      stroke-width: 1.4;
+    }
+    .edge.active {
+      stroke: var(--teal);
+      stroke-width: 3;
+    }
+    .depth {
+      font:
+        11px "Consolas",
+        monospace;
+      fill: var(--muted);
+    }
+    aside {
+      background: white;
+      border-left: 1px solid var(--line);
+      padding: 24px;
+      min-width: 0;
+    }
+    aside h2 {
+      font-size: 21px;
+      line-height: 1.4;
+      margin: 10px 0;
+    }
+    aside .url {
+      font:
+        11px/1.6 "Consolas",
+        monospace;
+      overflow-wrap: anywhere;
+      color: var(--muted);
+    }
+    .badge {
+      display: inline-block;
+      color: var(--teal);
+      background: #e4f4f4;
+      border-radius: 4px;
+      padding: 4px 7px;
+      font:
+        11px "Consolas",
+        monospace;
+    }
+    aside img {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      margin: 20px 0 6px;
+    }
+    aside h3 {
+      margin: 24px 0 10px;
+      font-size: 13px;
+    }
+    .path-step {
+      display: block;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .path-step b {
+      color: var(--teal);
+      font:
+        11px "Consolas",
+        monospace;
+      margin-right: 8px;
+    }
+    .control {
+      padding: 7px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
+    .control span {
+      color: var(--muted);
+      font:
+        10px "Consolas",
+        monospace;
+      margin-right: 8px;
+    }
+    .legend {
+      color: var(--muted);
+      font-size: 12px;
+      margin: 15px 0;
+      line-height: 1.7;
+    }
+    .log-list {
+      border: 1px solid var(--line);
+      border-radius: 7px;
+      background: white;
+      max-height: 70vh;
+      overflow: auto;
+    }
+    .log-row {
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .log-row summary {
+      cursor: pointer;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .log-row time {
+      font:
+        10px "Consolas",
+        monospace;
+      color: var(--muted);
+    }
+    .log-row strong {
+      font:
+        12px "Consolas",
+        monospace;
+    }
+    .log-row.failure {
+      border-left: 3px solid var(--alert);
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font:
+        11px/1.6 "Consolas",
+        monospace;
+      background: var(--paper);
+      padding: 12px;
+      border-radius: 5px;
+    }
+    .empty {
+      padding: 30px;
+      color: var(--muted);
+    }
+    [hidden] {
+      display: none !important;
+    }
+    .result-note {
+      padding: 13px 15px;
+      border-left: 3px solid var(--teal);
+      background: #eaf3f5;
+      font-size: 12px;
+      line-height: 1.8;
+      margin-top: 18px;
+    }
+    .graph-wrap {
+      max-height: 68vh;
+    }
+    aside {
+      max-height: calc(100vh - 150px);
+      overflow: auto;
+    }
+    .controls {
+      max-height: 380px;
+      overflow: auto;
+    }
+    @media (max-width: 1000px) {
+      main {
+        grid-template-columns: minmax(0, 1fr) 320px;
+      }
+      .workspace,
+      aside {
+        padding: 18px;
+      }
+      .metrics {
+        gap: 14px;
+      }
+    }
+    @media (max-width: 720px) {
+      header {
+        align-items: flex-start;
+        padding: 20px;
+        flex-direction: column;
+      }
+      .metrics {
+        gap: 28px;
+      }
+      .toolbar {
+        padding: 12px;
+        flex-wrap: wrap;
+      }
+      .toolbar input {
+        width: 100%;
+      }
+      .toolbar small {
+        display: none;
+      }
+      main {
+        display: block;
+      }
+      aside {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        max-height: none;
+      }
+      .workspace {
+        padding: 14px;
+      }
+      .graph-wrap {
+        min-height: 320px;
+        max-height: 460px;
+      }
+    }
+    .graph-tools {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      font-size: 12px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    .graph-tools select,
+    .zoom-tools button {
+      font: inherit;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: white;
+      color: var(--ink);
+    }
+    .graph-wrap {
+      height: clamp(320px, calc(100vh - 310px), 720px);
+      min-height: 0;
+      max-height: none;
+      cursor: grab;
+      user-select: none;
+      touch-action: none;
+      background: radial-gradient(#d6e2e9 1px, transparent 1px) 0 0 / 18px 18px white;
+    }
+    .graph-wrap.dragging, .graph-wrap.dragging * {
+      cursor: grabbing;
+      user-select: none;
+    }
+    .zoom-tools {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+    }
+    .zoom-tools output {
+      min-width: 48px;
+      text-align: center;
+      font-family: Consolas, monospace;
+    }
+    .zoom-tools button:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+    .edge {
+      stroke: var(--edge-color);
+      stroke-width: 2;
+      stroke-linejoin: round;
+    }
+    .edge.active {
+      stroke: var(--edge-color);
+      stroke-width: 3;
+    }
+    .edge-halo {
+      fill: none;
+      stroke: white;
+      stroke-width: 7;
+      stroke-linejoin: round;
+      pointer-events: none;
+    }
+    .edge-group.return .edge {
+      stroke-dasharray: 7 4;
+    }
+    .edge-origin {
+      fill: white;
+      stroke: var(--edge-color);
+      stroke-width: 2;
+    }
+    .edge-hit {
+      stroke: transparent;
+      stroke-width: 16;
+      fill: none;
+      cursor: pointer;
+    }
+    .edge-label {
+      font:
+        11px "Segoe UI",
+        "Microsoft YaHei",
+        sans-serif;
+      fill: var(--edge-color);
+      paint-order: stroke;
+      stroke: var(--panel);
+      stroke-width: 6;
+      stroke-linejoin: round;
+      cursor: pointer;
+    }
+    .edge-group:hover .edge,
+    .edge-group.chosen .edge {
+      stroke: #c026d3;
+      stroke-width: 3;
+    }
+    .edge-group:hover .edge-label,
+    .edge-group.chosen .edge-label {
+      fill: #a21caf;
+    }
+    .edge-group:focus-visible {
+      outline: 2px solid #c026d3;
+    }
+    .edge-detail {
+      border-left: 3px solid #c026d3;
+      padding: 14px 18px;
+      background: white;
+      margin: 16px 0;
+      overflow-wrap: anywhere;
+    }
+    .edge-detail button {
+      margin: 8px 10px 0 0;
+    }
+    .connection-row {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      padding: 10px 13px;
+      margin: 7px 0;
+      font:
+        12px/1.6 "Segoe UI",
+        "Microsoft YaHei",
+        sans-serif;
+      color: var(--ink);
+      cursor: pointer;
+    }
+    .connection-row {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 12px;
+      border-left: 4px solid var(--edge-color);
+      overflow-wrap: anywhere;
+    }
+    .connection-row.chosen {
+      background: #fdf4ff;
+      border-color: #c026d3;
+    }
+    .connection-row small {
+      display: block;
+      color: var(--muted);
+    }
+    .connection-list {
+      max-height: 360px;
+      overflow: auto;
+    }
+    @media (max-width: 720px) {
+      .connection-row { grid-template-columns: 36px minmax(0, 1fr); }
+      .connection-row > span { grid-column: 2; }
+      .zoom-tools { margin-left: 0; }
+    }
+    .activity-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 11px;
+      margin-top: 18px;
+    }
+    .activity-legend span::before {
+      content: "";
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 2px;
+      background: #1266c5;
+      margin-right: 5px;
+    }
+    .activity-legend .selected::before {
+      background: #ea580c;
+    }
+    .activity-legend .attempted::before {
+      background: #c026d3;
+    }
+    .candidate-row[data-status="selected"] {
+      border-left: 4px solid #ea580c;
+      background: #fff7ed;
+    }
+    .candidate-row[data-status="attempted"] {
+      border-left: 4px solid #c026d3;
+      background: #fdf4ff;
+    }
+    .selected-controls {
+      display: grid;
+      gap: 7px;
+    }
+    .all-candidates {
+      margin-top: 22px;
+    }
+    .all-candidates > summary {
+      cursor: pointer;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .activity-box {
+      position: absolute;
+      box-sizing: border-box;
+      border: 3px solid #ea580c;
+      background: #ea580c12;
+      pointer-events: none;
+      color: #ea580c;
+      z-index: 2;
+    }
+    .activity-box.attempted {
+      border-color: #c026d3;
+      background: #c026d312;
+      color: #c026d3;
+    }
+    .activity-box > span {
+      position: absolute;
+      left: -2px;
+      top: -3px;
+      transform: translateY(-55%);
+      font:
+        bold var(--mark-font, 11px) / var(--mark-line, 15px) Consolas,
+        "Microsoft YaHei",
+        monospace;
+      color: white;
+      background: #ea580c;
+      border-radius: 2px;
+      padding: 0 3px;
+      white-space: nowrap;
+    }
+    .activity-box.attempted > span {
+      background: #c026d3;
+    }
+    .focus-box {
+      z-index: 3;
+    }
+  </style>
+  <style>main.template-mode{grid-template-columns:minmax(0,1fr)}#templateFrame{width:100%;height:85vh;min-height:650px;border:0;border-radius:8px;background:#f1f5f4}</style>
+  <style>
+    .snapshot {
+      position: relative;
+      margin: 16px 0;
+      cursor: zoom-in;
+    }
+    .snapshot img {
+      display: block;
+      margin: 0;
+      max-height: none;
+      object-fit: contain;
+      background: #f3f7fa;
+    }
+    .snapshot .focus-box {
+      position: absolute;
+      outline: 2px dashed #142e42;
+      outline-offset: 3px;
+      pointer-events: none;
+    }
+    .snapshot-note,
+    .event-page {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+    .candidate-row {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: white;
+      text-align: left;
+      color: var(--ink);
+    }
+    .candidate-row.active {
+      border-color: #d44820;
+      background: #fff2e9;
+    }
+    .candidate-row b {
+      margin-right: 6px;
+    }
+    .candidate-row > span {
+      margin-right: 6px;
+      color: var(--muted);
+    }
+    .candidate-row small {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+    .candidate-row .number {
+      font-family: Consolas, monospace;
+      color: #1266c5;
+    }
+    .candidate-row[data-status="filtered"] {
+      border-left: 4px solid var(--alert);
+    }
+    .page-filter {
+      max-width: 250px;
+      padding: 9px;
+      border: 1px solid var(--line);
+      border-radius: 5px;
+      background: white;
+    }
+    .inspect {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      color: var(--teal);
+      background: white;
+      margin: 8px 8px 8px 0;
+    }
+    .log-row summary {
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr);
+    }
+    .event-page,
+    .event-action,
+    .event-error {
+      grid-column: 2;
+    }
+    .event-action {
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .event-error {
+      font-size: 12px;
+      color: var(--alert);
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+    .event-detail {
+      margin: 12px 0;
+      padding: 12px;
+      background: var(--paper);
+      font-size: 12px;
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+    }
+    .raw-event summary {
+      display: block;
+      color: var(--muted);
+      padding: 8px 0;
+    }
+    dialog {
+      width: 94vw;
+      height: 90vh;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--ink);
+    }
+    dialog::backdrop {
+      background: #153047aa;
+    }
+    .preview-header {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      height: 62px;
+      background: var(--paper);
+    }
+    .preview-header strong {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .preview-scroll {
+      height: calc(100% - 62px);
+      overflow: auto;
+      background: #dde5eb;
+    }
+    .preview-scroll .snapshot {
+      margin: 0;
+      width: max-content;
+    }
+    .preview-scroll img {
+      display: block;
+      max-width: none;
+      max-height: none;
+      width: auto;
+    }
+    @media (max-width: 720px) {
+      .page-filter {
+        max-width: 100%;
+      }
+      .log-row summary {
+        grid-template-columns: 52px minmax(0, 1fr);
+      }
+    }
+  </style>
+  <header>
+    <div>
+      <h1>
+        web2kg <span style="font-weight: 300; opacity: 0.65">/ 探索记录</span>
+      </h1>
+      <p id="origin"></p>
+      <a id="templateReport" hidden style="color:#c5eee1">查看页面模板归类</a>
+      <a id="frameworkReport" hidden style="color:#c5eee1;margin-left:18px">网站全局功能框架（第三层）</a>
+    </div>
+    <div class="metrics" id="metrics"></div>
+  </header>
+  <div class="toolbar">
+    <input
+      id="search"
+      aria-label="搜索页面或日志"
+      placeholder="搜索页面、地址或日志…"
+    /><button id="graphTab" aria-pressed="true">状态图</button
+    ><button id="logTab" aria-pressed="false">事件日志</button
+    ><button id="templateTab" aria-pressed="false" hidden>模板图谱</button
+    ><button id="failures" aria-pressed="false" hidden>只看失败</button
+    ><select
+      id="pageFilter"
+      class="page-filter"
+      aria-label="按页面筛选日志"
+      hidden
+    >
+      <option value="">全部页面</option></select
+    ><small>候选编号对应标注框；点击截图可放大检查</small>
+  </div>
+  <main>
+    <section class="workspace">
+      <div id="graphPanel">
+        <div class="graph-tools">
+          <label
+            >连线范围
+            <select id="edgeMode" aria-label="连线范围">
+              <option value="tree">发现树 · 首次到达</option>
+              <option value="focus">当前页连线</option>
+              <option value="all">全部连线</option>
+            </select></label
+          ><label>节点范围 <select id="nodeScope" aria-label="节点范围"><option value="all">整张图</option><option value="children">当前节点及子树</option><option value="neighbors">当前节点及相邻状态</option></select></label><span id="edgeCount"></span>
+          <div class="zoom-tools" role="group" aria-label="图谱缩放">
+            <button id="zoomOut" aria-label="缩小图谱" title="缩小图谱">−</button>
+            <output id="zoomLevel" aria-live="polite">100%</output>
+            <button id="zoomIn" aria-label="放大图谱" title="放大图谱">＋</button>
+            <button id="zoomReset" title="按原始尺寸显示">100%</button>
+            <button id="zoomFit">适应窗口</button>
+          </div>
+        </div>
+        <div id="edgeDetail" class="edge-detail" hidden></div>
+        <div class="graph-wrap" id="graph"></div>
+        <p class="legend">
+          滚轮围绕鼠标位置缩放；按住鼠标左键拖动画布，单击节点或连线查看详情。空心圆为起点，箭头为终点；实线为发现树，虚线为其他跳转。N 为页面编号，E 为连线编号，颜色区分源页面；标签与下方动作列表可直接核对起止页面。
+        </p>
+        <div id="connections"></div>
+        <div class="result-note" id="note"></div>
+      </div>
+      <div id="logPanel" hidden>
+        <p class="section-label" id="logCount"></p>
+        <div class="log-list" id="logs"></div>
+      </div>
+      <div id="templatePanel" hidden><iframe id="templateFrame" title="模板图谱与功能卡"></iframe></div>
+    </section>
+    <aside id="detail" aria-live="polite"></aside>
+  </main>
+  <dialog id="preview" aria-label="标注截图预览">
+    <div class="preview-header">
+      <strong id="previewTitle"></strong
+      ><button class="inspect" id="closePreview">关闭预览</button>
+    </div>
+    <div id="previewScroll" class="preview-scroll"></div>
+  </dialog>
+  <!-- prettier-ignore -->
+  <script type="application/json" id="data">__PAYLOAD__</script>
+  <script>
+    const {
+      graph: g,
+      pages,
+      events,
+      activity = {},
+      inspection,
+      template_report,
+      framework_report,
+    } = JSON.parse(document.getElementById("data").textContent);
+    const $ = (id) => document.getElementById(id),
+      nodes = Object.values(g.nodes),
+      NS = "http://www.w3.org/2000/svg";
+    if (framework_report) { $("frameworkReport").href = framework_report; $("frameworkReport").hidden = false; }
+    if (template_report) {
+      $("templateReport").href = template_report;
+      $("templateReport").hidden = false;
+      $("templateTab").hidden = false;
+    }
+    let selected = g.root,
+      selectedAction = null,
+      selectedEdge = null,
+      mode = "graph",
+      failuresOnly = false;
+    function el(tag, text, cls) {
+      const n = document.createElement(tag);
+      if (text !== undefined) n.textContent = text;
+      if (cls) n.className = cls;
+      return n;
+    }
+    function svgEl(tag, attrs) {
+      const n = document.createElementNS(NS, tag);
+      for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, v);
+      return n;
+    }
+    const audit = inspection.summary;
+    function displayPath(target) {
+      if (inspection.paths[target]) return inspection.paths[target].map(id => g.edges.find(e => e.id === id));
+      let q = [[g.root, []]],
+        seen = new Set([g.root]);
+      while (q.length) {
+        const [id, path] = q.shift();
+        if (id === target) return path;
+        for (const e of g.edges)
+          if (e.source === id && !seen.has(e.target)) {
+            seen.add(e.target);
+            q.push([e.target, [...path, e]]);
+          }
+      }
+      return [];
+    }
+    function actionLabel(edge) {
+      const action =
+        pages[edge.source]?.actions.find((a) => a.id === edge.action.id) ||
+        edge.action;
+      const verbs = {
+        click: "点击",
+        fill: "输入",
+        press: "按键",
+        select: "选择",
+      };
+      return `${action.number ? "#" + action.number + " " : ""}${verbs[edge.action.kind] || edge.action.kind} · ${action.name || "(未命名)"}`;
+    }
+    // Legacy graphs with missing saved paths get an explicitly labeled structural tree.
+    const savedTree = Object.keys(inspection.paths).length === nodes.length;
+    const treeEdges = savedTree
+      ? [...new Set(Object.values(inspection.paths).flat())].map(id => g.edges.find(e => e.id === id)) : [];
+    if (!savedTree) {
+      const seen = new Set([g.root]), queue = [g.root];
+      for (const id of queue) for (const edge of g.edges.filter(e => e.source === id))
+        if (!seen.has(edge.target)) { seen.add(edge.target); queue.push(edge.target); treeEdges.push(edge); }
+      $("edgeMode").options[0].textContent = "结构树 · 保存路径不完整";
+    }
+    function showChanges(box, record) {
+      const d = record.observed_changes;
+      if (!d) return;
+      if (!d.available) { box.append(el("p", "客观变化：缺少操作后观察")); return; }
+      box.append(el("p", `客观控件变化：新增 ${d.added.length}、移除 ${d.removed.length}、属性变化 ${d.changed.length}；观察相似度 ${(100*d.similarity).toFixed(1)}%。前观察：${record.before_observation === "live" ? "操作前现场" : "历史快照"}。`));
+      for (const row of d.added.slice(0, 8)) box.append(el("small", `新增：${row.control.role} · ${row.control.name} `));
+      for (const row of d.changed.slice(0, 8)) box.append(el("small", `变化：${row.after.name} · ${row.fields.join(" / ")} `));
+    }
+    function showEdge(edge) {
+      selectedEdge = edge.id;
+      selected = edge.source;
+      selectedAction = edge.action.id;
+      renderGraph();
+      renderDetail();
+      const box = $("edgeDetail");
+      box.hidden = false;
+      box.replaceChildren();
+      box.append(
+        el("strong", `${edgeRefs.get(edge.id)} · ${actionLabel(edge)}`),
+        el("p", `${nodeRefs.get(edge.source)} · ${pages[edge.source].title} → ${nodeRefs.get(edge.target)} · ${pages[edge.target].title}`),
+      );
+      box.append(
+        el(
+          "div",
+          `${pages[edge.source].url} → ${pages[edge.target].url}`,
+          "url",
+        ),
+      );
+      if (edge.description) {
+        const record = edge.description, a = record.annotation || {};
+        box.append(el("p", `LLM 描述状态：${a.status || "未生成"} · 实际结果：${record.outcome}`));
+        showChanges(box, record);
+        for (const [key, label] of [["before_page_description", "前页面"], ["after_page_description", "后页面"],
+          ["operation_description", "操作"], ["result_description", "可观察结果"], ["effect", "可观察变化"]]) {
+          if (a[key]) box.append(el("p", `${label}：${a[key]}`));
+        }
+        for (const e of a.control_evidence || []) box.append(el("small", `${e.ref}：${e.description} `));
+        const raw = el("details"); raw.append(el("summary", "结构化 Transition JSON（模型解释与运行事实分列）"),
+          el("pre", JSON.stringify(record, null, 2))); box.append(raw);
+      }
+      if (edge.replay_policy === 'luna-v1') box.append(el("p",
+        `回放许可（Luna判断及执行条件）：${edge.replayable ? '可回放' : '不可回放'}。${edge.replay_reason || ''}`));
+      else if (edge.replayable === false) box.append(el("p", "执行证据：此边禁止自动回放。"));
+      if (edge.action.value)
+        box.append(el("p", `输入值 / 按键：${edge.action.value}`));
+      const source = el("button", "定位源页面元素", "inspect"),
+        target = el("button", "查看目标页面", "inspect");
+      source.onclick = () => openPreview(pages[edge.source], edge.action.id);
+      target.onclick = () => {
+        selected = edge.target;
+        selectedAction = null;
+        selectedEdge = null;
+        renderGraph();
+        renderDetail();
+      };
+      box.append(source, target);
+    }
+    const nodeRefs = new Map(nodes.map((n, i) => [n.id, `N${i + 1}`]));
+    const edgeRefs = new Map(g.edges.map((e, i) => [e.id, `E${i + 1}`]));
+    const edgeColors = ["#167f88", "#466ac4", "#a05c20", "#8855a3", "#327b50", "#bc4868"];
+    const sourceColors = new Map([...new Set(g.edges.map(e => e.source))]
+      .map((id, i) => [id, edgeColors[i % edgeColors.length]]));
+    const treeIds = new Set(treeEdges.map(e => e.id));
+    let graphSize = { width: 1, height: 1 }, zoom = 1, autoFit = true;
+    function setZoom(value, anchor) {
+      const wrap = $("graph"), svg = wrap.querySelector("svg");
+      if (!svg || !wrap.clientWidth) return;
+      const x = anchor?.x ?? wrap.clientWidth / 2;
+      const y = anchor?.y ?? wrap.clientHeight / 2;
+      const center = { x: (wrap.scrollLeft + x) / zoom, y: (wrap.scrollTop + y) / zoom };
+      // The minimum includes the complete graph even for unusually large exports.
+      const fit = Math.min((wrap.clientWidth - 2) / graphSize.width, (wrap.clientHeight - 2) / graphSize.height, 1);
+      zoom = Math.max(Math.min(0.1, fit), Math.min(3, value));
+      svg.setAttribute("width", graphSize.width * zoom);
+      svg.setAttribute("height", graphSize.height * zoom);
+      wrap.scrollLeft = autoFit ? 0 : center.x * zoom - x;
+      wrap.scrollTop = autoFit ? 0 : center.y * zoom - y;
+      $("zoomLevel").textContent = `${Math.round(zoom * 100)}%`;
+      $("zoomFit").setAttribute("aria-pressed", String(autoFit));
+      $("zoomIn").disabled = zoom >= 3;
+      $("zoomOut").disabled = zoom <= Math.min(0.1, fit) + 0.00001;
+    }
+    function fitGraph() {
+      const wrap = $("graph");
+      if (!wrap.clientWidth) return;
+      autoFit = true;
+      setZoom(Math.min((wrap.clientWidth - 2) / graphSize.width,
+        (wrap.clientHeight - 2) / graphSize.height, 1));
+    }
+    function renderGraph() {
+      const wrap = $("graph"), previousScroll = [wrap.scrollLeft, wrap.scrollTop];
+      const query = $("search").value.toLowerCase(), scope = $("edgeMode").value;
+      const ids = new Set($("nodeScope").value === "all" ? nodes.map(n => n.id) : [selected]);
+      if ($("nodeScope").value === "children") {
+        const queue = [selected];
+        for (const id of queue) for (const edge of treeEdges.filter(e => e.source === id))
+          if (!ids.has(edge.target)) { ids.add(edge.target); queue.push(edge.target); }
+      } else if ($("nodeScope").value === "neighbors") {
+        for (const edge of g.edges.filter(e => e.source === selected || e.target === selected)) {
+          ids.add(edge.source); ids.add(edge.target);
+        }
+      }
+      const shownNodes = nodes.filter(n => ids.has(n.id)), layoutEdges = treeEdges.filter(e => ids.has(e.source) && ids.has(e.target));
+      const base = scope === "tree" ? treeEdges : scope === "focus"
+        ? g.edges.filter(e => e.source === selected || e.target === selected) : g.edges;
+      const visible = base.filter(e => ids.has(e.source) && ids.has(e.target));
+      $("edgeCount").textContent = `显示 ${visible.length} / ${g.edges.length} 条动作连线`;
+      const pos = {};
+      let leaf = 0, maxDepth = 0;
+      function place(id, depth) {
+        maxDepth = Math.max(maxDepth, depth);
+        const ys = layoutEdges.filter(e => e.source === id).map(e => place(e.target, depth + 1));
+        const y = ys.length ? (ys[0] + ys[ys.length - 1]) / 2 : leaf++ * 112;
+        pos[id] = { y, depth };
+        return y;
+      }
+      for (const node of shownNodes) if (!layoutEdges.some(e => e.target === node.id) && !pos[node.id]) place(node.id, 0);
+      for (const node of shownNodes) if (!pos[node.id]) place(node.id, 0);
+      const extra = visible.filter(e => !treeIds.has(e.id));
+      const outgoing = {}, incoming = {}, columnOut = {}, columnIn = {};
+      for (const edge of visible) {
+        (outgoing[edge.source] ||= []).push(edge);
+        (incoming[edge.target] ||= []).push(edge);
+        (columnOut[pos[edge.source].depth] ||= []).push(edge);
+        (columnIn[pos[edge.target].depth] ||= []).push(edge);
+      }
+      // Every edge has its own port and vertical corridor, including parallel and return edges.
+      const maxChannels = Math.max(1, ...Object.values(columnOut).map(x => x.length),
+        ...Object.values(columnIn).map(x => x.length));
+      const step = 500 + maxChannels * 28, left = 48 + maxChannels * 14;
+      const top = 72 + extra.length * 42;
+      for (const p of Object.values(pos)) { p.x = left + p.depth * step; p.y += top; }
+      const width = left + maxDepth * step + 280 + maxChannels * 14;
+      const height = Math.max(320, top + Math.max(1, leaf) * 112);
+      graphSize = { width, height };
+      const svg = svgEl("svg", { width, height, viewBox: `0 0 ${width} ${height}`,
+        role: "group", "aria-label": "页面状态与交互路径图" });
+      const defs = svgEl("defs", {}), marker = svgEl("marker", {
+        id: "arrow", viewBox: "0 0 10 10", refX: 10, refY: 5,
+        markerWidth: 7, markerHeight: 7, orient: "auto", markerUnits: "userSpaceOnUse" });
+      marker.append(svgEl("path", { d: "M 0 0 L 10 5 L 0 10 z", fill: "context-stroke" }));
+      defs.append(marker); svg.append(defs);
+      for (let depth = 0; depth <= maxDepth; depth++) {
+        const label = svgEl("text", { x: left + depth * step, y: top - 18, class: "depth" });
+        label.textContent = `DEPTH ${depth}`; svg.append(label);
+      }
+      const active = new Set(displayPath(selected).map(e => e.id));
+      const port = (rows, edge) => 10 + 48 * (rows.indexOf(edge) + 1) / (rows.length + 1);
+      for (const edge of visible) {
+        const a = pos[edge.source], b = pos[edge.target], isTree = treeIds.has(edge.id);
+        const sx = a.x + 220, sy = a.y + port(outgoing[edge.source], edge);
+        const tx = b.x, ty = b.y + port(incoming[edge.target], edge);
+        const laneX = sx + 26 + columnOut[a.depth].indexOf(edge) * 14;
+        let d, lx, ly;
+        if (isTree) {
+          d = `M${sx},${sy} H${laneX} V${ty} H${tx}`;
+          lx = (laneX + tx) / 2; ly = ty - 23;
+        } else {
+          const laneY = 28 + extra.indexOf(edge) * 42;
+          const targetX = tx - 26 - columnIn[b.depth].indexOf(edge) * 14;
+          d = `M${sx},${sy} H${laneX} V${laneY} H${targetX} V${ty} H${tx}`;
+          lx = (laneX + targetX) / 2; ly = laneY - 16;
+        }
+        const name = actionLabel(edge), reference = `${edgeRefs.get(edge.id)} · ${nodeRefs.get(edge.source)} → ${nodeRefs.get(edge.target)}`;
+        const group = svgEl("g", {
+          class: "edge-group" + (isTree ? "" : " return") + (selectedEdge === edge.id ? " chosen" : ""),
+          style: `--edge-color:${sourceColors.get(edge.source)}`, tabindex: 0, role: "button",
+          "aria-label": `${reference} / ${pages[edge.source].title} → ${pages[edge.target].title} / ${name}`,
+          "data-edge": edge.id, "data-source": edge.source, "data-target": edge.target });
+        group.append(svgEl("path", { d, class: "edge-halo" }),
+          svgEl("path", { d, class: "edge" + (active.has(edge.id) ? " active" : ""), "marker-end": "url(#arrow)" }),
+          svgEl("path", { d, class: "edge-hit" }),
+          svgEl("circle", { cx: sx, cy: sy, r: 3, class: "edge-origin" }));
+        const label = svgEl("text", { x: lx, y: ly, class: "edge-label", "text-anchor": "middle" });
+        const ref = svgEl("tspan", { x: lx, "font-weight": 700 }); ref.textContent = reference;
+        const action = svgEl("tspan", { x: lx, dy: 14 });
+        action.textContent = name.length > 30 ? name.slice(0, 29) + "…" : name;
+        label.append(ref, action);
+        const title = svgEl("title", {}); title.textContent = group.getAttribute("aria-label");
+        group.append(label, title);
+        group.onclick = () => showEdge(edge);
+        group.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); showEdge(edge); } };
+        svg.append(group);
+      }
+      for (const n of shownNodes) {
+        const { x, y } = pos[n.id], match = !query || `${n.title} ${n.url} ${n.id}`.toLowerCase().includes(query);
+        const node = svgEl("g", { transform: `translate(${x},${y})`,
+          class: "node" + (n.id === selected ? " active" : ""), tabindex: 0, role: "button",
+          "aria-label": `${nodeRefs.get(n.id)} ${n.title}`, "data-node": n.id, opacity: match ? 1 : 0.22 });
+        node.append(svgEl("rect", { width: 220, height: 68, rx: 7 }));
+        const title = svgEl("text", { x: 12, y: 24 });
+        title.textContent = `${nodeRefs.get(n.id)} · ${n.title.length > 22 ? n.title.slice(0, 21) + "…" : n.title}`;
+        const sub = svgEl("text", { x: 12, y: 48, class: "sub" });
+        const info = inspection.nodes[n.id];
+        sub.textContent = `${info.source_restore_failures ? "⚠ " : ""}${info.variants > 1 ? `同URL ${info.variant}/${info.variants} · ` : ""}${info.ranked ? "已排序" : "未排序"} · ${n.actions.length}候选`;
+        const full = svgEl("title", {}); full.textContent = `${n.title} / ${n.id}`;
+        node.append(title, sub, full);
+        const choose = () => {
+          selected = n.id; selectedAction = null; selectedEdge = null;
+          $("edgeDetail").hidden = true; renderGraph(); renderDetail();
+        };
+        node.onclick = choose;
+        node.onkeydown = e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); choose(); } };
+        svg.append(node);
+      }
+      wrap.replaceChildren(svg);
+      // Re-rendering selection must retain the developer's zoom and position.
+      svg.setAttribute("width", width * zoom); svg.setAttribute("height", height * zoom);
+      wrap.scrollLeft = previousScroll[0]; wrap.scrollTop = previousScroll[1];
+      if (autoFit) fitGraph(); else setZoom(zoom);
+      const connections = $("connections"), rows = scope === "all" ? visible
+        : scope === "focus" ? visible : g.edges.filter(e => e.source === selected);
+      connections.replaceChildren(el("h3", `${scope === "all" ? "全部动作" : scope === "focus" ? "当前页的进入与离开" : "当前页的全部跳转"} · ${rows.length} 条`));
+      const list = el("div", undefined, "connection-list");
+      for (const edge of rows) {
+        const row = el("button", undefined, "connection-row" + (selectedEdge === edge.id ? " chosen" : ""));
+        row.style.setProperty("--edge-color", sourceColors.get(edge.source));
+        row.dataset.edge = edge.id;
+        row.append(el("b", edgeRefs.get(edge.id)));
+        for (const [id, prefix] of [[edge.source, "起点"], [edge.target, "终点"]]) {
+          const cell = el("span", `${prefix} ${nodeRefs.get(id)} · ${pages[id].title}`);
+          cell.append(el("small", pages[id].url));
+          if (prefix === "终点") row.append(el("span", `→ ${actionLabel(edge)} →`));
+          row.append(cell);
+        }
+        row.onclick = () => showEdge(edge); list.append(row);
+      }
+      connections.append(list);
+      if (!rows.length) connections.append(el("p", "尚未记录相关的成功跳转。失败与未改变页面的尝试见右侧。", "legend"));
+    }
+    $("nodeScope").onchange = () => { autoFit = true; renderGraph(); };
+    $("edgeMode").onchange = () => { autoFit = true; renderGraph(); };
+    $("zoomIn").onclick = () => { autoFit = false; setZoom(zoom * 1.25); };
+    $("zoomOut").onclick = () => { autoFit = false; setZoom(zoom / 1.25); };
+    $("zoomReset").onclick = () => { autoFit = false; setZoom(1); };
+    $("zoomFit").onclick = fitGraph;
+    $("graph").addEventListener("wheel", e => {
+      e.preventDefault(); autoFit = false;
+      const rect = $("graph").getBoundingClientRect();
+      const delta = e.deltaY * (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? rect.height : 1);
+      setZoom(zoom * Math.exp(-delta * 0.002), { x: e.clientX - rect.left, y: e.clientY - rect.top });
+    }, { passive: false });
+    let drag = null, suppressClick = false;
+    $("graph").addEventListener("pointerdown", e => {
+      if (e.button !== 0) return;
+      const wrap = $("graph");
+      suppressClick = false;
+      drag = { pointerId: e.pointerId, x: e.clientX, y: e.clientY, left: wrap.scrollLeft, top: wrap.scrollTop };
+    });
+    $("graph").addEventListener("pointermove", e => {
+      if (!drag || e.pointerId !== drag.pointerId) return;
+      if (!(e.buttons & 1)) { drag = null; $("graph").classList.remove("dragging"); return; }
+      const dx = e.clientX - drag.x, dy = e.clientY - drag.y, wrap = $("graph");
+      if (!suppressClick && Math.hypot(dx, dy) < 4) return;
+      if (!suppressClick) {
+        suppressClick = true; autoFit = false;
+        wrap.setPointerCapture(e.pointerId); wrap.classList.add("dragging");
+      }
+      wrap.scrollLeft = drag.left - dx;
+      wrap.scrollTop = drag.top - dy;
+    });
+    for (const event of ["pointerup", "pointercancel", "lostpointercapture"])
+      $("graph").addEventListener(event, () => { drag = null; $("graph").classList.remove("dragging"); });
+    $("graph").addEventListener("click", e => {
+      if (suppressClick && e.detail) { e.preventDefault(); e.stopPropagation(); }
+    }, true);
+    new ResizeObserver(() => { if (autoFit) fitGraph(); }).observe($("graph"));
+    const reasons = {
+      selected: "入选探索",
+      risk_keyword: "风险关键词",
+      risky_url: "风险 URL",
+      external_origin: "站外链接",
+      non_http_link: "非 HTTP 链接",
+      mutation_form_or_handler: "写操作表单或处理器",
+      password_field: "密码输入",
+      disabled: "已禁用",
+      unknown_effect: "效果不明确",
+      group_budget: "同组预算已用完",
+      page_budget: "页面预算已用完",
+      llm_risk: "LLM 标记风险",
+      same_origin_navigation: "同站导航",
+      local_view_control: "页面视图控件",
+      read_control: "只读控件",
+      marked: "已圈出",
+      hidden: "不可见",
+      clipped: "页面外或被裁剪",
+      missing: "未找到元素",
+      unreviewed: "尚未进行探索筛选",
+      known_navigation_url: "目标 URL 已访问，跳过普通导航",
+    };
+    const phases = {
+      restore_source: "恢复源页面",
+      source_check: "核对源状态",
+      policy_check: "风险检查",
+      action: "定位 / 执行动作",
+      target_check: "校验目标状态",
+      capture_result: "采集结果页面",
+      model_call: "请求模型",
+      decision_validation: "检查模型动作",
+      annotation: "绘制标注截图",
+      navigation_request: "页面网络请求",
+      selection: "候选排序前",
+      before_attempt: "执行前复核",
+    };
+    const eventNames = {
+      exploration_action_started: "开始尝试候选动作",
+      agent_action: "Agent 动作执行完成",
+      exploration_failed: "探索失败",
+      replay_step: "路径重放",
+      agent_error: "Agent 执行失败",
+      llm_ranking: "LLM 功能分组与探索优先级",
+      transition_annotation: "Transition 结构化描述",
+      execution_state_discovered: "执行中发现新状态",
+      execution_template_assigned: "执行状态模板归类",
+      execution_template_unclassified: "状态缺少结构，暂不分类",
+      execution_transition: "执行 Transition 记录",
+      execution_descriptions_stopped: "已停止后续描述调用",
+      execution_graph_finished: "本任务扩展图已保存",
+      execution_graph_recording_finished: "浏览器记录结束，准备更新索引与卡片",
+      execution_index_started: "开始扩展本地Jina索引",
+      execution_index_completed: "本地Jina增量索引已完成",
+      execution_index_failed: "本地Jina增量索引失败",
+      responses_started: "Responses 请求开始",
+      responses_received: "Responses 返回与用量",
+      responses_failed: "Responses 失败（未自动重试）",
+      page_candidates: "候选筛选结果",
+      page_observed: "页面与候选快照",
+      transition_discovered: "发现交互路径",
+      exploration_no_change: "去重状态 ID 未变（不代表内容不变）",
+      exploration_pruned: "已知目标剪枝（未执行）",
+      annotation_saved: "标注截图已保存",
+      annotation_failed: "补拍标注失败",
+      risk_filter: "风险筛选",
+      candidate_selection: "候选分组",
+      source_restored: "源页面已恢复",
+    };
+    const decisions = {};
+    for (const event of events) {
+      const id = event.source_page?.id || event.node;
+      if (!id) continue;
+      decisions[id] ||= {};
+      if (event.event === "risk_filter")
+        for (const row of event.decisions) {
+          if (!decisions[id][row.id] || !row.allowed)
+            decisions[id][row.id] = {
+              reason: row.reason,
+              status: row.allowed ? "safe" : "filtered",
+            };
+        }
+      if (event.event === "candidate_selection")
+        decisions[id][event.action.id] = {
+          reason: event.reason,
+          status: event.reason === "selected" ? "selected" : "skipped",
+        };
+      if (event.event === "page_candidates")
+        for (const row of event.candidates) decisions[id][row.id] = row;
+      if (event.event === "exploration_pruned")
+        decisions[id][event.action.id] = {reason: event.reason, status: "skipped"};
+    }
+    function markedItem(page, actionId) {
+      return page.view?.annotations?.items.find((a) => a.id === actionId);
+    }
+    function snapshot(page, actionId, large = false) {
+      const view = page.view;
+      if (!view?.annotated && !view?.original)
+        return el("p", "没有可用截图。", "snapshot-note");
+      const wrap = el("div", undefined, "snapshot"),
+        img = el("img");
+      img.src = view.annotated || view.original;
+      img.alt = `${page.title} · ${view.annotated ? "候选元素标注图" : "原始截图（尚未补拍标注）"}`;
+      wrap.append(img);
+      if (view.annotations && view.annotated) {
+        const metadata = view.annotations;
+        for (const mark of metadata.items) {
+          const state = activity[page.id]?.[mark.id],
+            kind = state?.attempted
+              ? "attempted"
+              : state?.selected
+                ? "selected"
+                : null;
+          if (!kind || mark.status !== "marked") continue;
+          const box = el("span", undefined, "activity-box " + kind),
+            r = mark.rect;
+          box.dataset.action = mark.id;
+          box.dataset.activity = kind;
+          box.style.cssText = `left:${(100 * r.x) / metadata.width}%;top:${(100 * r.y) / metadata.height}%;width:${(100 * r.width) / metadata.width}%;height:${(100 * r.height) / metadata.height}%;`;
+          box.append(
+            el(
+              "span",
+              `#${mark.number} · ${kind === "attempted" ? "已试" : "入选"}`,
+            ),
+          );
+          if (r.y < 8) box.firstChild.style.transform = "none";
+          wrap.append(box);
+        }
+      }
+      if (view.annotations) {
+        const scale = () => {
+          const ratio = img.clientWidth / view.annotations.width;
+          wrap.style.setProperty("--mark-font", `${11 * ratio}px`);
+          wrap.style.setProperty("--mark-line", `${15 * ratio}px`);
+        };
+        img.addEventListener("load", scale);
+        if (img.complete) scale();
+      }
+      const item = markedItem(page, actionId),
+        metadata = view.annotations;
+      if (large && view.annotated && item?.rect && metadata) {
+        const box = el("div", undefined, "focus-box"),
+          r = item.rect;
+        box.style.cssText = `left:${(100 * r.x) / metadata.width}%;top:${(100 * r.y) / metadata.height}%;width:${(100 * r.width) / metadata.width}%;height:${(100 * r.height) / metadata.height}%;`;
+        wrap.append(box);
+      }
+      if (!large) {
+        wrap.tabIndex = 0;
+        wrap.setAttribute("role", "button");
+        wrap.setAttribute("aria-label", "放大标注截图");
+        wrap.onclick = () => openPreview(page, actionId);
+        wrap.onkeydown = (e) => {
+          if (e.key === "Enter") openPreview(page, actionId);
+        };
+      }
+      return wrap;
+    }
+    function openPreview(page, actionId) {
+      const item = markedItem(page, actionId),
+        action = page.actions?.find((a) => a.id === actionId);
+      $("previewTitle").textContent =
+        `${page.title}${action ? ` · #${action.number} ${action.name}` : ""}${item && item.status !== "marked" ? ` · ${reasons[item.status]}` : ""}`;
+      $("previewScroll").replaceChildren(snapshot(page, actionId, true));
+      if (!$("preview").open) $("preview").showModal();
+      const focus = () => {
+        const r = item?.rect;
+        $("previewScroll").scrollTo(
+          r ? Math.max(0, r.x - 100) : 0,
+          r ? Math.max(0, r.y - 100) : 0,
+        );
+      };
+      const img = $("previewScroll").querySelector("img");
+      if (img && !img.complete) img.onload = focus;
+      else focus();
+    }
+    $("closePreview").onclick = () => $("preview").close();
+    function inspect(pageId, actionId) {
+      if (!pages[pageId]) return;
+      selected = pageId;
+      selectedAction = actionId;
+      renderGraph();
+      renderDetail();
+    }
+    function renderDetail() {
+      const n = pages[selected],
+        d = $("detail");
+      d.replaceChildren();
+      d.append(
+        el(
+          "span",
+          `${n.depth === undefined ? "任务页面" : `DEPTH ${n.depth}`} / ${n.id.slice(0, 12)}`,
+          "badge",
+        ),
+        el("h2", n.title),
+        el("div", n.url, "url"),
+      );
+      if (g.execution_update) d.append(el("p", `${n.discovered_during === "execution" ? "执行中新发现" : "原图状态"} · 模板 ${n.template_id || "未分类"}`, "badge"));
+      const info = inspection.nodes[n.id];
+      if (info) {
+        const state = el("section", undefined, "snapshot-note");
+        state.append(el("p", `同 URL 状态 ${info.variant}/${info.variants} · ${info.ranked ? "已排序探索" : "尚未排序（前沿）"}。${info.entry_action ? `记录入边：${info.entry_action.role} · ${info.entry_action.name}` : "探索起点"}`));
+        if (info.source_restore_failures || info.path_restore_failures)
+          state.append(el("p", `⚠ 本节点源恢复失败 ${info.source_restore_failures} 次；保存路径的源节点累计有 ${info.path_restore_failures} 次失败记录。结构可达不保证稳定回放，需实际核验。`));
+        if (!info.saved_path_valid) state.append(el("p", "保存路径缺失或不唯一；下方仅显示结构路径，不能作为回放依据。"));
+        if (info.variants > 1) {
+          for (const id of info.siblings) {
+            const b = el("button", `${nodeRefs.get(id)} · 状态${inspection.nodes[id].variant}${inspection.nodes[id].source_restore_failures ? " ⚠" : ""}`);
+            b.disabled = id === n.id;
+            b.onclick = () => { selected = id; selectedAction = null; renderGraph(); renderDetail(); };
+            state.append(b);
+          }
+        }
+        d.append(state);
+      }
+      d.append(snapshot(n, selectedAction));
+      d.append(
+        el(
+          "p",
+          n.view?.annotated
+            ? "蓝色：普通候选 · 橙色：已入选 · 洋红：已尝试。编号对应列表；点击可放大定位。"
+            : "尚无标注图，当前显示原图。可运行 annotate 命令补拍。",
+          "snapshot-note",
+        ),
+      );
+      if (n.view?.original) {
+        const original = el("a", "打开原始截图", "snapshot-note");
+        original.href = n.view.original;
+        original.target = "_blank";
+        original.rel = "noopener";
+        d.append(original);
+      }
+      d.append(el("h3", inspection.paths[n.id] ? "保存的首次到达路径" : "图结构路径（未核验）"));
+      const path = displayPath(n.id);
+      if (!path.length)
+        d.append(
+          el(
+            "p",
+            n.id === g.root ? "这是探索起点。" : "没有已知的到达路径。",
+            "legend",
+          ),
+        );
+      path.forEach((e, i) => {
+        const row = el("div", undefined, "path-step");
+        row.append(
+          el("b", String(i + 1).padStart(2, "0")),
+          el("span", `${e.action.role} · ${e.action.name}`),
+        );
+        d.append(row);
+      });
+      const pageEvents = events.filter((e) => e.source_page?.id === n.id),
+        failures = pageEvents.filter(isFailure);
+      const logButton = el(
+        "button",
+        `查看此页日志 · ${pageEvents.length} 条 / ${failures.length} 次失败`,
+        "inspect",
+      );
+      logButton.onclick = () => {
+        $("pageFilter").value = n.id;
+        $("search").value = "";
+        setMode("log");
+      };
+      d.append(logButton);
+      const rows = activity[n.id] || {},
+        chosen = n.actions.filter(
+          (a) => rows[a.id]?.selected || rows[a.id]?.attempted,
+        );
+      chosen.sort((a, b) => (decisions[n.id]?.[a.id]?.priority ?? Infinity) - (decisions[n.id]?.[b.id]?.priority ?? Infinity));
+      const attempted = chosen.filter((a) => rows[a.id]?.attempted).length;
+      const legend = el("div", undefined, "activity-legend");
+      for (const [kind, label] of [
+        ["candidate", "普通候选"],
+        ["selected", "已入选"],
+        ["attempted", "已尝试"],
+      ])
+        legend.append(el("span", label, kind));
+      d.append(
+        legend,
+        el("h3", `最终入选 · ${chosen.length} / 已尝试 · ${attempted}`),
+      );
+      const selectedList = el("div", undefined, "selected-controls");
+      if (!chosen.length)
+        selectedList.append(
+          el(
+            "p",
+            "本页没有已记录的入选或尝试。可能尚未扩展，或历史日志缺失。",
+            "legend",
+          ),
+        );
+      const outcomeNames = {
+        success: "执行成功",
+        no_change: "去重状态 ID 未变",
+        failed: "执行失败",
+        not_attempted: "未执行",
+        unknown: "是否执行未知",
+        pruned: "目标已访问，未执行；未验证新连接",
+      };
+      function candidateRow(a, compact = false) {
+        const outcome = decisions[n.id]?.[a.id] || { reason: "unreviewed" },
+          state = rows[a.id],
+          mark = markedItem(n, a.id);
+        const kind = state?.attempted
+          ? "attempted"
+          : state?.selected
+            ? "selected"
+            : "candidate";
+        const row = el(
+          "button",
+          undefined,
+          "candidate-row" + (selectedAction === a.id ? " active" : ""),
+        );
+        row.dataset.status = kind;
+        row.dataset.action = a.id;
+        row.append(
+          el("b", `#${a.number}`, "number"),
+          el("span", a.role),
+          el("b", a.name || "(未命名)"),
+        );
+        row.append(
+          el(
+            "small",
+            `${outcome.reason === "known_navigation_url" ? reasons[outcome.reason] : kind === "attempted" ? "已尝试" : kind === "selected" ? (state.results.some((r) => r.outcome === "unknown") ? "已选 · 是否尝试未知" : "已选 · 未尝试") : reasons[outcome.reason] || outcome.reason}${mark ? " · " + (reasons[mark.status] || mark.status) : ""}`,
+          ),
+        );
+        if (outcome.priority) row.append(el("small", `优先级 ${outcome.priority} · ${outcome.group}：${outcome.llm_reason}`));
+        if (compact && state) {
+          for (const result of state.results) {
+            const target = pages[result.target];
+            row.append(
+              el(
+                "small",
+                `${outcomeNames[result.outcome]}${target ? " → " + target.title : ""}${result.phase ? " · " + (phases[result.phase] || result.phase) : ""}${result.error ? " · " + result.error : ""}`,
+              ),
+            );
+          }
+          if (state.attempted && !state.results.length)
+            row.append(el("small", "已开始尝试，尚无完成结果"));
+        }
+        if (a.href) row.append(el("small", a.href));
+        row.onclick = () => {
+          selectedAction = a.id;
+          renderDetail();
+          openPreview(n, a.id);
+        };
+        return row;
+      }
+      for (const action of chosen)
+        selectedList.append(candidateRow(action, true));
+      d.append(selectedList);
+      const plan = g.rankings?.[n.id];
+      if (plan) {
+        const panel = el("details"); panel.open = true;
+        panel.append(el("summary", `LLM 探索排序 · ${plan.context_mode} · 提供 ${plan.provided_candidates} 个候选`));
+        for (const [i, row] of plan.selected.entries()) {
+          const control = n.actions.find(a => a.id === row.id);
+          panel.append(el("p", `${i + 1}. ${control?.name || row.id} · ${row.group}：${row.reason}`));
+        }
+        if (plan.omitted_safe_candidates) panel.append(el("small", `上下文预算未提供 ${plan.omitted_safe_candidates} 个安全候选；日志保留全部控件。`));
+        d.append(panel);
+      }
+      const all = el("details", undefined, "all-candidates");
+      all.open = true;
+      all.append(el("summary", `全部候选交互元素 · ${n.actions.length}`));
+      const controls = el("div", undefined, "controls");
+      for (const a of n.actions) controls.append(candidateRow(a));
+      all.append(controls);
+      d.append(all);
+    }
+    function isFailure(e) {
+      return /fail|error|blocked|interrupted/.test(e.event) || e.success === false ||
+        e.annotation?.status === "failed" || ["failed", "not_attempted"].includes(e.outcome);
+    }
+    function renderLogs() {
+      const query = $("search").value.toLowerCase(),
+        rows = events.filter(
+          (e) =>
+            (!failuresOnly || isFailure(e)) &&
+            (!$("pageFilter").value ||
+              e.source_page?.id === $("pageFilter").value) &&
+            (!query || JSON.stringify(e).toLowerCase().includes(query)),
+        );
+      $("logCount").textContent =
+        `EVENTS / ${rows.length} 条记录 · 最近 300 条`;
+      $("logs").replaceChildren();
+      for (const e of rows.slice(-300).reverse()) {
+        const row = el(
+            "details",
+            undefined,
+            "log-row" + (isFailure(e) ? " failure" : ""),
+          ),
+          summary = el("summary");
+        summary.append(
+          el("time", (e.time || "").slice(11, 19)),
+          el(
+            "strong",
+            `${eventNames[e.event] || e.event}${e.attempt ? ` · 尝试 ${e.attempt}` : ""}${e.success === false ? " · 失败" : ""}`,
+          ),
+        );
+        const source = e.source_page,
+          action = typeof e.action === "object" ? e.action : null;
+        if (source)
+          summary.append(
+            el(
+              "div",
+              `${source.title || source.id} · ${source.url || ""}`,
+              "event-page",
+            ),
+          );
+        if (action)
+          summary.append(
+            el(
+              "div",
+              `${e.action_attempted === false ? "计划动作（未执行）" : "动作"}：${action.kind || "click"} ${action.number ? `#${action.number} ` : ""}${action.role || ""} ${action.name || action.id || ""}`,
+              "event-action",
+            ),
+          );
+        if (e.error)
+          summary.append(
+            el(
+              "div",
+              `${phases[e.phase] || e.phase || "阶段未记录"} · ${e.error_summary || e.error.split("\n")[0]}`,
+              "event-error",
+            ),
+          );
+        row.append(summary);
+        const body = el("div", undefined, "event-detail");
+        if (source) {
+          body.append(el("div", `源页面：${source.title} · ${source.url}`));
+          const button = el(
+            "button",
+            `查看源页面${action?.number ? `与元素 #${action.number}` : "及候选元素"}`,
+            "inspect",
+          );
+          button.onclick = () => inspect(source.id, action?.id);
+          button.disabled = !pages[source.id];
+          body.append(button);
+        }
+        if (action?.xpath)
+          body.append(
+            el(
+              "div",
+              `定位：${action.role || ""} / ${action.name || ""} · ${action.xpath}`,
+            ),
+          );
+        if (action?.href) body.append(el("div", `链接目标：${action.href}`));
+        if (e.event === "exploration_pruned") {
+          body.append(el("p", "目标 URL 已访问，本次未执行、未生成已验证边；目标页面仍按原队列展开。"));
+          body.append(el("div", `已有目标：${(e.known_targets || []).map(id => pages[id]?.title || id).join("、")}`));
+        }
+        if (e.target && g.nodes[e.target])
+          body.append(
+            el(
+              "div",
+              `预期目标：${g.nodes[e.target].title} · ${g.nodes[e.target].url}`,
+            ),
+          );
+        if (e.failure_page) {
+          body.append(
+            el(
+              "div",
+              `失败后实际页面：${e.failure_page.title} · ${e.failure_page.url}`,
+            ),
+          );
+          const button = el("button", "查看失败现场截图", "inspect");
+          button.onclick = () => openPreview(e.failure_page, action?.id);
+          body.append(button);
+        } else if (isFailure(e) && e.error)
+          body.append(
+            el(
+              "div",
+              e.capture_error
+                ? `现场截图采集失败：${e.capture_error}`
+                : "此记录没有失败现场截图；源页面快照可用于检查候选元素。",
+            ),
+          );
+        if (e.candidates && source && pages[source.id])
+          body.append(
+            el(
+              "div",
+              `本页 ${e.candidates.length} 个候选${e.selected !== undefined ? `，入选 ${e.selected} 个` : ""}；编号和筛选原因见右侧页面详情。`,
+            ),
+          );
+        if (e.annotation) {
+          body.append(el("strong", `结构化描述：${e.annotation.status} · 实际结果：${e.outcome}`));
+          showChanges(body, e);
+          for (const [key, label] of [["before_page_description", "前页面"], ["after_page_description", "后页面"],
+            ["operation_description", "操作"], ["result_description", "结果"], ["effect", "可观察变化"]]) {
+            if (e.annotation[key]) body.append(el("p", `${label}：${e.annotation[key]}`));
+          }
+          for (const item of e.annotation.control_evidence || []) body.append(el("p", `${item.ref}：${item.description}`));
+          for (const item of e.annotation.uncertainties || []) body.append(el("small", `不确定：${item} `));
+        }
+        row.append(body);
+        const raw = el("details", undefined, "raw-event");
+        raw.append(
+          el("summary", "原始 JSON / 完整错误栈"),
+          el("pre", JSON.stringify(e, null, 2)),
+        );
+        row.append(raw);
+        $("logs").append(row);
+      }
+      if (!rows.length)
+        $("logs").append(
+          el("div", "没有匹配记录。可清空搜索或关闭失败筛选。", "empty"),
+        );
+    }
+    function setMode(value) {
+      mode = value === "templates" && !template_report ? "graph" : value;
+      $("graphPanel").hidden = mode !== "graph";
+      $("logPanel").hidden = mode !== "log";
+      $("templatePanel").hidden = mode !== "templates";
+      $("detail").hidden = mode === "templates";
+      document.querySelector("main").classList.toggle("template-mode", mode === "templates");
+      $("search").disabled = mode === "templates";
+      $("templateTab").setAttribute("aria-pressed", mode === "templates");
+      if (mode === "templates" && !$("templateFrame").getAttribute("src")) $("templateFrame").src = template_report + "#map";
+      $("failures").hidden = mode !== "log";
+      $("pageFilter").hidden = mode !== "log";
+      $("graphTab").setAttribute("aria-pressed", mode === "graph");
+      $("logTab").setAttribute("aria-pressed", mode === "log");
+      if (mode === "log") renderLogs();
+    }
+    $("origin").textContent = g.start_url;
+    for (const page of Object.values(pages)) {
+      const option = el("option", `${page.title} · ${page.id.slice(0, 6)}`);
+      option.value = page.id;
+      $("pageFilter").append(option);
+    }
+    $("pageFilter").onchange = renderLogs;
+    for (const [value, label] of [
+      [nodes.length, "页面状态"],
+      [audit.urls, "独立URL"],
+      [g.edges.length, "交互路径"],
+      [Math.max(g.attempts || 0, events.filter(e => e.event === "crawl_attempt_started").length), g.execution_update ? "执行记录" : "探索尝试"],
+      [g.execution_update?.description_calls ?? events.filter((e) => ["model_call", "responses_started"].includes(e.event)).length, g.execution_update ? "图谱描述调用" : "模型调用"],
+    ]) {
+      const m = el("div", undefined, "metric");
+      m.append(el("b", String(value)), el("span", label));
+      $("metrics").append(m);
+    }
+    $("note").before(el("p", `结构可达 ${audit.reachable}/${nodes.length} · 保存路径 ${audit.saved_paths}/${nodes.length} · ${audit.multi_state_urls}个URL有多个状态 · ${audit.ranked}个已排序 · ${audit.pruned}次剪枝（无转移边） · ${audit.source_restore_failures}次源恢复失败/${audit.source_restore_nodes}节点。结构可达与状态数不能代替回放成功率或URL覆盖。`, "snapshot-note"));
+    const finish = events.findLast((e) => ["crawl_finished", "execution_graph_finished"].includes(e.event));
+    $("note").textContent =
+      `探索模式：${g.review_mode === "llm_ranked" ? "规则过滤 + LLM 功能排序 + 逐次证据描述" : g.review_mode === "llm" ? "规则过滤 + LLM 批量审查" : "规则过滤 + 重复元素分组"}。停止原因：${finish?.reason || "记录未完成"}。${g.identity_mode === "webnavigator" ? "页面按 URL 与 DOM 结构路径标识，不能证明语义完全相同" : g.identity_mode === "interaction" ? "页面按 URL、可访问控件状态、区域与标题核对；正文变化单独记录" : "页面按可访问内容与控件状态核对"}；动态内容变化可能导致重放停止。`;
+    $("graphTab").onclick = () => setMode("graph");
+    if (g.execution_update) $("note").textContent = `执行阶段扩展图：输入和写入边仅作证据，不自动回放。原图保留；任务索引状态：${g.execution_update.index_status || '未记录'}。模板卡请以当前卡片状态为准。`;
+    $("logTab").onclick = () => setMode("log");
+    $("templateTab").onclick = () => setMode("templates");
+    $("search").oninput = () => {
+      renderGraph();
+      renderLogs();
+    };
+    $("failures").onclick = () => {
+      failuresOnly = !failuresOnly;
+      $("failures").setAttribute("aria-pressed", failuresOnly);
+      renderLogs();
+    };
+    renderGraph();
+    renderDetail();
+    if (location.hash === "#logs") setMode("log");
+    if (location.hash === "#templates") setMode("templates");
+    window.addEventListener("hashchange", () =>
+      setMode(location.hash === "#logs" ? "log" : location.hash === "#templates" ? "templates" : "graph"),
+    );
+  </script>
+</html>
