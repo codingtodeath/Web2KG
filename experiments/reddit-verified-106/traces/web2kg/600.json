@@ -1,0 +1,28 @@
+{
+  "task_id": 600,
+  "method": "Web2KG",
+  "difficulty": "non-hard",
+  "intent": "Post my question with the title \"what is the recommended console to buy these days?\", in a forum where I'm likely to get an answer",
+  "official_score": 0.0,
+  "run_status": "model_error",
+  "reported_steps": 1,
+  "final_url": "https://reddit.example/forums",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "- Current page is the Postmill homepage.\n- Navigation links include 'Forums' [45], 'Submit' [106], etc.\n- No featured forums are currently displayed.",
+      "reason": "- I need to find a forum related to gaming or consoles to post the question. Clicking on 'Forums' will show the list of available forums.",
+      "action": "click [45]",
+      "note": "",
+      "observation_highlight_idxs": "[45]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [45] 'Forums' [url: https://reddit.example/forums]"
+      ]
+    }
+  ]
+}

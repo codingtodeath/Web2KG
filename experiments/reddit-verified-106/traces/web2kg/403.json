@@ -1,0 +1,105 @@
+{
+  "task_id": 403,
+  "method": "Web2KG",
+  "difficulty": "non-hard",
+  "intent": "Change my bio to \"Awesome Prompt Artist\" in the discussion forum",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 6,
+  "final_url": "https://reddit.example/user/MarvelsGrantMan136/edit_biography",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "- Current page is Postmill homepage.\n- User menu button visible: `button [124] 'MarvelsGrantMan136'`\n- Template context indicates user menu provides \"Profile\", \"My account\", \"User settings\" options.",
+      "reason": "To change the bio, I need to access the user settings or profile page. The user menu button `button [124] 'MarvelsGrantMan136'` should open a dropdown with options like \"User settings\" or \"Profile\".",
+      "action": "click [124]",
+      "note": "Clicking user menu to access settings.",
+      "observation_highlight_idxs": "[124]",
+      "done": false,
+      "matching_observation_lines": [
+        "button [124] 'MarvelsGrantMan136'"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "The user menu dropdown is open. Visible options include:\n- link [264] 'Profile' [url: https://reddit.example/user/MarvelsGrantMan136]\n- link [270] 'My account' [url: https://reddit.example/user/MarvelsGrantMan136/account]\n- link [276] 'User settings' [url: https://reddit.example/user/MarvelsGrantMan136/preferences]",
+      "reason": "To change the bio, I should navigate to the Profile page where user details like bio are typically edited. Clicking on 'Profile' [264] will take me to the profile page.",
+      "action": "click [264]",
+      "note": "",
+      "observation_highlight_idxs": "[264] [270] [276]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [264] 'Profile' [url: https://reddit.example/user/MarvelsGrantMan136]"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/user/MarvelsGrantMan136",
+      "observation_description": "On the user profile page (MarvelsGrantMan136), there is an \"Edit biography\" link [2818] in the right sidebar pointing to /user/MarvelsGrantMan136/edit_biography.",
+      "reason": "To change the bio, I need to click the \"Edit biography\" link visible in the sidebar to reach the biography editing page.",
+      "action": "click [2818]",
+      "note": "",
+      "observation_highlight_idxs": "2818",
+      "done": false,
+      "matching_observation_lines": [
+        "link [2818] 'Edit biography' [url: https://reddit.example/user/MarvelsGrantMan136/edit_biography]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/user/MarvelsGrantMan136/edit_biography",
+      "observation_description": "",
+      "reason": "The biography editing page is loaded with the text box [7380] visible. I will type the new bio \"Awesome Prompt Artist\" into this field.",
+      "action": "type [7380] [Awesome Prompt Artist]",
+      "note": "After typing, I will need to click the 'Save' button [7407] to apply the changes. If the text appended instead of replacing, I may need to clear the field in the next step.",
+      "observation_highlight_idxs": "[7380]",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [7380] 'Biography' [required: False] [describedby: user_biography_biography_help]"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/user/MarvelsGrantMan136/edit_biography",
+      "observation_description": "",
+      "reason": "",
+      "action": "click [7407]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "button [7407] 'Save'"
+      ]
+    },
+    {
+      "record": 6,
+      "num_actions": 6,
+      "budget_steps": 6,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/user/MarvelsGrantMan136/edit_biography",
+      "observation_description": "Current page shows success alert \"The biography was updated.\" Textbox contains \"Awesome Prompt Artist\", preview shows \"Awesome Prompt Artist\", and sidebar bio is updated.",
+      "reason": "The bio has been successfully changed and verified. Task is complete.",
+      "action": "stop [{\"task_type\":\"MUTATE\",\"status\":\"SUCCESS\",\"retrieved_data\":null}]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": true
+    }
+  ]
+}

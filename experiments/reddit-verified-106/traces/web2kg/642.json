@@ -1,0 +1,121 @@
+{
+  "task_id": 642,
+  "method": "Web2KG",
+  "difficulty": "non-hard",
+  "intent": "Post a notice in books forum titled \"Big little lies Meet up!\". Set post details to \"virtual meetup for Big little lies on Sep 10th\"",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 7,
+  "final_url": "https://reddit.example/f/books/2/big-little-lies-meet-up",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "Current page is Postmill home page. Navigation includes \"Forums\", \"Wiki\", \"Submit\" [106], etc. \"Featured forums\" is empty.",
+      "reason": "Clicking the \"Submit\" link [106] will take us to the submission creation page where we can select the \"books\" forum and enter the title and details.",
+      "action": "click [106]",
+      "note": "",
+      "observation_highlight_idxs": "[106] 'Submit' [url: https://reddit.example/submit]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [106] 'Submit' [url: https://reddit.example/submit]"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The \"Create submission\" page is loaded with empty Title textbox [762], Body textbox [770], and Forum combobox [1616].",
+      "reason": "Start by entering the required title \"Big little lies Meet up!\" into the Title textbox [762].",
+      "action": "type [762] [Big little lies Meet up!] [0]",
+      "note": "Proceeding to fill the Body field next after typing the title.",
+      "observation_highlight_idxs": "[762] Title textbox\n[770] Body textbox\n[1616] Forum combobox\n[1199] Create submission button",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [762] 'Title This field is required.' [required: True]"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The \"Create submission\" page is loaded. Title textbox [762] contains \"Big little lies Meet up!\". Body textbox [770] is empty. Forum combobox [1616] shows \"Choose one...\". The \"Create submission\" button [1199] is visible.",
+      "reason": "The title has been entered. Next, I need to fill the Body textbox [770] with \"virtual meetup for Big little lies on Sep 10th\" before selecting the forum and submitting.",
+      "action": "type [770] [virtual meetup for Big little lies on Sep 10th] [0]",
+      "note": "",
+      "observation_highlight_idxs": "[770] Body textbox, [762] Title textbox, [1616] Forum combobox, [1199] Create submission button.",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [770] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "",
+      "reason": "I need to select the \"books\" forum from the dropdown combobox [1616] before submitting the form.",
+      "action": "click [1616]",
+      "note": "Title and Body are filled. Next step is to select \"books\" forum from dropdown [1616].",
+      "observation_highlight_idxs": "[1616] combobox 'Choose one' [required: False]",
+      "done": false,
+      "matching_observation_lines": [
+        "combobox [1616] 'Choose one' [required: False]"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The forum dropdown is open showing a list of forums. The \"books\" forum is visible as option [2669] in the listbox [1627]. Title and Body fields are correctly filled.",
+      "reason": "The \"books\" forum option [2669] is visible in the expanded dropdown. I need to click it to select the correct forum before submitting the form.",
+      "action": "click [2669]",
+      "note": "",
+      "observation_highlight_idxs": "[2669] 'books' [selected: False]",
+      "done": false,
+      "matching_observation_lines": [
+        "listbox [1627] \"[2661] 'Choose one' [selected: True]; [2662] 'allentown' [selected: False]; [2663] 'arlingtonva' [selected: False]; [2664] 'Art' [selected: False]; [2665] 'AskReddit' [selected: False]; [2666] 'askscience' [selected: False]; [2667] 'aww' [selected: False]; [2668] 'baltimore' [selected: False]; [2669] 'books' [selected: False]; [2670] 'boston' [selected: False]; [2671] 'BridgeportCT' [selected: False]; [2672] 'BuyItForLife' [selected: False]; [2673] 'CambridgeMA' [selected: False]; [2674] 'ColumbiaMD' [selected: False]; [2675] 'Connecticut' [selected: False]; [2676] 'consoles' [selected: False]; [2677] 'coolgithubprojects' [selected: False]; [2678] 'creepy' [selected: False]; [2679] 'dataisbeautiful' [selected: False]; [2680] 'deeplearning' [selected: False]; [2681] 'DIY' [selected: False]; [2682] 'Documentaries' [selected: False]; [2683] 'EarthPorn' [selected: False]; [2684] 'explainlikeimfive' [selected: False]; [2685] 'food' [selected: False]; [2686] 'funny' [selected: False]; [2687] 'Futurology' [selected: False]; [2688] 'gadgets' [selected: False]; [2689] 'gaming' [selected: False]; [2690] 'GetMotivated' [selected: False]; [2691] 'gifs' [selected: False]; [2692] 'Hartford' [selected: False]; [2693] 'headphones' [selected: False]; [2694] 'history' [selected: False]; [2695] 'IAmA' [selected: False]; [2696] 'InternetIsBeautiful' [selected: False]; [2697] 'iphone' [selected: False]; [2698] 'jerseycity' [selected: False]; [2699] 'Jokes' [selected: False]; [2700] 'lakewood' [selected: False]; [2701] 'LifeProTips' [selected: False]; [2702] 'listentothis' [selected: False]; [2703] 'LowellMA' [selected: False]; [2704] 'MachineLearning' [selected: False]; [2705] 'Maine' [selected: False]; [2706] 'ManchesterNH' [selected: False]; [2707] 'massachusetts' [selected: False]; [2708] 'MechanicalKeyboards' [selected: False]; [2709] 'memes' [selected: False]; [2710] 'mildlyinteresting' [selected: False]; [2711] 'monitor' [selected: False]; [2712] 'movies' [selected: False]; [2713] 'Music' [selected: False]; [2714] 'Newark' [selected: False]; [2715] 'newhampshire' [selected: False]; [2716] 'newhaven' [selected: False]; [2717] 'newjersey' [selected: False]; [2718] 'news' [selected: False]; [2719] 'nosleep' [selected: False]; [2720] 'nottheonion' [selected: False]; [2721] 'nyc' [selected: False]; [2722] 'OldSchoolCool' [selected: False]; [2723] 'Paterson' [selected: False]; [2724] 'Pennsylvania' [selected: False]; [2725] 'personalfinance' [selected: False]; [2726] 'philadelphia' [selected: False]; [2727] 'philosophy' [selected: False]; [2728] 'photoshopbattles' [selected: False]; [2729] 'pics' [selected: False]; [2730] 'pittsburgh' [selected: False]; [2731] 'providence' [selected: False]; [2732] 'relationship_advice' [selected: False]; [2733] 'RhodeIsland' [selected: False]; [2734] 'rva' [selected: False]; [2735] 'science' [selected: False]; [2736] 'Showerthoughts' [selected: False]; [2737] 'singularity' [selected: False]; [2738] 'space' [selected: False]; [2739] 'sports' [selected: False]; [2740] 'springfieldMO' [selected: False]; [2741] 'StamfordCT' [selected: False]; [2742] 'technology' [selected: False]; [2743] 'television' [selected: False]; [2744] 'tifu' [selected: False]; [2745] 'todayilearned' [selected: False]; [2746] 'UpliftingNews' [selected: False]; [2747] 'vermont' [selected: False]; [2748] 'videos' [selected: False]; [2749] 'wallstreetbets' [selected: False]; [2750] 'Washington' [selected: False]; [2751] 'washingtondc' [selected: False]; [2752] 'WaterburyCT' [selected: False]; [2753] 'WorcesterMA' [selected: False]; [2754] 'worldnews' [selected: False]; [2755] 'WritingPrompts' [selected: False]; [2756] 'yonkers' [selected: False]\" [required: False]"
+      ]
+    },
+    {
+      "record": 6,
+      "num_actions": 6,
+      "budget_steps": 6,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "",
+      "reason": "",
+      "action": "click [1199]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "button [1199] 'Create submission'"
+      ]
+    },
+    {
+      "record": 7,
+      "num_actions": 7,
+      "budget_steps": 7,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/books/2/big-little-lies-meet-up",
+      "observation_description": "The current page is the post detail page for \"Big little lies Meet up!\" in the /f/books forum. The post is submitted by MarvelsGrantMan136, with the body text \"virtual meetup for Big little lies on Sep 10th\". All task requirements have been fulfilled successfully.",
+      "reason": "The objective has been achieved. The post titled \"Big little lies Meet up!\" with the specified details is now visible in the books forum. No further actions are required.",
+      "action": "stop [{\"task_type\":\"MUTATE\",\"status\":\"SUCCESS\",\"retrieved_data\":null}]",
+      "note": "Task completed successfully. Post created in books forum with correct title and body.",
+      "observation_highlight_idxs": "[4575] 'Big little lies Meet up!'\n[4591] 'books'\ntext 'virtual meetup for Big little lies on Sep 10th'",
+      "done": true
+    }
+  ]
+}

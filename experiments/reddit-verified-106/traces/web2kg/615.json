@@ -1,0 +1,11 @@
+{
+  "task_id": 615,
+  "method": "Web2KG",
+  "difficulty": "hard",
+  "intent": "Re-post the image of Bald Eagle from this forum to connecticut forum using the image URL and title \"from /f/pics\"",
+  "official_score": 0.0,
+  "run_status": "agent_error",
+  "reported_steps": 0,
+  "final_url": "https://reddit.example/f/pics",
+  "trajectory": []
+}

@@ -1,0 +1,137 @@
+{
+  "task_id": 584,
+  "method": "Web2KG",
+  "difficulty": "hard",
+  "intent": "Create a new forum with name and title \"Karaoke\", description \"Place for Karaoke lovers\", and sidebar \"*devices*, setup\"",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 8,
+  "final_url": "https://reddit.example/f/Karaoke",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "The current page is the Postmill homepage. Visible elements include navigation links: 'Home' [34], 'Forums' [45], 'Wiki' [51], 'Submit' [106]. The main content shows \"You are not subscribed to any forum. Showing featured forums instead.\" and \"There are no featured forums to display.\" in the sidebar.",
+      "reason": "To create a new forum, I need to go to the Forums page (link [45]) where the forum creation entry point is typically located, as indicated by template T097.",
+      "action": "click [45]",
+      "note": "Navigating to the Forums page to find the create new forum option.",
+      "observation_highlight_idxs": "[45] 'Forums' [url: https://reddit.example/forums]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [45] 'Forums' [url: https://reddit.example/forums]"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/forums",
+      "observation_description": "The current page is the \"List of forums\" at https://reddit.example/forums. There is a \"Create forum\" link [792] with URL https://reddit.example/create_forum. The page lists various existing forums like AskReddit, relationship_advice, etc.",
+      "reason": "To create a new forum, I need to access the forum creation form. The \"Create forum\" link [792] is visible on the current page and will navigate me to the correct form to input the required details (name, title, description, sidebar).",
+      "action": "click [792]",
+      "note": "",
+      "observation_highlight_idxs": "[792] 'Create forum' [url: https://reddit.example/create_forum]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [792] 'Create forum' [url: https://reddit.example/create_forum]"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/create_forum",
+      "observation_description": "The current page is the \"Create new forum\" form. Visible fields include:\n- textbox [3322] for Name (already shows \"/r/\" placeholder)\n- textbox [3333] for Title\n- textbox [3343] for Description\n- textbox [3357] for Sidebar\n- button [3399] 'Create forum' to submit",
+      "reason": "Fill in the Name field with \"Karaoke\" as the first step of completing the forum creation form.",
+      "action": "type [3322] [Karaoke] [0]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [3322] 'Name This field is required.' [required: True]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/create_forum",
+      "observation_description": "The \"Create new forum\" form is visible. Name field [3322] contains \"Karaoke\". Title [3333], Description [3343], and Sidebar [3357] fields are empty and marked as required.",
+      "reason": "The Name field is filled. Next, I need to fill the Title field with \"Karaoke\" as required by the task.",
+      "action": "type [3333] [Karaoke] [0]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [3333] 'Title This field is required.' [required: True]"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/create_forum",
+      "observation_description": "The \"Create new forum\" form is visible. Name field [3322] contains \"Karaoke\", Title field [3333] contains \"Karaoke\". Description field [3343] and Sidebar field [3357] are empty and marked as required. Button [3399] 'Create forum' is available.",
+      "reason": "Name and Title are filled. Next, fill the Description field [3343] with \"Place for Karaoke lovers\" as required by the task.",
+      "action": "type [3343] [Place for Karaoke lovers] [0]",
+      "note": "",
+      "observation_highlight_idxs": "[3343] Description field, [3357] Sidebar field, [3399] Create forum button",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [3343] 'Description This field is required.' [required: True] [describedby: forum_description_help]"
+      ]
+    },
+    {
+      "record": 6,
+      "num_actions": 6,
+      "budget_steps": 6,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/create_forum",
+      "observation_description": "The \"Create new forum\" form is visible. Name [3322], Title [3333], and Description [3343] fields are filled. Sidebar field [3357] is empty and marked as required. Button [3399] 'Create forum' is available.",
+      "reason": "The Name, Title, and Description fields are already filled. The Sidebar field [3357] needs to be filled with \"*devices*, setup\" as per the task requirements. After filling it, I will submit the form.",
+      "action": "type [3357] [*devices*, setup] [0]",
+      "note": "",
+      "observation_highlight_idxs": "[3357]",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [3357] 'Sidebar This field is required.' [required: True] [describedby: forum_sidebar_help]"
+      ]
+    },
+    {
+      "record": 7,
+      "num_actions": 7,
+      "budget_steps": 7,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/create_forum",
+      "observation_description": "",
+      "reason": "",
+      "action": "click [3399]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "button [3399] 'Create forum'"
+      ]
+    },
+    {
+      "record": 8,
+      "num_actions": 8,
+      "budget_steps": 8,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/Karaoke",
+      "observation_description": "The current page is the newly created \"/f/Karaoke\" forum page. The sidebar shows the text \"devices, setup\" matching the required sidebar content. The forum was created successfully.",
+      "reason": "The task has been completed successfully. The forum \"Karaoke\" exists with the correct name, title, description, and sidebar content. No further actions are needed.",
+      "action": "stop [{\"task_type\":\"MUTATE\",\"status\":\"SUCCESS\",\"retrieved_data\":null}]",
+      "note": "Forum \"Karaoke\" created successfully with sidebar \"devices, setup\". Task complete.",
+      "observation_highlight_idxs": "[4578] [4917] [4799] [4805]",
+      "done": true
+    }
+  ]
+}

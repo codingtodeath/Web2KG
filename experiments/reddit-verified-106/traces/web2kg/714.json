@@ -1,0 +1,89 @@
+{
+  "task_id": 714,
+  "method": "Web2KG",
+  "difficulty": "non-hard",
+  "intent": "Thumbs down the top 1 post ever in gadgets.",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 5,
+  "final_url": "https://reddit.example/f/gadgets",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "Current page is Postmill homepage. Link [45] 'Forums' is visible.",
+      "reason": "Click on Forums link to browse forums and find \"gadgets\".",
+      "action": "click [45]",
+      "note": "None",
+      "observation_highlight_idxs": "[45]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [45] 'Forums' [url: https://reddit.example/forums]"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/forums",
+      "observation_description": "Page shows list of forums. Links available: Alphabetical [754], Tags [748], Search box [670].",
+      "reason": "Click on \"Alphabetical\" link to view forums in alphabetical order and quickly locate the \"gadgets\" forum.",
+      "action": "click [754]",
+      "note": "",
+      "observation_highlight_idxs": "[754] 'Alphabetical' [url: https://reddit.example/forums/all]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [754] 'Alphabetical' [url: https://reddit.example/forums/all]"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/forums/all",
+      "observation_description": "Page shows 'All forums' with alphabetical list. Link 'gadgets' [3598] is visible under heading 'G'.",
+      "reason": "Click on the 'gadgets' forum link to enter the forum and view its posts.",
+      "action": "click [3598]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "link [3598] 'gadgets' [url: https://reddit.example/f/gadgets]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/gadgets",
+      "observation_description": "The current page shows the /f/gadgets forum. The first article is \"A custom gaming PC built inside a vintage 1940s Motorola radio case\" with 11533 upvotes. The downvote button for this article is button [6409].",
+      "reason": "The top post in the gadgets forum is \"A custom gaming PC built inside a vintage 1940s Motorola radio case\" with 11533 upvotes. I will click the downvote button [6409] for this post to complete the task.",
+      "action": "click [6409]",
+      "note": "",
+      "observation_highlight_idxs": "[6409]",
+      "done": false,
+      "matching_observation_lines": [
+        "button [6409] 'Downvote'"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/gadgets",
+      "observation_description": "The current page shows the /f/gadgets forum. The top article is \"A custom gaming PC built inside a vintage 1940s Motorola radio case\". The voting button for this article is now labeled 'Retract downvote' [6409], indicating that the downvote has been successfully applied.",
+      "reason": "The downvote button for the top post has changed to 'Retract downvote', which confirms that the post is currently downvoted. The task objective is fully achieved.",
+      "action": "stop [{\"task_type\":\"MUTATE\",\"status\":\"SUCCESS\",\"retrieved_data\":null}]",
+      "note": "",
+      "observation_highlight_idxs": "[6409] 'Retract downvote'",
+      "done": true
+    }
+  ]
+}

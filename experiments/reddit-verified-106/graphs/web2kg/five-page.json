@@ -1,0 +1,716 @@
+{
+  "templates": [
+    {
+      "id": "T044",
+      "members": [
+        "00ffb1726b4cec685bd520a1",
+        "04e628243ba602f06ab5907b",
+        "0ca07d1f5c56962432926852",
+        "0fd61221a41dd0d16c18afe1",
+        "1f6e99e6e1eec63e6f084b95",
+        "231938621d6bf50f2b7c41bc",
+        "2fa4416775f34c096d4f15f1",
+        "340b0e485d0b61d6599042db",
+        "383c49fbdfd5d5a7cc760320",
+        "3f6fc3ea0ac785809207c7e7",
+        "60072fd302e323c17b057949",
+        "674ab0b4aa21c6371cee9a4f",
+        "74f7b43fd221416b8737578e",
+        "782073263539c892b064ec72",
+        "790211a2533b2773d8479930",
+        "7aae75ce3a74e5cf98733a6f",
+        "9590ed2036577d7833efb879",
+        "96759a6040bd8780e1076b65",
+        "96e295e998d9f31e9671149f",
+        "a2f1c0d6bb1def7ce4ad41c3",
+        "a58313adf6e2c12785102512",
+        "a5b5c642d7afc0caf7332759",
+        "a5f2d6a6e03ab716a3dc1f6c",
+        "a9fc4876c32dd95bcf8633f2",
+        "b757d2120b9fa96b9f5c6247",
+        "bcf93084fc01cb7513de5009",
+        "be2408066c9c902892ebdab9",
+        "c3739cd5c877f858efe9b845",
+        "cd3e6e0b38a39d829b9f351b",
+        "cf63231eb0a04e54cd13c94c",
+        "d1ba39c5b827c3eb703322da",
+        "d33afe496f097f6ff1613a06",
+        "dc390e760e9b81cedbc7c464",
+        "e1026c1d5c265ff1332d81bc",
+        "e9a075ffe48af0b1e975dc03",
+        "ee9371929a8fb18fe8a3e35a",
+        "f19a86012a3d878c3d730424",
+        "fe19ed73860f4f7d65297105"
+      ],
+      "representative": "0fd61221a41dd0d16c18afe1"
+    },
+    {
+      "id": "T045",
+      "members": [
+        "01cef4a01e4246fb69e82c63",
+        "0275cf0cb044cce576decf2d",
+        "0469ea7c2e10fd1bd4105bd4",
+        "0488289e1c09634532be3323",
+        "06c6dcd5dd26e98e46653df7",
+        "08c1e71187044efcef467af7",
+        "0ac3b7f61005c41356330f92",
+        "0bfd9d972a46e890037dddcd",
+        "0c159b8f50b08f2d875b813f",
+        "0eed4c9e363230117bbb65da",
+        "1056bd5759567d678bb48602",
+        "142b84a98d4001eaeb0d9ba4",
+        "1462324b0cad8ef266ca7291",
+        "18b03e6239ffb80e96733545",
+        "18c224b7b8a3449107cae033",
+        "19c61fd0962c94455d73aa08",
+        "1a457a0410e6d6a1da98940c",
+        "1a798495c8e9919d41630278",
+        "1dfe0c62a5c67b2a0ab7d7e3",
+        "1e5567d559a443fe0044fd19",
+        "1e97107143e89dd30737844c",
+        "1f21e644c86913952bbda4e2",
+        "1f8d02ceb44fbbebff0f1ca2",
+        "2161c0fec0b06347602d60c9",
+        "24069358ada112361507334c",
+        "249dfcd22bf9cd4deba5b7aa",
+        "2632a7bcc42a7cddc837ed8b",
+        "270b4f59797e5fab244ebc5b",
+        "282cb849db6b5c55a0b3e6b7",
+        "290b433dfe5dde6976cbf0b3",
+        "2a1dc1591d812846b12bd49d",
+        "2a6cdbaefb0b008a6ffdd569",
+        "2a9c7ca346debf2326be1db3",
+        "3080be4f64bd1ca4881237a5",
+        "322dd78d97c9a3964a476bd7",
+        "34c2fa3306bf2b3f1be82549",
+        "365b6d04943e2c4805f465c1",
+        "36c380f27ebaafeecf2015fd",
+        "389d5a1d9f319042754bd96d",
+        "38c88cc85d4e4f7edb07d9ef",
+        "390ae772fccd2b9eea8491f1",
+        "3ef844014f3f21973ea54789",
+        "401e7df5caa40740ec565b9b",
+        "4465d8c4cb059c30fb26f935",
+        "484f9817d26ea8075e8fc371",
+        "4a79f40742cc2fe60abea77e",
+        "4c8d5e0b01d42c2b8fba2b74",
+        "506310dc7394c30ed2b7544e",
+        "51c9db9a634e7e8a425b3c5e",
+        "546f151bb6a865c0fccd5123",
+        "55f7530dba7210d7cce06832",
+        "56754572804c8ed74b48b0a6",
+        "56f773def8643e9aa9f6372d",
+        "58140e22ff999ee461b53d7c",
+        "58459d199f86dcaec58e9660",
+        "59b996049e8b68347134fae6",
+        "5a2497b85ccbf8905fa31954",
+        "6308d04241c91da8d3d7e99e",
+        "630c93d69a455b39f44b2d96",
+        "6962eedbacc22ee992318949",
+        "6a788425d0f3d70c4463fa7e",
+        "6b785b56bd5925cef1cd36c0",
+        "6c1cc596430064b9044134af",
+        "6cfad43eb57da0b213c4ea87",
+        "6db28744aead50299d5fccb3",
+        "6e41a18f58c673b00c37b645",
+        "71fd0a74f3a7c360c41c5680",
+        "724f676d66dc12e3ccca061e",
+        "74b76bbf50e99331ff5d3aa0",
+        "7562783d95270bbd60d5b9c5",
+        "77079c62b4b93d268ea72e30",
+        "7771f13a817809fe92f1344e",
+        "7a9c9205cd8c691d62e90042",
+        "7d3b75242fc96a5fbf33d7aa",
+        "81f724b54d149826c547e34a",
+        "82a4c7c436f1ddca61ebcf54",
+        "8413cbbd96e2b77717097a23",
+        "84c24ad2890df627db623473",
+        "84dd54826eb5592b12ea9bdc",
+        "87f7a6583ec7bb95c4954794",
+        "88e393c42140bfc4607bd227",
+        "89c800986ea1bbf27eb9c447",
+        "8d002dda9d47e9a3c9c75581",
+        "8f7bec16b9c020c5b7841787",
+        "97baaa49b38d1bda751bec20",
+        "97c910406440456e5c7c3740",
+        "97f68664492bfe526189a942",
+        "989d017aacc1d6ed42088ab3",
+        "98d1bca356cb1819a32355ef",
+        "99a32f9e72437a6d2e8964a8",
+        "99b17e775d074b170c84cfe8",
+        "9c315d3fba2c07ebd3e61c14",
+        "9cbe9d212b6d67b12be8a04c",
+        "9cd3cf4a9cbd179d936cfe1b",
+        "9dd41abf29915620aa3f2690",
+        "a53491a19adb1cb1df8eccdb",
+        "a5b27bfc8a78c1bfb988a1ee",
+        "a73d87525c420dd193a7ca6d",
+        "a9152efddd6022e9e871eedb",
+        "a9c2f01acaf9b5fd68f15c46",
+        "aac263d2715af8e4c81c8a4f",
+        "ab7685f43e04250beaad0762",
+        "adb86287012c23800d1b7dd2",
+        "b36c5bcc076a64b8a0308221",
+        "b5e29c5a7c3afed73be51fc4",
+        "b64e0682531e5c4dfd9c29cc",
+        "b6b160f6389e876033b980fc",
+        "b8110f6d2815944f1644d477",
+        "bb0ff4d0952e25e502c5e3db",
+        "bb21863f519a7d666763f494",
+        "bb4940269ac422f58c5e0e20",
+        "bb9ceaab3d14b1091feb276b",
+        "bd9260cf806f8136b2b9235c",
+        "c2b81881f3d8330a8578f8f7",
+        "c3aea438839b46b908d40318",
+        "c60c8557d1283cb84bf99d02",
+        "c83fd3640ed114daa7bcb03e",
+        "c93f46973c9114b419114a5c",
+        "cbeadbb30b1ffa1208f157b4",
+        "cfa64342167fa9ef1c77c9a8",
+        "d22f6e3f6a5b98cf353278c3",
+        "d2e92a6c20e6e7e808dc2f6c",
+        "d35c2341b39f84c91cf71426",
+        "d54471bab980399fbf971bc4",
+        "d6f13679448a5e07b50b065b",
+        "d9682da39db47304ea1aadf4",
+        "de9034ed8c3bf5cf4eb39977",
+        "e1cd62337df1e6a266062960",
+        "e722567970f1de54f21bde6f",
+        "ea0acdf5d558f63511e13532",
+        "eb2b3b55421b18acbbe59adb",
+        "ed9a2710b1b4f51058bf14c2",
+        "edb624b13a3d6eae9d3943a4",
+        "ee1da59bc82bbf6fda076456",
+        "ee2416235afeae431249eb07",
+        "f0f73d7fa68792bd5083fc9a",
+        "f20c87c4d4f18e5ab4a3edd2",
+        "f29015a01c3a4250efa640ad",
+        "f7e0a92f632c322ade3b4fbb",
+        "f835e3d8b7deeff1c31fb3a7",
+        "fa8a8d2786a07f9484883f65",
+        "fafff25bbefdcf59a983b048",
+        "fc38faf0775cfbd1f0b5254a",
+        "fcc30dec5fee413f7524e2e2",
+        "fce053a351641bb4a16d52e1",
+        "fd7b803e19c04c1c2121b939",
+        "fe0f57efec7fafc3b6021a18",
+        "fefecb818f5112e416643289"
+      ],
+      "representative": "0bfd9d972a46e890037dddcd"
+    },
+    {
+      "id": "T046",
+      "members": [
+        "01dd4c8782b40050173485d3",
+        "12057f1cd52617331cb57d60",
+        "2e0db80487f9f1339b4ee152",
+        "3638cadaea56f68a218abc14",
+        "3a17cc050ba7e4cb02f0cea1",
+        "3c3a9ea2d847815d7a675995",
+        "45e5d5b675eb2f45d50d333e",
+        "49d0f12ebc0c7d95163ca512",
+        "530a5c9dda27fd1c8d7325d1",
+        "55956504bd7e36c8224b0cb4",
+        "619caf0437a43f41240c2bcd",
+        "7e0e0f304b226611fcee2fc8",
+        "8c87fa5747c055875a581c35",
+        "914be183b64f703b5b04f5eb",
+        "94fcfb4fac3d60108f3979be",
+        "97b13de04a23d0dca6c2442a",
+        "a9d3b3797208bcaed41e497f",
+        "b4c9f5e837081a639f241a21",
+        "bb4b63cb0a69ce05292c589c",
+        "dd24f0daf49ed120c6176dc2",
+        "e22125cae0922922db3a09ea",
+        "e9c10525bf68c2c46b2aa6b4",
+        "ec4967bfe6bd144c4bfa5fcd",
+        "f863a91ec7a889eb53d09335"
+      ],
+      "representative": "3a17cc050ba7e4cb02f0cea1"
+    },
+    {
+      "id": "T047",
+      "members": [
+        "0e12268ef490231507eb57cc",
+        "248f9ba73049b84248de63ac",
+        "520756cb12b96bf36c6025a9",
+        "5eb080d0795dabe681b66f8d",
+        "67fbb1fed57df307e5ac0522",
+        "83104788c890fa7f12126738",
+        "9475b3640594a9256aa14612",
+        "a0d5970a47a23b3921c8a735",
+        "b006bd4789b6b6b797a2fb35",
+        "fcbbff6d90b06e0797ade2f0"
+      ],
+      "representative": "83104788c890fa7f12126738"
+    },
+    {
+      "id": "T040",
+      "members": [
+        "7ee17af1eb2a7f5ac248fc97"
+      ],
+      "representative": "7ee17af1eb2a7f5ac248fc97"
+    },
+    {
+      "id": "T048",
+      "members": [
+        "883e1f5c78db34059404257c",
+        "ed3b601a01b407aaf13d9aca"
+      ],
+      "representative": "ed3b601a01b407aaf13d9aca"
+    },
+    {
+      "id": "T034",
+      "members": [
+        "cc25584ef13d535d40ca3d81"
+      ],
+      "representative": "cc25584ef13d535d40ca3d81"
+    },
+    {
+      "id": "T039",
+      "members": [
+        "ef3a8c4168019b4d5dc3d0b5"
+      ],
+      "representative": "ef3a8c4168019b4d5dc3d0b5"
+    }
+  ],
+  "cards": {
+    "T044": {
+      "name": "Postmill 通用页面模板",
+      "summary": "提供顶部导航（搜索/提交）、用户菜单（设置/登出）及内容区。根据上下文，右侧可能显示论坛侧边栏或Wiki导航，主内容展示列表、消息或空状态提示。",
+      "common_functions": [
+        "顶部全局导航栏（含 Postmill/Forums/Wiki 切换、搜索框、Submit 按钮）",
+        "用户下拉菜单（提供 Profile、My account、User settings、Block list、Dark mode、Log out 入口）",
+        "内容区域渲染（支持列表展示、空状态提示 'There are no entries...' 及排序/过滤控件）",
+        "底部页脚标识（显示 'Running Postmill'）"
+      ],
+      "importance": 0.6,
+      "variants": [
+        {
+          "when": "当页面为主页、消息或标签列表页时（如 P1, P2, P5）",
+          "functions": [
+            "展示主内容列表（Submissions/Comments 或 Messages/Tags）",
+            "显示排序或过滤控件（如 Featured, New）",
+            "主页可能显示 Featured forums 提示区域"
+          ],
+          "evidence_nodes": [
+            "00ffb1726b4cec685bd520a1",
+            "e9a075ffe48af0b1e975dc03",
+            "383c49fbdfd5d5a7cc760320"
+          ]
+        },
+        {
+          "when": "当页面为特定论坛的审核日志页时（如 P3）",
+          "functions": [
+            "展示审核日志内容（或空状态）",
+            "右侧显示论坛详情侧边栏（包含 Subscribe 按钮、论坛信息及 Toolbox 工具如 Bans、Moderation log）"
+          ],
+          "evidence_nodes": [
+            "3f6fc3ea0ac785809207c7e7"
+          ]
+        },
+        {
+          "when": "当页面为 Wiki 404 错误页时（如 P4）",
+          "functions": [
+            "显示 'Page not found' 提示及 'Create this page' 按钮",
+            "右侧显示 Navigation 侧边栏（包含 All pages、Recent changes、Create new page 链接）"
+          ],
+          "evidence_nodes": [
+            "7aae75ce3a74e5cf98733a6f"
+          ]
+        }
+      ],
+      "uncertainties": [
+        "顶部导航栏的信封图标（邮件图标）点击后是否直接跳转至 Messages 页面或仅显示通知预览。",
+        "Featured forums 区域是否支持直接交互操作（如点击订阅），还是仅展示信息。",
+        "P3 中出现的 'Global moderation log' 按钮是否仅对特定管理员角色可见。",
+        "用户菜单中的 'Block list' 功能具体屏蔽范围（是屏蔽用户还是屏蔽内容）及交互方式。"
+      ]
+    },
+    "T045": {
+      "name": "论坛内容浏览与评论页",
+      "summary": "展示论坛帖子列表、帖子详情及评论讨论。提供论坛订阅、管理工具及用户操作。支持评论回复、视图切换及分页加载。右侧栏包含论坛信息及工具箱。",
+      "common_functions": [
+        "展示帖子或评论列表，支持分页（More按钮）和排序/视图切换。",
+        "右侧侧边栏提供论坛订阅、RSS、隐藏论坛及管理工具（Toolbox）。",
+        "支持内容投票（上下箭头）和评论回复（文本域及Post按钮）。",
+        "顶部导航包含搜索、提交入口及用户账户菜单。"
+      ],
+      "importance": 0.9,
+      "variants": [
+        {
+          "when": "当展示论坛列表页时",
+          "functions": [
+            "展示帖子或评论列表，支持Submissions/Comments标签页切换。",
+            "支持排序（如Hot）及底部加载更多（More）按钮。"
+          ],
+          "evidence_nodes": [
+            "08c1e71187044efcef467af7",
+            "0c159b8f50b08f2d875b813f"
+          ]
+        },
+        {
+          "when": "当展示帖子详情页时",
+          "functions": [
+            "展示帖子主体内容、投票数及评论列表。",
+            "提供评论回复框（Post按钮），支持Nested/Linear视图切换。"
+          ],
+          "evidence_nodes": [
+            "c93f46973c9114b419114a5c",
+            "484f9817d26ea8075e8fc371"
+          ]
+        },
+        {
+          "when": "当展示评论历史页时",
+          "functions": [
+            "展示Recent comments历史评论列表。",
+            "每条评论下可能有回复表单，底部有加载更多按钮。"
+          ],
+          "evidence_nodes": [
+            "0c159b8f50b08f2d875b813f"
+          ]
+        },
+        {
+          "when": "当展示单条评论线程或用户菜单时",
+          "functions": [
+            "显示“Viewing a single comment thread”提示。",
+            "右上角用户下拉菜单展开，提供Profile、Log out等选项。"
+          ],
+          "evidence_nodes": [
+            "1a798495c8e9919d41630278"
+          ]
+        }
+      ],
+      "uncertainties": [
+        "Toolbox（Bans, Moderation log）是否仅对版主或管理员可见。",
+        "Recent comments页面是全局功能还是当前用户个人功能。",
+        "短链接（Short URL）是否在所有帖子详情页固定显示。",
+        "评论视图切换（Nested/Linear）是否在所有帖子页可用。"
+      ]
+    },
+    "T046": {
+      "name": "用户管理与内容创建页面",
+      "summary": "该模板涵盖用户凭证编辑、偏好设置、内容提交、私信及论坛创建。页面通常包含顶部导航、右侧用户资料与工具箱侧边栏（内容创建页除外），支持Markdown编辑与表单提交。",
+      "common_functions": [
+        "顶部导航栏提供搜索、提交入口及用户账户菜单。",
+        "右侧侧边栏显示用户资料摘要及上下文相关的工具箱操作。",
+        "表单区域支持文本输入、Markdown格式化及保存或创建提交。",
+        "用户资料卡片展示注册信息及用户ID。"
+      ],
+      "importance": 0.8,
+      "variants": [
+        {
+          "when": "编辑用户凭证或个人设置时（如修改密码、配置语言/通知/外观）",
+          "functions": [
+            "修改用户名、密码、邮箱或删除账户。",
+            "配置语言、时区、首页显示、通知偏好及外观主题。",
+            "右侧显示当前用户资料及包含‘Hidden forums’、‘Trash’的工具箱。"
+          ],
+          "evidence_nodes": [
+            "12057f1cd52617331cb57d60",
+            "914be183b64f703b5b04f5eb"
+          ]
+        },
+        {
+          "when": "创建新提交（帖子）或新论坛时",
+          "functions": [
+            "上传文件/链接、填写标题正文、选择论坛（提交页面）。",
+            "填写论坛名称、标题、描述、侧边栏内容及标签（论坛创建页）。",
+            "提供Markdown语法帮助表格或链接。"
+          ],
+          "evidence_nodes": [
+            "45e5d5b675eb2f45d50d333e",
+            "2e0db80487f9f1339b4ee152"
+          ]
+        },
+        {
+          "when": "向其他用户撰写私信时",
+          "functions": [
+            "输入必填的消息文本并发送。",
+            "右侧显示目标用户资料及包含‘Block user’、‘Send message’的工具箱。"
+          ],
+          "evidence_nodes": [
+            "3c3a9ea2d847815d7a675995"
+          ]
+        },
+        {
+          "when": "右上角用户菜单展开时",
+          "functions": [
+            "提供个人资料、账户、设置、屏蔽列表、深色模式及登出选项。"
+          ],
+          "evidence_nodes": [
+            "2e0db80487f9f1339b4ee152"
+          ]
+        }
+      ],
+      "uncertainties": [
+        "并非所有页面（如内容创建页）都显示右侧用户资料侧边栏。",
+        "工具箱的具体选项可能因用户权限或页面上下文动态变化。",
+        "右上角用户菜单在部分页面默认折叠，仅部分页面展示展开状态。",
+        "未观察到全部24个成员页面，侧边栏布局或功能可能存在未覆盖的变体。"
+      ]
+    },
+    "T047": {
+      "name": "论坛列表与字母索引页",
+      "summary": "用于浏览和查找网站论坛。支持按提交数列表查看（含分页、统计、排序）或按字母分类索引。提供订阅、创建论坛及用户设置入口。",
+      "common_functions": [
+        "展示论坛名称、描述及统计数据（如提交数）。",
+        "切换列表视图（按统计排序）与字母索引视图（A-Y）。",
+        "提供分页控件以浏览多页列表。",
+        "提供用户下拉菜单（Profile, Settings, Logout）。",
+        "提供论坛订阅（Subscribe）功能。"
+      ],
+      "importance": 0.6,
+      "variants": [
+        {
+          "when": "页面处于“列表视图”（List of forums，按Submissions等排序）",
+          "functions": [
+            "显示具体论坛的提交数和订阅数。",
+            "提供分页控件（Previous, Next, 页码）。",
+            "提供“Create forum”按钮。",
+            "支持通过下拉菜单选择排序字段（Name, Title, Submissions, Subscribers, Creation date）。"
+          ],
+          "evidence_nodes": [
+            "0e12268ef490231507eb57cc",
+            "9475b3640594a9256aa14612",
+            "fcbbff6d90b06e0797ade2f0"
+          ]
+        },
+        {
+          "when": "页面处于“字母索引视图”（All forums，Alphabetical标签激活）",
+          "functions": [
+            "按字母A至Y分类展示所有论坛的文本链接。",
+            "无分页控件。",
+            "无详细统计数据（提交数/订阅数）。",
+            "无“Create forum”按钮。"
+          ],
+          "evidence_nodes": [
+            "520756cb12b96bf36c6025a9",
+            "248f9ba73049b84248de63ac"
+          ]
+        },
+        {
+          "when": "右上角用户菜单（User menu）展开",
+          "functions": [
+            "显示 Profile, My account, User settings, Block list, Dark mode, Log out 选项。"
+          ],
+          "evidence_nodes": [
+            "520756cb12b96bf36c6025a9",
+            "9475b3640594a9256aa14612"
+          ]
+        },
+        {
+          "when": "排序控件（Submissions dropdown）展开",
+          "functions": [
+            "显示 Name, Title, Submissions, Subscribers, Creation date 排序选项。"
+          ],
+          "evidence_nodes": [
+            "fcbbff6d90b06e0797ade2f0"
+          ]
+        }
+      ],
+      "uncertainties": [
+        "“Tags”标签页的具体内容和功能未在截图中展示。",
+        "订阅按钮旁的数字“0”具体含义（可能是当前用户订阅数或某种计数器）不明确。",
+        "“Create forum”按钮的可见性权限限制不确定（是否仅管理员或特定用户可见）。"
+      ]
+    },
+    "T040": {
+      "name": "投资组合概览页",
+      "summary": "展示投资组合总价值、年初至今盈亏及历史走势折线图，支持多时间维度切换，并提供交易、观察列表等核心功能导航入口。",
+      "common_functions": [
+        "显示投资组合总价值及年初至今盈亏",
+        "提供资产走势折线图及多时间维度切换",
+        "底部导航提供交易、观察列表等核心功能入口"
+      ],
+      "importance": 0.9,
+      "variants": [
+        {
+          "when": "页面展示投资组合价值及趋势图时",
+          "functions": [
+            "展示当前资产总值",
+            "显示年初至今涨跌幅",
+            "提供多时间维度（7D/MTD/1M/YTD/1Y）走势图表"
+          ],
+          "evidence_nodes": [
+            "7ee17af1eb2a7f5ac248fc97"
+          ]
+        }
+      ],
+      "uncertainties": [
+        "截图仅展示移动端界面，网页端可能包含更详细的持仓列表",
+        "底部导航栏各图标的详细交互逻辑未完全展示",
+        "页面提示数据同步完成的具体含义不明确"
+      ]
+    },
+    "T048": {
+      "name": "Cloudflare 访问拦截页",
+      "summary": "Cloudflare 安全服务拦截页面，告知用户访问被拒绝，解释触发拦截的原因（如SQL命令或畸形数据），提供联系站长解决的建议，并显示 Ray ID 和 IP 信息用于排查故障。",
+      "common_functions": [
+        "显示访问被拒绝提示及无法访问的目标网站",
+        "解释触发安全服务拦截的具体原因",
+        "提供联系网站所有者解决拦截问题的建议",
+        "显示 Cloudflare Ray ID 用于故障追踪"
+      ],
+      "importance": 0.1,
+      "variants": [
+        {
+          "when": "底部用户 IP 地址被隐藏时",
+          "functions": [
+            "显示 'Click to reveal' 链接以揭示用户 IP 地址"
+          ],
+          "evidence_nodes": [
+            "883e1f5c78db34059404257c"
+          ]
+        },
+        {
+          "when": "底部用户 IP 地址直接显示时",
+          "functions": [
+            "直接展示用户 IP 地址，不显示揭示按钮"
+          ],
+          "evidence_nodes": [
+            "ed3b601a01b407aaf13d9aca"
+          ]
+        }
+      ],
+      "uncertainties": [
+        "截图中未显示用户可执行的验证挑战（如验证码）或重试按钮",
+        "无法确定具体触发拦截的安全规则策略详情",
+        "不同网站定制拦截页面的具体文案和样式可能存在差异"
+      ]
+    },
+    "T034": {
+      "name": "论坛板块 Atom 订阅源",
+      "summary": "页面提供论坛特定板块（如 gaming）的 Atom XML 订阅数据，用于 RSS 阅读器订阅最新帖子。内容包含帖子标题、链接、摘要和更新时间。",
+      "common_functions": [
+        "输出 Atom XML 格式数据",
+        "提供论坛板块最新帖子列表",
+        "包含帖子标题、链接和摘要内容",
+        "支持外部 RSS 阅读器订阅"
+      ],
+      "importance": 0.1,
+      "variants": [
+        {
+          "when": "URL 路径包含 .atom 后缀时",
+          "functions": [
+            "输出 Atom XML 格式的订阅数据"
+          ],
+          "evidence_nodes": [
+            "cc25584ef13d535d40ca3d81"
+          ]
+        },
+        {
+          "when": "URL 路径指定具体论坛板块（如 /f/gaming）时",
+          "functions": [
+            "提供该特定板块内容的订阅数据"
+          ],
+          "evidence_nodes": [
+            "cc25584ef13d535d40ca3d81"
+          ]
+        }
+      ],
+      "uncertainties": [
+        "具体论坛软件系统无法仅从 XML 结构完全确认",
+        "是否同时提供 RSS 2.0 等其他订阅格式未观察到",
+        "订阅数据是否包含帖子完整正文还是仅摘要不明确",
+        "是否支持通过参数过滤特定时间范围未观察到"
+      ]
+    },
+    "T039": {
+      "name": "论坛板块 Atom 订阅源",
+      "summary": "该页面为论坛特定板块（如 technology）的 Atom 订阅源，以 XML 格式展示最新文章列表，包含标题、链接、作者及更新时间，供订阅客户端聚合内容。",
+      "common_functions": [
+        "以 XML (Atom) 格式输出内容流",
+        "展示指定板块的最新文章元数据",
+        "供订阅客户端抓取聚合内容"
+      ],
+      "importance": 0.2,
+      "variants": [
+        {
+          "when": "URL 指向特定板块（如 technology）的订阅源",
+          "functions": [
+            "提供该板块内容的 Atom 订阅",
+            "展示该板块最新文章列表"
+          ],
+          "evidence_nodes": [
+            "ef3a8c4168019b4d5dc3d0b5"
+          ]
+        }
+      ],
+      "uncertainties": [
+        "是否支持其他板块或全站订阅源",
+        "是否同时提供 RSS 格式支持",
+        "是否支持自定义标签或作者过滤"
+      ]
+    }
+  },
+  "framework": {
+    "overview": "网站基于Postmill框架，聚焦论坛社区交互与内容聚合。提供全站通用导航、多级内容浏览（列表/详情/维基）、用户账户管理及板块索引功能。支持排序过滤、投票回复、Markdown创作及Atom订阅。部分状态涉及安全防护拦截或独立数据概览。整体为观察到的局部功能映射，权限边界与未记录页面的可达性存在不确定性。",
+    "areas": [
+      {
+        "name": "全局导航与基础页面结构",
+        "purpose": "提供全局导航与搜索；根据上下文分情况渲染内容区：主页或消息列表展示排序控件，审核日志页显示Mod侧栏，维基404页提供创建入口，底部固定站点标识。",
+        "templates": [
+          "T044"
+        ]
+      },
+      {
+        "name": "论坛内容浏览与互动",
+        "purpose": "展示帖子与评论视图，支持分页加载、排序切换及投票操作；提供评论回复框与右侧板块订阅入口；分情况处理列表浏览、详情页阅读及历史记录查询。",
+        "templates": [
+          "T045"
+        ]
+      },
+      {
+        "name": "用户管理与内容创作",
+        "purpose": "处理凭证编辑与偏好配置；根据页面上下文分情况执行操作：设值页修改个人信息，创作页调用Markdown编辑器，私信页对接目标用户工具栏，默认折叠展开菜单。",
+        "templates": [
+          "T046"
+        ]
+      },
+      {
+        "name": "论坛目录与统计索引",
+        "purpose": "按提交量排序或字母(A-Y)分类浏览全部板块，提供分页控件、维度筛选及板块订阅入口；分情况展示详细统计数据或纯文本索引列表。",
+        "templates": [
+          "T047"
+        ]
+      },
+      {
+        "name": "附加数据与安全拦截状态",
+        "purpose": "分情况呈现不同界面：非核心模块展示投资组合价值趋势与多时间维度图表；外部安全策略触发时显示拒绝提示、Ray ID及IP排查信息。",
+        "templates": [
+          "T040",
+          "T048"
+        ]
+      },
+      {
+        "name": "频道订阅源输出",
+        "purpose": "定向输出指定论坛板块最新文章元数据；以Atom XML格式提供结构化数据流，供外部客户端抓取，具体过滤参数与格式兼容性待验证。",
+        "templates": [
+          "T034",
+          "T039"
+        ]
+      }
+    ],
+    "navigation": [
+      "顶部全局导航栏",
+      "用户账户下拉菜单",
+      "内容排序与过滤控件",
+      "论坛订阅与RSS入口",
+      "创建提交与论坛按钮",
+      "维基/导航侧边栏",
+      "Atom订阅源链接",
+      "账户设置与登出入口"
+    ],
+    "limitations": [
+      "观测范围受限，未捕获所有模板成员及潜在页面布局变体",
+      "高级管理工具(GLOBAL MOD LOG, TOOLBOX)可见性受角色限制且未证实",
+      "部分交互逻辑(邮件图标、屏蔽列表作用域)缺乏明确行为证据",
+      "投资组合页面(T040)可能属第三方或独立应用，非核心论坛功能",
+      "安全拦截页(T048)为CDN策略反馈，不反映网站原生业务流",
+      "订阅源(T034/T039)仅见XML基础结构，不支持自定义过滤参数的确认",
+      "转换记录仅反映历史点击类型，不保证任意页面可直接可达",
+      "未记录的导航路径不等于不可达，实际功能可能存在未观察到的直接跳转"
+    ]
+  }
+}

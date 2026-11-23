@@ -1,0 +1,121 @@
+{
+  "task_id": 28,
+  "method": "Web2KG",
+  "difficulty": "hard",
+  "intent": "In the Worcester forum, get the username and post title of the most recent post, and count the number of comments on that post that are not from the author and have more downvotes than upvotes. Return a list of objects with keys \"username\", \"post_title\", and \"count\".",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 7,
+  "final_url": "https://reddit.example/f/WorcesterMA/123052/best-place-for-a-foot-rub",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "- Current page is Postmill homepage (RootWebArea 'Postmill').\n- Navigation links include 'Forums' [45], 'Wiki' [51], 'Submit' [106].\n- Main content shows \"You are not subscribed to any forum. Showing featured forums instead.\" with no featured forums.",
+      "reason": "To find the Worcester forum, I need to navigate to the Forums page first. Clicking on the 'Forums' link [45] will take me to the forum directory where I can locate 'Worcester'.",
+      "action": "click [45]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "link [45] 'Forums' [url: https://reddit.example/forums]"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/forums",
+      "observation_description": "The current page shows a list of forums sorted by submissions. A global search box is available at ID [670]. The \"Worcester\" forum is not in the visible list of 24 forums.",
+      "reason": "To find the Worcester forum, I will use the global search box [670] to search for \"Worcester\". This should bring up the forum in the search results, allowing me to navigate to it directly.",
+      "action": "type [670] [Worcester] [1]",
+      "note": "",
+      "observation_highlight_idxs": "[670]",
+      "done": false,
+      "matching_observation_lines": [
+        "searchbox [670] 'Search query'"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/search?q=Worcester",
+      "observation_description": "The current page shows search results for \"Worcester\". Multiple posts from the WorcesterMA forum are visible. The forum link \"WorcesterMA\" is present in multiple articles, e.g., [3402] with URL https://reddit.example/f/WorcesterMA.",
+      "reason": "Clicking on the \"WorcesterMA\" forum link will take me to the forum's main page where I can sort posts by \"New\" to find the most recent post.",
+      "action": "click [3402]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "link [3402] 'WorcesterMA' [url: https://reddit.example/f/WorcesterMA]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/WorcesterMA",
+      "observation_description": "The current page shows the WorcesterMA forum with posts sorted by \"Hot\". The most recent post visible is \"A Coastal Massachusetts Gem\" from March 27, 2023. To ensure we get the actual most recent post, we need to change the sort order to \"New\" using the sort button [12358].",
+      "reason": "Clicking the 'Sort by: Hot' button [12358] will allow me to change the sorting to \"New\" to find the most recent post in the forum.",
+      "action": "click [12358]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "button [12358] 'Sort by: Hot'"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/WorcesterMA",
+      "observation_description": "The current page shows the WorcesterMA forum with posts sorted by \"Hot\". Sort options are visible: Hot [13105], New [13108], Active [13111], Top [13114], Controversial [13117], Most commented [13120].",
+      "reason": "Clicking on the 'New' link [13108] will sort posts by newest first, allowing me to identify the most recent post in the WorcesterMA forum.",
+      "action": "click [13108]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "link [13108] 'New' [url: https://reddit.example/f/WorcesterMA/new]"
+      ]
+    },
+    {
+      "record": 6,
+      "num_actions": 6,
+      "budget_steps": 6,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/WorcesterMA/new",
+      "observation_description": "",
+      "reason": "",
+      "action": "click [18270]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "link [18270] 'Best place for a foot rub?' [url: https://reddit.example/f/WorcesterMA/123052/best-place-for-a-foot-rub]"
+      ]
+    },
+    {
+      "record": 7,
+      "num_actions": 7,
+      "budget_steps": 7,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/WorcesterMA/123052/best-place-for-a-foot-rub",
+      "observation_description": "",
+      "reason": "",
+      "action": "stop [{\"task_type\":\"RETRIEVE\",\"status\":\"SUCCESS\",\"retrieved_data\":[{\"username\":\"mineinhusdson\",\"post_title\":\"Best place for a foot rub?\",\"count\":0}]}]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": true
+    }
+  ]
+}

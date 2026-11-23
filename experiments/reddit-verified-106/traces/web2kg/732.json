@@ -1,0 +1,89 @@
+{
+  "task_id": 732,
+  "method": "Web2KG",
+  "difficulty": "non-hard",
+  "intent": "Edit my post on The Night Agent by adding a line to the body that says \"Done watching, pretty cool!\"",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 5,
+  "final_url": "https://reddit.example/f/television/134868/the-night-agent-renewed-for-season-2-at-netflix",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "- Current page is Postmill homepage. Searchbox [78] is available at the top. User is logged in as MarvelsGrantMan136.",
+      "reason": "I will search for \"The Night Agent\" using the searchbox to locate the post that needs to be edited.",
+      "action": "type [78] [The Night Agent] [1]",
+      "note": "Searching for the post title to find it quickly.",
+      "observation_highlight_idxs": "[78] searchbox 'Search query'",
+      "done": false,
+      "matching_observation_lines": [
+        "searchbox [78] 'Search query'"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/search?q=The+Night+Agent",
+      "observation_description": "- Search results page showing 50 results for \"The Night Agent\".\n- Article [1128] contains the post \"The NightAgent’ Renewed for Season 2 at Netflix\" by MarvelsGrantMan136.\n- Link [1070] 'Edit' is visible for this post.",
+      "reason": "I need to access the edit page for the post \"The NightAgent’ Renewed for Season 2 at Netflix\" by MarvelsGrantMan136 to add the required text to the body. The 'Edit' link [1070] is clearly visible in the search results.",
+      "action": "click [1070]",
+      "note": "",
+      "observation_highlight_idxs": "[1070]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [1070] 'Edit' [url: https://reddit.example/f/television/134868/-/edit]"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/television/134868/-/edit",
+      "observation_description": "The edit submission page is loaded. The Body textbox [13017] is empty and ready for input. The 'Edit submission' button [13047] is available to save changes.",
+      "reason": "The Body textbox [13017] is visible and empty. I will type the required text \"Done watching, pretty cool!\" into it.",
+      "action": "type [13017] [Done watching, pretty cool!]",
+      "note": "After typing, I will need to click the 'Edit submission' button [13047] to save the changes.",
+      "observation_highlight_idxs": "[13017]",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [13017] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/television/134868/-/edit",
+      "observation_description": "The edit submission page is loaded. The Body textbox [13017] contains \"Done watching, pretty cool!\". The 'Edit submission' button [13047] is available to save the changes.",
+      "reason": "The required text \"Done watching, pretty cool!\" is already entered in the Body textbox. I need to click the 'Edit submission' button [13047] to save the changes and complete the task.",
+      "action": "click [13047]",
+      "note": "",
+      "observation_highlight_idxs": "[13047] 'Edit submission' button, [13017] 'Body' textbox containing 'Done watching, pretty cool!'",
+      "done": false,
+      "matching_observation_lines": [
+        "button [13047] 'Edit submission'"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/television/134868/the-night-agent-renewed-for-season-2-at-netflix",
+      "observation_description": "The page shows the post \"The Night Agent’ Renewed for Season 2 at Netflix\" with the text \"Done watching, pretty cool!\" in the body. An alert confirms \"The submission was edited.\"",
+      "reason": "The required text \"Done watching, pretty cool!\" is visible in the post body, and the success alert \"The submission was edited.\" confirms the task is complete. No further actions are needed.",
+      "action": "stop [{\"task_type\":\"MUTATE\",\"status\":\"SUCCESS\",\"retrieved_data\":null}]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": true
+    }
+  ]
+}

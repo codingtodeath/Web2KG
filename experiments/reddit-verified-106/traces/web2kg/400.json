@@ -1,0 +1,105 @@
+{
+  "task_id": 400,
+  "method": "Web2KG",
+  "difficulty": "hard",
+  "intent": "Change my bio to \"Pro Python Developer with 20 years of Experience\" in the discussion forum",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 6,
+  "final_url": "https://reddit.example/user/MarvelsGrantMan136/edit_biography",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "Current page is Postmill homepage. User menu button 'MarvelsGrantMan136' [124] is visible in the top right. Clicking it should reveal options like Profile, User settings, etc.",
+      "reason": "To change the bio, I need to access the user's account settings or profile. The user menu button [124] is the entry point for these options based on the template description.",
+      "action": "click [124]",
+      "note": "Template T090 indicates user menu provides access to Profile, My account, User settings. Need to navigate to settings to edit bio.",
+      "observation_highlight_idxs": "[124] 'MarvelsGrantMan136' button to open user menu.",
+      "done": false,
+      "matching_observation_lines": [
+        "button [124] 'MarvelsGrantMan136'"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "- Dropdown menu is visible with links: Profile [264], My account [270], User settings [276], Block list [282].\n- User settings link [276] points to https://reddit.example/user/MarvelsGrantMan136/preferences.",
+      "reason": "To change the bio, I need to access user settings or profile page. Clicking \"User settings\" [276] is the logical next step to find bio editing options.",
+      "action": "click [276]",
+      "note": "",
+      "observation_highlight_idxs": "[276] 'User settings' [url: https://reddit.example/user/MarvelsGrantMan136/preferences]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [276] 'User settings' [url: https://reddit.example/user/MarvelsGrantMan136/preferences]"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/user/MarvelsGrantMan136/preferences",
+      "observation_description": "- Current page: 'Editing user settings for MarvelsGrantMan136' at https://reddit.example/user/MarvelsGrantMan136/preferences\n- Sidebar contains link [2487] 'Edit biography' pointing to https://reddit.example/user/MarvelsGrantMan136/edit_biography\n- Main content shows general settings, posting, notifications, privacy, appearance options",
+      "reason": "The \"Edit biography\" link [2487] in the sidebar is the direct path to edit the user's bio. Clicking it will take me to the biography editing form where I can input the new bio text.",
+      "action": "click [2487]",
+      "note": "",
+      "observation_highlight_idxs": "[2487]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [2487] 'Edit biography' [url: https://reddit.example/user/MarvelsGrantMan136/edit_biography]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/user/MarvelsGrantMan136/edit_biography",
+      "observation_description": "On the \"Editing biography for /u/MarvelsGrantMan136\" page. Biography textbox [3853] is visible with current text \"t2_5adwlxvn\". Save button [3880] is present.",
+      "reason": "The next step is to input the new bio text into the biography textbox [3853]. After typing, I will click Save to apply the changes.",
+      "action": "type [3853] [Pro Python Developer with 20 years of Experience]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [3853] 'Biography' [required: False] [describedby: user_biography_biography_help]"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/user/MarvelsGrantMan136/edit_biography",
+      "observation_description": "On the \"Editing biography for /u/MarvelsGrantMan136\" page. The textbox [3853] contains \"Pro Python Developer with 20 years of Experience\" and the preview matches. The Save button [3880] is visible and ready to be clicked to apply the changes.",
+      "reason": "The new bio text has been entered and verified in the preview. Clicking the Save button [3880] is the final step to persist the changes to the user's profile.",
+      "action": "click [3880]",
+      "note": "",
+      "observation_highlight_idxs": "[3853], [3880]",
+      "done": false,
+      "matching_observation_lines": [
+        "button [3880] 'Save'"
+      ]
+    },
+    {
+      "record": 6,
+      "num_actions": 6,
+      "budget_steps": 6,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/user/MarvelsGrantMan136/edit_biography",
+      "observation_description": "The current page shows an alert \"The biography was updated.\" [4580]. The Biography textbox [4728] contains \"Pro Python Developer with 20 years of Experience\", and the preview matches. The sidebar also displays the new bio text.",
+      "reason": "The task has been fully completed as confirmed by the success alert and updated bio text. I will now stop the task.",
+      "action": "stop [{\"task_type\":\"MUTATE\",\"status\":\"SUCCESS\",\"retrieved_data\":null}]",
+      "note": "Bio updated successfully.",
+      "observation_highlight_idxs": "[4580]",
+      "done": true
+    }
+  ]
+}

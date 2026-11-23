@@ -1,0 +1,42 @@
+{
+  "model": "Qwen3.7-flash",
+  "record_type": "Historical cross-version descriptive comparison",
+  "selection": "Original selected archived 42-task view, including original 724 failure; plus completed 64 non-hard tasks from verified v6 references. No later retests substituted. Cross-version descriptive aggregate.",
+  "verified_source_sha256": {
+    "retained": "f575a83a3d1fabf971589b3fa4478449b2ae66073ba5424a79d9dad911202aba",
+    "verified": "6506dad03a3e83e4610a1e2391d26db263596485970f16b492161ab34a92261b",
+    "scope": "45b034fff0c5ac3374723e0d6736365583dff06cc9c8ef204e2ce3dd54e55407"
+  },
+  "construction_input_sha256": "df9f88f6496328066224053051f79768c3223605139b4dfbe606a22a23d72d3f",
+  "baseline_input_sha256": "2df8fd879e13c3da56e95f9a2a0d45767c252275c60262a47a5a5f9cfe87d907",
+  "arms": {
+    "Web2KG": {
+      "tasks": 106,
+      "successes": 75,
+      "by_difficulty": {
+        "hard": {
+          "successes": 32,
+          "tasks": 42
+        },
+        "non-hard": {
+          "successes": 43,
+          "tasks": 64
+        }
+      }
+    },
+    "WebNavigator": {
+      "tasks": 106,
+      "successes": 77,
+      "by_difficulty": {
+        "hard": {
+          "successes": 31,
+          "tasks": 42
+        },
+        "non-hard": {
+          "successes": 46,
+          "tasks": 64
+        }
+      }
+    }
+  }
+}

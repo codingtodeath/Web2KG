@@ -1,0 +1,105 @@
+{
+  "task_id": 735,
+  "method": "Web2KG",
+  "difficulty": "hard",
+  "intent": "Edit my post on Lord of the Rings season 2 cast announcement with the lowest vote count by adding a line to the body that says \"The cast is amazing!\"",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 6,
+  "final_url": "https://reddit.example/f/television/70886/the-lord-of-the-rings-the-rings-of-power-adds-8-to-season-2",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "- Current page is Postmill homepage with searchbox [76] 'Search query'.\n- Navigation links: Home, Forums, Wiki, Notifications, Submit, User menu 'MarvelsGrantMan136'.\n- Main content shows \"You are not subscribed to any forum. Showing featured forums instead.\" and no posts are visible.",
+      "reason": "To find the post \"Lord of the Rings season 2 cast announcement\", I will use the search box [76] to search for it. This will help locate the post among the forum submissions.",
+      "action": "type [76] [Lord of the Rings season 2 cast announcement] [1]",
+      "note": "",
+      "observation_highlight_idxs": "[76]",
+      "done": false,
+      "matching_observation_lines": [
+        "searchbox [76] 'Search query'"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/search?q=Lord+of+the+Rings+season+2+cast+announcement",
+      "observation_description": "Search page shows \"No results for Lord of the Rings season 2 cast announcement\". Searchbox [741] contains the query.",
+      "reason": "The exact search query returned no results. I will try a shorter query \"Lord of the Rings\" to locate the post.",
+      "action": "type [741] [Lord of the Rings] [1]",
+      "note": "",
+      "observation_highlight_idxs": "[741]",
+      "done": false,
+      "matching_observation_lines": [
+        "searchbox [741] 'Search query'"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/search?q=Lord+of+the+Rings",
+      "observation_description": "The search results show multiple posts. The post \"The Lord Of The Rings: The Rings Of Power’ Adds 8 To Season 2 Cast\" has 2 votes and an Edit link [2303]. Another post \"Lord of the Rings: The Rings of Power’ Season 2 Cast Adds Ciaràn Hinds, Rory Kinnear and Tanya Moodie\" has 4 votes. The target post with the lowest vote count is the one with 2 votes.",
+      "reason": "Clicking the Edit link [2303] for the post \"The Lord Of The Rings: The Rings Of Power’ Adds 8 To Season 2 Cast\" (which has 2 votes, the lowest among season 2 cast posts) will open the edit interface where I can add the required line to the body.",
+      "action": "click [2303]",
+      "note": "",
+      "observation_highlight_idxs": "[2303] 'Edit' [url: https://reddit.example/f/television/70886/-/edit]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [2303] 'Edit' [url: https://reddit.example/f/television/70886/-/edit]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/television/70886/-/edit",
+      "observation_description": "The edit page for \"The Lord Of The Rings: The Rings Of Power’ Adds 8 To Season 2 Cast\" is open. The Body textbox [12636] is empty and ready for input. The \"Edit submission\" button [12666] is available to save changes.",
+      "reason": "I need to add the text \"The cast is amazing!\" to the body of the post. The body textbox [12636] is visible and empty. I will type the required text into it.",
+      "action": "type [12636] [The cast is amazing!] [0]",
+      "note": "",
+      "observation_highlight_idxs": "[12636] [12666]",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [12636] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/television/70886/-/edit",
+      "observation_description": "",
+      "reason": "",
+      "action": "click [12666]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "button [12666] 'Edit submission'"
+      ]
+    },
+    {
+      "record": 6,
+      "num_actions": 6,
+      "budget_steps": 6,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/television/70886/the-lord-of-the-rings-the-rings-of-power-adds-8-to-season-2",
+      "observation_description": "The current page shows the edited post \"The Lord Of The Rings: The Rings Of Power’ Adds 8 To Season 2 Cast\". The body text now includes \"The cast is amazing!\". An alert message confirms \"The submission was edited.\" The task has been successfully completed.",
+      "reason": "The objective has been fully achieved. The post with the lowest vote count (2 votes) has been edited to include \"The cast is amazing!\" in the body, and the system confirmed the edit was successful. No further actions are needed.",
+      "action": "stop [{\"task_type\":\"MUTATE\",\"status\":\"SUCCESS\",\"retrieved_data\":null}]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": true
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "task_id": 733,
+  "method": "Web2KG",
+  "difficulty": "hard",
+  "intent": "Edit my post on Star Trek Starfleet Academy series by adding a line to the body that says \"Every watch makes me feel like a kid again\"",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 6,
+  "final_url": "https://reddit.example/f/television/135201/star-trek-starfleet-academy-series-from-alex-kurtzman-and",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "The current page is the Postmill homepage. There is a searchbox [76] 'Search query' at the top. User is logged in as 'MarvelsGrantMan136'.",
+      "reason": "To find the post, I'll search for \"Star Trek Starfleet Academy series\" using the global search box.",
+      "action": "click [76]",
+      "note": "Searching for the post using the searchbox. I'll type the query and press enter. Wait, I should type first. Let me type. type [76] [Star Trek Starfleet Academy series] [1]",
+      "observation_highlight_idxs": "[76] 'Search query' searchbox.\n[91] 'Notifications (0)'\n[106] 'Submit'\n[124] 'MarvelsGrantMan136' button.",
+      "done": false,
+      "matching_observation_lines": [
+        "searchbox [76] 'Search query'"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "- Current page is the Postmill homepage with a searchbox [76] 'Search query' in the top navigation.\n- No search results are displayed yet; the page shows \"You are not subscribed to any forum. Showing featured forums instead.\"",
+      "reason": "I need to enter the search query into the searchbox [76] and submit it to find the specific post. The previous step only clicked the searchbox; now I will type the query and press enter.",
+      "action": "type [76] [Star Trek Starfleet Academy series] [1]",
+      "note": "",
+      "observation_highlight_idxs": "[76]",
+      "done": false,
+      "matching_observation_lines": [
+        "searchbox [76] 'Search query'"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/search?q=Star+Trek+Starfleet+Academy+series",
+      "observation_description": "The search results page shows 1 result for the query. The post has an \"Edit\" link [903] with URL `https://reddit.example/f/television/135201/-/edit`. I need to click this link to access the edit form for the post.",
+      "reason": "To edit the post, I need to click the \"Edit\" link [903] associated with the found post. This will take me to the post editing interface where I can add the required line to the body.",
+      "action": "click [903]",
+      "note": "",
+      "observation_highlight_idxs": "[903] 'Edit' [url: https://reddit.example/f/television/135201/-/edit]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [903] 'Edit' [url: https://reddit.example/f/television/135201/-/edit]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/television/135201/-/edit",
+      "observation_description": "",
+      "reason": "",
+      "action": "type [1512] [Every watch makes me feel like a kid again] [0]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [1512] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/television/135201/-/edit",
+      "observation_description": "The edit page is open with the text \"Every watch makes me feel like a kid again\" in the Body textbox [1512] and Preview section. The \"Edit submission\" button [1542] is visible and ready to be clicked to save the changes.",
+      "reason": "To complete the task, I must click the \"Edit submission\" button to save the changes made to the post body.",
+      "action": "click [1542]",
+      "note": "The text has been entered into the body field and preview shows it correctly. Clicking \"Edit submission\" will save the edit.",
+      "observation_highlight_idxs": "[1542]",
+      "done": false,
+      "matching_observation_lines": [
+        "button [1542] 'Edit submission'"
+      ]
+    },
+    {
+      "record": 6,
+      "num_actions": 6,
+      "budget_steps": 6,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/television/135201/star-trek-starfleet-academy-series-from-alex-kurtzman-and",
+      "observation_description": "The current page shows the edited post \"Star Trek: Starfleet Academy Series, From Alex Kurtzman and Nancy Drew Creator, Ordered at Paramount\". The body text now includes \"Every watch makes me feel like a kid again\". An alert confirms \"The submission was edited.\" and the post shows an edit timestamp.",
+      "reason": "The objective has been fully achieved. The post body now contains the required line \"Every watch makes me feel like a kid again\" and the system confirmed the edit was successful. No further actions are needed.",
+      "action": "stop [{\"task_type\":\"MUTATE\",\"status\":\"SUCCESS\",\"retrieved_data\":null}]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": true
+    }
+  ]
+}

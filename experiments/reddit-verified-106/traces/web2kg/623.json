@@ -1,0 +1,121 @@
+{
+  "task_id": 623,
+  "method": "Web2KG",
+  "difficulty": "non-hard",
+  "intent": "Ask for advice in a forum for relations. Title it \"gift for birthday\" and in post details ask \"Please help\"",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 7,
+  "final_url": "https://reddit.example/f/relationship_advice/2/gift-for-birthday",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "Current page is Postmill homepage. Navigation links include 'Forums' [45], 'Wiki' [51], 'Submit' [106]. No featured forums are displayed.",
+      "reason": "Click on 'Forums' link to view available forums and locate one related to \"relations\".",
+      "action": "click [45]",
+      "note": "Navigating to Forums page to find a relations-related forum.",
+      "observation_highlight_idxs": "[45]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [45] 'Forums' [url: https://reddit.example/forums]"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/forums",
+      "observation_description": "- Current page is \"List of forums\" on Postmill.\n- Forum \"relationship_advice\" is visible with link [871] to https://reddit.example/f/relationship_advice.",
+      "reason": "Click on the \"relationship_advice\" forum link to enter the forum where the post will be submitted.",
+      "action": "click [871]",
+      "note": "Navigating to relationship_advice forum to submit a post titled \"gift for birthday\" with details \"Please help\".",
+      "observation_highlight_idxs": "871",
+      "done": false,
+      "matching_observation_lines": [
+        "link [871] 'relationship_advice relationship_advice' [url: https://reddit.example/f/relationship_advice]"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/relationship_advice",
+      "observation_description": "Currently on the /f/relationship_advice page. There is a \"Submit\" link [3301] at the top right which will allow creating a new post in this forum.",
+      "reason": "To create a new post titled \"gift for birthday\" with details \"Please help\" in the relationship_advice forum, I need to click the \"Submit\" link to access the submission form.",
+      "action": "click [3301]",
+      "note": "",
+      "observation_highlight_idxs": "[3301] 'Submit' link to create a new post in the relationship_advice forum.",
+      "done": false,
+      "matching_observation_lines": [
+        "link [3301] 'Submit' [url: https://reddit.example/submit/relationship_advice]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit/relationship_advice",
+      "observation_description": "On the 'Create submission' page for 'relationship_advice' forum. Title textbox [7777] and Body textbox [7785] are visible. Submit button [8214] is available.",
+      "reason": "Need to enter the title \"gift for birthday\" into the Title textbox [7777] first.",
+      "action": "type [7777] [gift for birthday] [0]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [7777] 'Title This field is required.' [required: True]"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit/relationship_advice",
+      "observation_description": "On 'Create submission' page for 'relationship_advice'. Title textbox [7777] contains 'gift for birthday'. Body textbox [7785] is empty. Submit button [8214] is available.",
+      "reason": "Need to enter the post details \"Please help\" into the Body textbox [7785] before submitting the form.",
+      "action": "type [7785] [Please help] [0]",
+      "note": "Title already filled. Next step after typing body will be to click 'Create submission' button.",
+      "observation_highlight_idxs": "7777, 7785, 8214",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [7785] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 6,
+      "num_actions": 6,
+      "budget_steps": 6,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit/relationship_advice",
+      "observation_description": "The submission form is filled with title \"gift for birthday\" and body \"Please help\". The forum is set to \"relationship_advice\". The \"Create submission\" button [8214] is visible and ready to be clicked.",
+      "reason": "All required fields (title and body) are filled, and the correct forum is selected. Clicking the \"Create submission\" button will submit the post and complete the task.",
+      "action": "click [8214]",
+      "note": "",
+      "observation_highlight_idxs": "[8214]",
+      "done": false,
+      "matching_observation_lines": [
+        "button [8214] 'Create submission'"
+      ]
+    },
+    {
+      "record": 7,
+      "num_actions": 7,
+      "budget_steps": 7,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/relationship_advice/2/gift-for-birthday",
+      "observation_description": "Current page is the post detail page for \"gift for birthday\" in /f/relationship_advice. The post shows title \"gift for birthday\", body \"Please help\", submitted by MarvelsGrantMan136 4 seconds ago. The task has been completed successfully.",
+      "reason": "The post \"gift for birthday\" with body \"Please help\" has been successfully created in the relationship_advice forum. No further action is needed.",
+      "action": "stop [{\"task_type\":\"MUTATE\",\"status\":\"SUCCESS\",\"retrieved_data\":null}]",
+      "note": "Task completed successfully. Post visible at https://reddit.example/f/relationship_advice/2/gift-for-birthday",
+      "observation_highlight_idxs": "9722, 9731, 9738, 9759",
+      "done": true
+    }
+  ]
+}

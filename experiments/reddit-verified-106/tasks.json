@@ -1,0 +1,1698 @@
+[
+  {
+    "task_id": 27,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/27.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/27.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 28,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/28.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/28.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 29,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/29.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/29.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 30,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/30.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/30.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 31,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/31.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/31.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 66,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/66.json",
+      "score": 0.0,
+      "records": 11,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/66.json",
+      "score": 0.0,
+      "records": 23,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 67,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/67.json",
+      "score": 0.0,
+      "records": 15,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/67.json",
+      "score": 0.0,
+      "records": 27,
+      "status": "model_error"
+    }
+  },
+  {
+    "task_id": 68,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/68.json",
+      "score": 0.0,
+      "records": 8,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/68.json",
+      "score": 0.0,
+      "records": 26,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 69,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/69.json",
+      "score": 0.0,
+      "records": 11,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/69.json",
+      "score": 0.0,
+      "records": 22,
+      "status": "model_error"
+    }
+  },
+  {
+    "task_id": 399,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/399.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/399.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 400,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/400.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/400.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 401,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/401.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/401.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 402,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/402.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/402.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 403,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/403.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/403.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 404,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/404.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/404.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 405,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/405.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/405.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 406,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/406.json",
+      "score": 0.0,
+      "records": 5,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/406.json",
+      "score": 1.0,
+      "records": 10,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 407,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/407.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/407.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 408,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/408.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/408.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 409,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/409.json",
+      "score": 1.0,
+      "records": 4,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/409.json",
+      "score": 1.0,
+      "records": 4,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 410,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/410.json",
+      "score": 1.0,
+      "records": 4,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/410.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 580,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/580.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/580.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 581,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/581.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/581.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 582,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/582.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/582.json",
+      "score": 1.0,
+      "records": 14,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 583,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/583.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/583.json",
+      "score": 1.0,
+      "records": 11,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 584,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/584.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/584.json",
+      "score": 1.0,
+      "records": 11,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 595,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/595.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/595.json",
+      "score": 1.0,
+      "records": 4,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 596,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/596.json",
+      "score": 1.0,
+      "records": 13,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/596.json",
+      "score": 0.0,
+      "records": 13,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 597,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/597.json",
+      "score": 1.0,
+      "records": 10,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/597.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 598,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/598.json",
+      "score": 1.0,
+      "records": 9,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/598.json",
+      "score": 0.0,
+      "records": 17,
+      "status": "model_error"
+    }
+  },
+  {
+    "task_id": 599,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/599.json",
+      "score": 0.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/599.json",
+      "score": 0.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 600,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/600.json",
+      "score": 0.0,
+      "records": 1,
+      "status": "model_error"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/600.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 601,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/601.json",
+      "score": 0.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/601.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 602,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/602.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/602.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 603,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/603.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/603.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 604,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/604.json",
+      "score": 0.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/604.json",
+      "score": 0.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 605,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/605.json",
+      "score": 0.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/605.json",
+      "score": 0.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 606,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/606.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/606.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 607,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/607.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/607.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 608,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/608.json",
+      "score": 0.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/608.json",
+      "score": 0.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 609,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/609.json",
+      "score": 0.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/609.json",
+      "score": 0.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 610,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/610.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/610.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 611,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/611.json",
+      "score": 0.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/611.json",
+      "score": 0.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 612,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/612.json",
+      "score": 0.0,
+      "records": 9,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/612.json",
+      "score": 0.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 613,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/613.json",
+      "score": 0.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/613.json",
+      "score": 0.0,
+      "records": 10,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 614,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/614.json",
+      "score": 0.0,
+      "records": 9,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/614.json",
+      "score": 0.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 615,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/615.json",
+      "score": 0.0,
+      "records": 0,
+      "status": "agent_error"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/615.json",
+      "score": 0.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 616,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/616.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/616.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 617,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/617.json",
+      "score": 0.0,
+      "records": 1,
+      "status": "agent_error"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/617.json",
+      "score": 0.0,
+      "records": 10,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 618,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/618.json",
+      "score": 0.0,
+      "records": 0,
+      "status": "agent_error"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/618.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 619,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/619.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/619.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 620,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/620.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/620.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 621,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/621.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/621.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 622,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/622.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/622.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 623,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/623.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/623.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 624,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/624.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/624.json",
+      "score": 1.0,
+      "records": 9,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 625,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/625.json",
+      "score": 1.0,
+      "records": 9,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/625.json",
+      "score": 0.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 626,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/626.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/626.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 627,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/627.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/627.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 628,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/628.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/628.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 629,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/629.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/629.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 630,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/630.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/630.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 631,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/631.json",
+      "score": 0.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/631.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 632,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/632.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/632.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 633,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/633.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/633.json",
+      "score": 1.0,
+      "records": 9,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 634,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/634.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/634.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 635,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/635.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/635.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 636,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/636.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/636.json",
+      "score": 1.0,
+      "records": 10,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 637,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/637.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/637.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 638,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/638.json",
+      "score": 0.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/638.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 639,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/639.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/639.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 640,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/640.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/640.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 641,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/641.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/641.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 642,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/642.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/642.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 643,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/643.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/643.json",
+      "score": 1.0,
+      "records": 10,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 644,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/644.json",
+      "score": 1.0,
+      "records": 10,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/644.json",
+      "score": 1.0,
+      "records": 9,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 645,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/645.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/645.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 646,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/646.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/646.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 647,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/647.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/647.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 648,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/648.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/648.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 649,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/649.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/649.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 650,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/650.json",
+      "score": 0.0,
+      "records": 3,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/650.json",
+      "score": 1.0,
+      "records": 3,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 651,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/651.json",
+      "score": 1.0,
+      "records": 4,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/651.json",
+      "score": 1.0,
+      "records": 3,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 652,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/652.json",
+      "score": 1.0,
+      "records": 3,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/652.json",
+      "score": 1.0,
+      "records": 3,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 714,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/714.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/714.json",
+      "score": 1.0,
+      "records": 9,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 715,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/715.json",
+      "score": 0.0,
+      "records": 5,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/715.json",
+      "score": 0.0,
+      "records": 10,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 716,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/716.json",
+      "score": 1.0,
+      "records": 10,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/716.json",
+      "score": 1.0,
+      "records": 11,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 717,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/717.json",
+      "score": 1.0,
+      "records": 11,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/717.json",
+      "score": 1.0,
+      "records": 13,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 718,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/718.json",
+      "score": 1.0,
+      "records": 12,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/718.json",
+      "score": 1.0,
+      "records": 11,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 719,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/719.json",
+      "score": 0.0,
+      "records": 3,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/719.json",
+      "score": 0.0,
+      "records": 2,
+      "status": "model_error"
+    }
+  },
+  {
+    "task_id": 720,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/720.json",
+      "score": 0.0,
+      "records": 0,
+      "status": "model_error"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/720.json",
+      "score": 1.0,
+      "records": 10,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 721,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/721.json",
+      "score": 1.0,
+      "records": 26,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/721.json",
+      "score": 0.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 722,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/722.json",
+      "score": 0.0,
+      "records": 7,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/722.json",
+      "score": 0.0,
+      "records": 21,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 723,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/723.json",
+      "score": 0.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/723.json",
+      "score": 0.0,
+      "records": 10,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 724,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/724.json",
+      "score": 0.0,
+      "records": 4,
+      "status": "model_error"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/724.json",
+      "score": 1.0,
+      "records": 16,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 725,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/725.json",
+      "score": 0.0,
+      "records": 15,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/725.json",
+      "score": 0.0,
+      "records": 21,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 726,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/726.json",
+      "score": 0.0,
+      "records": 5,
+      "status": "model_error"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/726.json",
+      "score": 0.0,
+      "records": 15,
+      "status": "model_error"
+    }
+  },
+  {
+    "task_id": 727,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/727.json",
+      "score": 1.0,
+      "records": 9,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/727.json",
+      "score": 0.0,
+      "records": 11,
+      "status": "model_error"
+    }
+  },
+  {
+    "task_id": 728,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/728.json",
+      "score": 1.0,
+      "records": 13,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/728.json",
+      "score": 1.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 729,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/729.json",
+      "score": 1.0,
+      "records": 12,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/729.json",
+      "score": 0.0,
+      "records": 28,
+      "status": "model_error"
+    }
+  },
+  {
+    "task_id": 730,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/730.json",
+      "score": 0.0,
+      "records": 29,
+      "status": "model_error"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/730.json",
+      "score": 1.0,
+      "records": 14,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 731,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/731.json",
+      "score": 1.0,
+      "records": 15,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/731.json",
+      "score": 0.0,
+      "records": 7,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 732,
+    "difficulty": "non-hard",
+    "web2kg": {
+      "trace": "traces/web2kg/732.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/732.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 733,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/733.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/733.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 734,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/734.json",
+      "score": 1.0,
+      "records": 5,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/734.json",
+      "score": 1.0,
+      "records": 8,
+      "status": "agent_stopped"
+    }
+  },
+  {
+    "task_id": 735,
+    "difficulty": "hard",
+    "web2kg": {
+      "trace": "traces/web2kg/735.json",
+      "score": 1.0,
+      "records": 6,
+      "status": "agent_stopped"
+    },
+    "webnavigator": {
+      "trace": "traces/webnavigator/735.json",
+      "score": 0.0,
+      "records": 5,
+      "status": "agent_stopped"
+    }
+  }
+]

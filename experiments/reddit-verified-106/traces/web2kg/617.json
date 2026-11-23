@@ -1,0 +1,28 @@
+{
+  "task_id": 617,
+  "method": "Web2KG",
+  "difficulty": "hard",
+  "intent": "Re-post the image of Firework from this forum to news forum using the image URL and title \"from /f/pics\"",
+  "official_score": 0.0,
+  "run_status": "agent_error",
+  "reported_steps": 1,
+  "final_url": "https://reddit.example/search?q=Firework",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/pics",
+      "observation_description": "- Current page is /f/pics forum submissions list.\n- Searchbox [104] is available in the top navigation bar.\n- No \"Firework\" post is visible in the current list of articles.",
+      "reason": "The AX search for \"Firework\" failed on the current page. I will use the global searchbox [104] to search for \"Firework\" to locate the specific post and its image URL.",
+      "action": "type [104] [Firework] [1]",
+      "note": "",
+      "observation_highlight_idxs": "[104]",
+      "done": false,
+      "matching_observation_lines": [
+        "searchbox [104] 'Search query'"
+      ]
+    }
+  ]
+}

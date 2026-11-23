@@ -1,0 +1,137 @@
+{
+  "task_id": 610,
+  "method": "Web2KG",
+  "difficulty": "hard",
+  "intent": "Post a review of my recent reading, titled \"To Kill a Mockingbird by Harper Lee\" in f/books and then comment \"good book!\" on the created post",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 8,
+  "final_url": "https://reddit.example/f/books/2/to-kill-a-mockingbird-by-harper-lee/comment/1",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "",
+      "reason": "",
+      "action": "click [106]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "link [106] 'Submit' [url: https://reddit.example/submit]"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The page shows a 'Create submission' form with fields:\n- textbox [762] for Title\n- textbox [770] for Body\n- combobox [1608] for Forum selection ('Choose one...')\n- button [1398] 'Create submission'",
+      "reason": "I need to enter the title \"To Kill a Mockingbird by Harper Lee\" into the Title field [762] first.",
+      "action": "type [762] [To Kill a Mockingbird by Harper Lee]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [762] 'Title This field is required.' [required: True]"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The Create submission page is visible. Title field [762] has \"To Kill a Mockingbird by Harper Lee\". Forum combobox [1608] is set to \"Choose one\". Need to select \"f/books\".",
+      "reason": "Click on the forum combobox [1608] to open the dropdown and select \"f/books\" as the target forum for the submission.",
+      "action": "click [1608]",
+      "note": "Title is already filled. Next step is to select forum \"f/books\" from the combobox.",
+      "observation_highlight_idxs": "[1608]",
+      "done": false,
+      "matching_observation_lines": [
+        "combobox [1608] 'Choose one' [required: False]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The forum dropdown is open showing a listbox [1619] with options including [2524] 'books'. Title field is filled.",
+      "reason": "Click on the 'books' option [2524] in the listbox to select it as the target forum for the submission.",
+      "action": "click [2524]",
+      "note": "Selected forum 'books' from dropdown to create submission in f/books.",
+      "observation_highlight_idxs": "[2524] 'books' [selected: False] in listbox [1619]",
+      "done": false,
+      "matching_observation_lines": [
+        "listbox [1619] \"[2516] 'Choose one' [selected: True]; [2517] 'allentown' [selected: False]; [2518] 'arlingtonva' [selected: False]; [2519] 'Art' [selected: False]; [2520] 'AskReddit' [selected: False]; [2521] 'askscience' [selected: False]; [2522] 'aww' [selected: False]; [2523] 'baltimore' [selected: False]; [2524] 'books' [selected: False]; [2525] 'boston' [selected: False]; [2526] 'BridgeportCT' [selected: False]; [2527] 'BuyItForLife' [selected: False]; [2528] 'CambridgeMA' [selected: False]; [2529] 'ColumbiaMD' [selected: False]; [2530] 'Connecticut' [selected: False]; [2531] 'consoles' [selected: False]; [2532] 'coolgithubprojects' [selected: False]; [2533] 'creepy' [selected: False]; [2534] 'dataisbeautiful' [selected: False]; [2535] 'deeplearning' [selected: False]; [2536] 'DIY' [selected: False]; [2537] 'Documentaries' [selected: False]; [2538] 'EarthPorn' [selected: False]; [2539] 'explainlikeimfive' [selected: False]; [2540] 'food' [selected: False]; [2541] 'funny' [selected: False]; [2542] 'Futurology' [selected: False]; [2543] 'gadgets' [selected: False]; [2544] 'gaming' [selected: False]; [2545] 'GetMotivated' [selected: False]; [2546] 'gifs' [selected: False]; [2547] 'Hartford' [selected: False]; [2548] 'headphones' [selected: False]; [2549] 'history' [selected: False]; [2550] 'IAmA' [selected: False]; [2551] 'InternetIsBeautiful' [selected: False]; [2552] 'iphone' [selected: False]; [2553] 'jerseycity' [selected: False]; [2554] 'Jokes' [selected: False]; [2555] 'lakewood' [selected: False]; [2556] 'LifeProTips' [selected: False]; [2557] 'listentothis' [selected: False]; [2558] 'LowellMA' [selected: False]; [2559] 'MachineLearning' [selected: False]; [2560] 'Maine' [selected: False]; [2561] 'ManchesterNH' [selected: False]; [2562] 'massachusetts' [selected: False]; [2563] 'MechanicalKeyboards' [selected: False]; [2564] 'memes' [selected: False]; [2565] 'mildlyinteresting' [selected: False]; [2566] 'monitor' [selected: False]; [2567] 'movies' [selected: False]; [2568] 'Music' [selected: False]; [2569] 'Newark' [selected: False]; [2570] 'newhampshire' [selected: False]; [2571] 'newhaven' [selected: False]; [2572] 'newjersey' [selected: False]; [2573] 'news' [selected: False]; [2574] 'nosleep' [selected: False]; [2575] 'nottheonion' [selected: False]; [2576] 'nyc' [selected: False]; [2577] 'OldSchoolCool' [selected: False]; [2578] 'Paterson' [selected: False]; [2579] 'Pennsylvania' [selected: False]; [2580] 'personalfinance' [selected: False]; [2581] 'philadelphia' [selected: False]; [2582] 'philosophy' [selected: False]; [2583] 'photoshopbattles' [selected: False]; [2584] 'pics' [selected: False]; [2585] 'pittsburgh' [selected: False]; [2586] 'providence' [selected: False]; [2587] 'relationship_advice' [selected: False]; [2588] 'RhodeIsland' [selected: False]; [2589] 'rva' [selected: False]; [2590] 'science' [selected: False]; [2591] 'Showerthoughts' [selected: False]; [2592] 'singularity' [selected: False]; [2593] 'space' [selected: False]; [2594] 'sports' [selected: False]; [2595] 'springfieldMO' [selected: False]; [2596] 'StamfordCT' [selected: False]; [2597] 'technology' [selected: False]; [2598] 'television' [selected: False]; [2599] 'tifu' [selected: False]; [2600] 'todayilearned' [selected: False]; [2601] 'UpliftingNews' [selected: False]; [2602] 'vermont' [selected: False]; [2603] 'videos' [selected: False]; [2604] 'wallstreetbets' [selected: False]; [2605] 'Washington' [selected: False]; [2606] 'washingtondc' [selected: False]; [2607] 'WaterburyCT' [selected: False]; [2608] 'WorcesterMA' [selected: False]; [2609] 'worldnews' [selected: False]; [2610] 'WritingPrompts' [selected: False]; [2611] 'yonkers' [selected: False]\" [required: False]"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "",
+      "reason": "",
+      "action": "click [1398]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "button [1398] 'Create submission'"
+      ]
+    },
+    {
+      "record": 6,
+      "num_actions": 6,
+      "budget_steps": 6,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/books/2/to-kill-a-mockingbird-by-harper-lee",
+      "observation_description": "The post page is loaded. There is a comment textbox [4531] and a 'Post' button [4561] to submit the comment.",
+      "reason": "The post is created. Now I need to enter \"good book!\" into the comment textbox [4531] and submit it using the 'Post' button [4561].",
+      "action": "type [4531] [good book!]",
+      "note": "After typing, I will need to click the 'Post' button to submit the comment.",
+      "observation_highlight_idxs": "[4531], [4561]",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [4531] 'Comment' [required: True] [describedby: reply_to_submission_2_comment_help]"
+      ]
+    },
+    {
+      "record": 7,
+      "num_actions": 7,
+      "budget_steps": 7,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/books/2/to-kill-a-mockingbird-by-harper-lee",
+      "observation_description": "",
+      "reason": "",
+      "action": "click [4561]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "button [4561] 'Post'"
+      ]
+    },
+    {
+      "record": 8,
+      "num_actions": 8,
+      "budget_steps": 8,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/books/2/to-kill-a-mockingbird-by-harper-lee/comment/1",
+      "observation_description": "The current page shows the post \"To Kill a Mockingbird by Harper Lee\" in /f/books. The comment \"good book!\" by MarvelsGrantMan136 is visible under the post. The task has been successfully completed.",
+      "reason": "The post and comment have been successfully created and are visible on the page. No further actions are required.",
+      "action": "stop [{\"task_type\":\"MUTATE\",\"status\":\"SUCCESS\",\"retrieved_data\":null}]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": true
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "task_id": 731,
+  "method": "Web2KG",
+  "difficulty": "non-hard",
+  "intent": "Edit my post on Nvidia RTX 4090 by adding a line to the body that says \"EDIT: This news aged well\"",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 15,
+  "final_url": "https://reddit.example/f/MachineLearning/1/nvidia-rtx-4090",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "The current page is the Postmill homepage. There is a searchbox [76] 'Search query' in the top navigation. The user is logged in as 'MarvelsGrantMan136'.",
+      "reason": "To locate the post titled \"Nvidia RTX 4090\", I will search for it using the searchbox [76].",
+      "action": "type [76] [Nvidia RTX 4090] [1]",
+      "note": "",
+      "observation_highlight_idxs": "[76]",
+      "done": false,
+      "matching_observation_lines": [
+        "searchbox [76] 'Search query'"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/search?q=Nvidia+RTX+4090",
+      "observation_description": "The search results page shows a post titled \"NvidiaRTX4090\" by MarvelsGrantMan136. There is an 'Edit' link with ID [1074] pointing to `https://reddit.example/f/MachineLearning/1/-/edit`.",
+      "reason": "To edit the post, I need to click the 'Edit' link associated with the \"NvidiaRTX4090\" post. This will take me to the edit page where I can modify the body text.",
+      "action": "click [1074]",
+      "note": "",
+      "observation_highlight_idxs": "[1074]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [1074] 'Edit' [url: https://reddit.example/f/MachineLearning/1/-/edit]"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/MachineLearning/1/-/edit",
+      "observation_description": "The edit page for \"Nvidia RTX 4090\" is loaded. The body textbox [4599] contains \"Crazy device for ML!\". The \"Edit submission\" button [4629] is available to save changes.",
+      "reason": "I will click on the body textbox [4599] to focus it, then type the new line to append to the existing content.",
+      "action": "click [4599]",
+      "note": "After clicking, I will type the new line and then click the submit button.",
+      "observation_highlight_idxs": "[4599]",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [4599] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/MachineLearning/1/-/edit",
+      "observation_description": "The edit page for \"Nvidia RTX 4090\" is loaded. The body textbox [4599] contains \"Crazy device for ML!\". The submit button is [4629] 'Edit submission'.",
+      "reason": "The body textbox is focused. I will type the updated body content including the new line to be added, then submit the form.",
+      "action": "type [4599] [Crazy device for ML!\\nEDIT: This news aged well] [0]",
+      "note": "After typing, I will click the 'Edit submission' button [4629] to save the changes.",
+      "observation_highlight_idxs": "[4599], [4629]",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [4599] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/MachineLearning/1/-/edit",
+      "observation_description": "The edit page is open with the body textbox [4599] containing the incorrectly formatted text. The \"Edit submission\" button [4629] is available to save changes.",
+      "reason": "Since the `type` command replaces the textarea content, I will retype the first line and use `press_enter_after(1)` to insert a real newline character in the textarea, then append the second line and submit the form.",
+      "action": "type [4599] [Crazy device for ML!] [1]",
+      "note": "The `type` command overwrites textarea content. Using `press_enter_after(1)` will press Enter after typing, which inserts a real newline in a textarea without necessarily submitting the form.",
+      "observation_highlight_idxs": "[4599], [4629]",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [4599] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 6,
+      "num_actions": 6,
+      "budget_steps": 6,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/MachineLearning/1/-/edit",
+      "observation_description": "- Edit page for \"Nvidia RTX 4090\" is open.\n- Body textbox [4599] contains \"Crazy device for ML!\" followed by a LineBreak.\n- \"Edit submission\" button [4629] is available.",
+      "reason": "The textarea currently has \"Crazy device for ML!\\n\". I need to append \"EDIT: This news aged well\" to it. I will type this text into the textarea [4599] without pressing enter, then submit the form in the next step.",
+      "action": "type [4599] [EDIT: This news aged well] [0]",
+      "note": "Previous type action with press_enter_after(1) successfully added a newline. Now appending the required text.",
+      "observation_highlight_idxs": "4599, 4629",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [4599] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 7,
+      "num_actions": 7,
+      "budget_steps": 7,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/MachineLearning/1/-/edit",
+      "observation_description": "",
+      "reason": "",
+      "action": "type [4599] [Crazy device for ML!] [1]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [4599] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 8,
+      "num_actions": 8,
+      "budget_steps": 8,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/MachineLearning/1/-/edit",
+      "observation_description": "The edit page for \"Nvidia RTX 4090\" is open. The body textbox [4599] currently contains \"Crazy device for ML!\" followed by a LineBreak [6269]. The \"Edit submission\" button [4629] is available to save changes.",
+      "reason": "The textarea currently has \"Crazy device for ML!\\n\". I need to append \"EDIT: This news aged well\" to it. I will type this text into the textarea [4599] without pressing enter, then submit the form in the next step.",
+      "action": "type [4599] [EDIT: This news aged well] [0]",
+      "note": "After typing, I will click the 'Edit submission' button [4629] to save the changes.",
+      "observation_highlight_idxs": "[4599] [4629] [6269]",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [4599] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 9,
+      "num_actions": 9,
+      "budget_steps": 9,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/MachineLearning/1/-/edit",
+      "observation_description": "The edit page for \"Nvidia RTX 4090\" is open. The body textbox [4599] currently contains only \"EDIT: This news aged well\". The \"Edit submission\" button [4629] is available to save changes. The preview also shows only \"EDIT: This news aged well\".",
+      "reason": "I will first type the original line \"Crazy device for ML!\" and press Enter to add a newline, then in the next step I will append \"EDIT: This news aged well\" and submit the form.",
+      "action": "type [4599] [Crazy device for ML!] [1]",
+      "note": "",
+      "observation_highlight_idxs": "[4599] [4629]",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [4599] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 10,
+      "num_actions": 10,
+      "budget_steps": 10,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/MachineLearning/1/-/edit",
+      "observation_description": "The edit page for \"Nvidia RTX 4090\" is open. The body textbox [4599] contains \"Crazy device for ML!\" and a LineBreak [6698]. The preview shows \"Crazy device for ML!\". The \"Edit submission\" button [4629] is available to save changes.",
+      "reason": "The textarea currently has \"Crazy device for ML!\\n\". I need to append \"EDIT: This news aged well\" to it. I will type this text into the textarea [4599] without pressing enter, then submit the form in the next step.",
+      "action": "type [4599] [EDIT: This news aged well] [0]",
+      "note": "Textarea [4599] currently has \"Crazy device for ML!\\n\". Appending \"EDIT: This news aged well\" then clicking [4629] will complete the task.",
+      "observation_highlight_idxs": "[4599] [4629] [6698]",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [4599] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 11,
+      "num_actions": 11,
+      "budget_steps": 11,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/MachineLearning/1/-/edit",
+      "observation_description": "The edit page for \"Nvidia RTX 4090\" is open. The body textbox [4599] currently contains only \"EDIT: This news aged well\". The \"Edit submission\" button [4629] is available to save changes. The original text \"Crazy device for ML!\" is missing from the body.",
+      "reason": "The `type` command overwrites textarea content. I need to retype the full correct content: first type \"Crazy device for ML!\" and press Enter to add a newline, then append \"EDIT: This news aged well\" in the next step, and finally submit the form.",
+      "action": "type [4599] [Crazy device for ML!] [1]",
+      "note": "The `type` command overwrites textarea content. Retyping \"Crazy device for ML!\" with `press_enter_after(1)` will restore the first line and add a newline before appending the second line in the next step.",
+      "observation_highlight_idxs": "[4599] [4629]",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [4599] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 12,
+      "num_actions": 12,
+      "budget_steps": 12,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/MachineLearning/1/-/edit",
+      "observation_description": "Edit page is open. Textbox [4599] contains \"Crazy device for ML!\" followed by a LineBreak. Button [4629] 'Edit submission' is available.",
+      "reason": "Since `type` overwrites textarea content, I must retype the first line \"Crazy device for ML!\" and press Enter to restore the newline, then append the required text in the next step.",
+      "action": "type [4599] [Crazy device for ML!] [1]",
+      "note": "Previous `type` commands overwrote textarea content. Using `press_enter_after(1)` will restore the first line and newline. Next step will append the second line and submit.",
+      "observation_highlight_idxs": "[4599] [4629] [7127]",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [4599] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 13,
+      "num_actions": 13,
+      "budget_steps": 13,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/MachineLearning/1/-/edit",
+      "observation_description": "",
+      "reason": "",
+      "action": "type [4599] [Crazy device for ML!\nEDIT: This news aged well] [0]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [4599] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 14,
+      "num_actions": 14,
+      "budget_steps": 14,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/MachineLearning/1/-/edit",
+      "observation_description": "The edit page for \"Nvidia RTX 4090\" is open. The body textbox [4599] contains \"Crazy device for ML!\" and \"EDIT: This news aged well\". The preview shows the correct content. The \"Edit submission\" button [4629] is available to save the changes.",
+      "reason": "The required text \"EDIT: This news aged well\" is already present in the body textbox [4599] along with the original text. I will now click the \"Edit submission\" button [4629] to save the changes and complete the task.",
+      "action": "click [4629]",
+      "note": "",
+      "observation_highlight_idxs": "[4599], [4629]",
+      "done": false,
+      "matching_observation_lines": [
+        "button [4629] 'Edit submission'"
+      ]
+    },
+    {
+      "record": 15,
+      "num_actions": 15,
+      "budget_steps": 15,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/MachineLearning/1/nvidia-rtx-4090",
+      "observation_description": "The current page is the post page for \"Nvidia RTX 4090\". The body text reads \"Crazy device for ML! EDIT: This news aged well\". An alert confirms \"The submission was edited.\" and the post metadata shows it was edited.",
+      "reason": "The task has been completed successfully. The required text has been added to the post body and the submission was saved, as confirmed by the success message and the updated post content.",
+      "action": "stop [{\"task_type\":\"MUTATE\",\"status\":\"SUCCESS\",\"retrieved_data\":null}]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": true
+    }
+  ]
+}

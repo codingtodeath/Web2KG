@@ -4,6 +4,8 @@ web2kg 用网站图谱帮助 Web Agent 找页面、走已有路径，再操作�
 
 目前主要在 WebArena-Verified Reddit 上开发。执行沿用 WebNavigator 的 Agent 和动作接口，并增加检索、导航、观察适配、后台描述及任务结束后的图谱维护。
 
+[Reddit 全量对照实验：106 题的两组逐步轨迹、得分与起始图谱](experiments/reddit-verified-106/README.md)
+
 ## 从哪里开始
 
 工作目录是 `D:/Agent/MyCode/web2kg`，保留 `main`，当前在 `dev` 分支开发。项目 Python 是 `.venv-research/Scripts/python.exe`，不要直接使用系统 Anaconda base 运行实验。

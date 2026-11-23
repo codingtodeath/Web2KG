@@ -1,0 +1,121 @@
+{
+  "task_id": 620,
+  "method": "Web2KG",
+  "difficulty": "non-hard",
+  "intent": "Ask for advice in a forum for relations. Title it \"deal with long-distance relationships\" and in post details ask \"Please help\"",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 7,
+  "final_url": "https://reddit.example/f/relationship_advice/2/deal-with-long-distance-relationships",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "- Current page is Postmill homepage.\n- Visible elements: Home link, Forums link, Wiki link, Search box, Notifications, Submit link [106], User menu button [124].\n- Main content shows \"You are not subscribed to any forum. Showing featured forums instead.\"",
+      "reason": "To create a new post with the specified title and details, I need to access the submission form. The \"Submit\" link [106] is visible in the top navigation bar and will lead to the post creation page.",
+      "action": "click [106]",
+      "note": "",
+      "observation_highlight_idxs": "[106]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [106] 'Submit' [url: https://reddit.example/submit]"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The \"Create submission\" page is visible with a Title textbox [762], Body textbox [770], and a Forum combobox [1612] labeled \"Choose one...\". I need to fill in the title and body, and select the appropriate forum.",
+      "reason": "I will start by entering the required title \"deal with long-distance relationships\" into the Title textbox [762].",
+      "action": "type [762] [deal with long-distance relationships]",
+      "note": "",
+      "observation_highlight_idxs": "[762] Title textbox\n[770] Body textbox\n[1612] Forum combobox\n[1199] Create submission button",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [762] 'Title This field is required.' [required: True]"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The \"Create submission\" page is visible. Title textbox [762] contains \"deal with long-distance relationships\". Body textbox [770] is empty. Forum combobox [1612] shows \"Choose one...\". \"Create submission\" button [1199] is at the bottom.",
+      "reason": "The title has been entered. Next, I need to enter the post details \"Please help\" into the Body textbox [770]. After that, I will need to select an appropriate forum from the combobox.",
+      "action": "type [770] [Please help]",
+      "note": "Title is already filled. Next step is to fill Body and select forum.",
+      "observation_highlight_idxs": "[762] Title textbox, [770] Body textbox, [1612] Forum combobox, [1199] Create submission button.",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [770] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The \"Create submission\" page is visible. Title textbox [762] contains \"deal with long-distance relationships\". Body textbox [770] contains \"Please help\". Forum combobox [1612] shows \"Choose one...\". \"Create submission\" button [1199] is at the bottom.",
+      "reason": "The title and body are filled. Next, I need to select an appropriate forum related to \"relations\" from the Forum combobox [1612] before creating the submission.",
+      "action": "click [1612]",
+      "note": "",
+      "observation_highlight_idxs": "[1612] 'Choose one' [required: False]",
+      "done": false,
+      "matching_observation_lines": [
+        "combobox [1612] 'Choose one' [required: False]"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The forum combobox is open. The listbox contains various forums including 'relationship_advice' [2739]. Title and body are already filled.",
+      "reason": "The task requires posting in a forum for relations. 'relationship_advice' [2739] is visible in the combobox list and matches the requirement. I will select it.",
+      "action": "click [2739]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "listbox [1623] \"[2668] 'Choose one' [selected: True]; [2669] 'allentown' [selected: False]; [2670] 'arlingtonva' [selected: False]; [2671] 'Art' [selected: False]; [2672] 'AskReddit' [selected: False]; [2673] 'askscience' [selected: False]; [2674] 'aww' [selected: False]; [2675] 'baltimore' [selected: False]; [2676] 'books' [selected: False]; [2677] 'boston' [selected: False]; [2678] 'BridgeportCT' [selected: False]; [2679] 'BuyItForLife' [selected: False]; [2680] 'CambridgeMA' [selected: False]; [2681] 'ColumbiaMD' [selected: False]; [2682] 'Connecticut' [selected: False]; [2683] 'consoles' [selected: False]; [2684] 'coolgithubprojects' [selected: False]; [2685] 'creepy' [selected: False]; [2686] 'dataisbeautiful' [selected: False]; [2687] 'deeplearning' [selected: False]; [2688] 'DIY' [selected: False]; [2689] 'Documentaries' [selected: False]; [2690] 'EarthPorn' [selected: False]; [2691] 'explainlikeimfive' [selected: False]; [2692] 'food' [selected: False]; [2693] 'funny' [selected: False]; [2694] 'Futurology' [selected: False]; [2695] 'gadgets' [selected: False]; [2696] 'gaming' [selected: False]; [2697] 'GetMotivated' [selected: False]; [2698] 'gifs' [selected: False]; [2699] 'Hartford' [selected: False]; [2700] 'headphones' [selected: False]; [2701] 'history' [selected: False]; [2702] 'IAmA' [selected: False]; [2703] 'InternetIsBeautiful' [selected: False]; [2704] 'iphone' [selected: False]; [2705] 'jerseycity' [selected: False]; [2706] 'Jokes' [selected: False]; [2707] 'lakewood' [selected: False]; [2708] 'LifeProTips' [selected: False]; [2709] 'listentothis' [selected: False]; [2710] 'LowellMA' [selected: False]; [2711] 'MachineLearning' [selected: False]; [2712] 'Maine' [selected: False]; [2713] 'ManchesterNH' [selected: False]; [2714] 'massachusetts' [selected: False]; [2715] 'MechanicalKeyboards' [selected: False]; [2716] 'memes' [selected: False]; [2717] 'mildlyinteresting' [selected: False]; [2718] 'monitor' [selected: False]; [2719] 'movies' [selected: False]; [2720] 'Music' [selected: False]; [2721] 'Newark' [selected: False]; [2722] 'newhampshire' [selected: False]; [2723] 'newhaven' [selected: False]; [2724] 'newjersey' [selected: False]; [2725] 'news' [selected: False]; [2726] 'nosleep' [selected: False]; [2727] 'nottheonion' [selected: False]; [2728] 'nyc' [selected: False]; [2729] 'OldSchoolCool' [selected: False]; [2730] 'Paterson' [selected: False]; [2731] 'Pennsylvania' [selected: False]; [2732] 'personalfinance' [selected: False]; [2733] 'philadelphia' [selected: False]; [2734] 'philosophy' [selected: False]; [2735] 'photoshopbattles' [selected: False]; [2736] 'pics' [selected: False]; [2737] 'pittsburgh' [selected: False]; [2738] 'providence' [selected: False]; [2739] 'relationship_advice' [selected: False]; [2740] 'RhodeIsland' [selected: False]; [2741] 'rva' [selected: False]; [2742] 'science' [selected: False]; [2743] 'Showerthoughts' [selected: False]; [2744] 'singularity' [selected: False]; [2745] 'space' [selected: False]; [2746] 'sports' [selected: False]; [2747] 'springfieldMO' [selected: False]; [2748] 'StamfordCT' [selected: False]; [2749] 'technology' [selected: False]; [2750] 'television' [selected: False]; [2751] 'tifu' [selected: False]; [2752] 'todayilearned' [selected: False]; [2753] 'UpliftingNews' [selected: False]; [2754] 'vermont' [selected: False]; [2755] 'videos' [selected: False]; [2756] 'wallstreetbets' [selected: False]; [2757] 'Washington' [selected: False]; [2758] 'washingtondc' [selected: False]; [2759] 'WaterburyCT' [selected: False]; [2760] 'WorcesterMA' [selected: False]; [2761] 'worldnews' [selected: False]; [2762] 'WritingPrompts' [selected: False]; [2763] 'yonkers' [selected: False]\" [required: False]"
+      ]
+    },
+    {
+      "record": 6,
+      "num_actions": 6,
+      "budget_steps": 6,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "",
+      "reason": "",
+      "action": "click [1199]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "button [1199] 'Create submission'"
+      ]
+    },
+    {
+      "record": 7,
+      "num_actions": 7,
+      "budget_steps": 7,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/relationship_advice/2/deal-with-long-distance-relationships",
+      "observation_description": "The current page shows the newly created post titled \"deal with long-distance relationships\" in the \"relationship_advice\" forum, with body text \"Please help\", submitted by MarvelsGrantMan136. The task is fully completed.",
+      "reason": "The post has been successfully created with all required details (title, body, and forum). No further actions are needed.",
+      "action": "stop [{\"task_type\":\"MUTATE\",\"status\":\"SUCCESS\",\"retrieved_data\":null}]",
+      "note": "Task completed successfully. Post is visible with correct title, body, and forum selection.",
+      "observation_highlight_idxs": "[4584] 'deal with long-distance relationships', [4600] 'relationship_advice', [4605] 'Please help'",
+      "done": true
+    }
+  ]
+}

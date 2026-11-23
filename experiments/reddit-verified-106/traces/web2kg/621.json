@@ -1,0 +1,121 @@
+{
+  "task_id": 621,
+  "method": "Web2KG",
+  "difficulty": "non-hard",
+  "intent": "Ask for advice in a forum for relations. Title it \"cheat\" and in post details ask \"Please help\"",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 7,
+  "final_url": "https://reddit.example/f/relationship_advice/2/cheat",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "- Current page is Postmill home page.\n- Navigation links: Home [34], Forums [45], Wiki [51], Submit [106].\n- No featured forums displayed.",
+      "reason": "Clicking on the \"Forums\" link will take me to the list of available forums where I can find one related to relations or advice to submit the post.",
+      "action": "click [45]",
+      "note": "",
+      "observation_highlight_idxs": "[45] 'Forums' [url: https://reddit.example/forums]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [45] 'Forums' [url: https://reddit.example/forums]"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/forums",
+      "observation_description": "The current page shows a list of forums. The \"relationship_advice\" forum is visible with link [871] pointing to https://reddit.example/f/relationship_advice.",
+      "reason": "Clicking on the \"relationship_advice\" forum link will take me to the forum page where I can submit a new post with the required title and details.",
+      "action": "click [871]",
+      "note": "",
+      "observation_highlight_idxs": "[871] 'relationship_advice relationship_advice' [url: https://reddit.example/f/relationship_advice]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [871] 'relationship_advice relationship_advice' [url: https://reddit.example/f/relationship_advice]"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/relationship_advice",
+      "observation_description": "Currently on the `/f/relationship_advice` forum page. There is a \"Submit\" link in the top navigation bar pointing to `https://reddit.example/submit/relationship_advice` with ID [3304].",
+      "reason": "Clicking the \"Submit\" link will take me to the submission page for the `relationship_advice` forum where I can enter the title \"cheat\" and post details \"Please help\".",
+      "action": "click [3304]",
+      "note": "",
+      "observation_highlight_idxs": "[3304]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [3304] 'Submit' [url: https://reddit.example/submit/relationship_advice]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit/relationship_advice",
+      "observation_description": "The Create submission page is loaded. Title textbox [7804] and Body textbox [7812] are available. Forum is already set to relationship_advice [8778].",
+      "reason": "I need to fill in the title \"cheat\" in the Title textbox [7804] as the first step of creating the submission.",
+      "action": "type [7804] [cheat]",
+      "note": "Will next type \"Please help\" into the Body field and then submit.",
+      "observation_highlight_idxs": "7804, 7812, 8241",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [7804] 'Title This field is required.' [required: True]"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit/relationship_advice",
+      "observation_description": "Currently on the \"Create submission\" page for the relationship_advice forum. The Title field [7804] contains \"cheat\". The Body field [7812] is empty and ready for input. The Forum is set to \"relationship_advice\".",
+      "reason": "The title \"cheat\" has been entered. The next step is to enter the post details \"Please help\" into the Body textbox [7812] before submitting the form.",
+      "action": "type [7812] [Please help]",
+      "note": "Title \"cheat\" entered. Next, typing \"Please help\" into Body [7812].",
+      "observation_highlight_idxs": "[7812] Body textbox, [7804] Title textbox (contains \"cheat\"), [8241] Create submission button.",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [7812] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 6,
+      "num_actions": 6,
+      "budget_steps": 6,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit/relationship_advice",
+      "observation_description": "",
+      "reason": "",
+      "action": "click [8241]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "button [8241] 'Create submission'"
+      ]
+    },
+    {
+      "record": 7,
+      "num_actions": 7,
+      "budget_steps": 7,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/relationship_advice/2/cheat",
+      "observation_description": "The post \"cheat\" has been successfully created in the relationship_advice forum with the body \"Please help\". The page shows the submitted post with title \"cheat\", author \"MarvelsGrantMan136\", and text \"Please help\".",
+      "reason": "The task has been completed successfully. The post is visible with the correct title and details. I will stop and return success.",
+      "action": "stop [{\"task_type\":\"MUTATE\",\"status\":\"SUCCESS\",\"retrieved_data\":null}]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": true
+    }
+  ]
+}

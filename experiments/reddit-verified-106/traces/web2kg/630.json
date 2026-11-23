@@ -1,0 +1,121 @@
+{
+  "task_id": 630,
+  "method": "Web2KG",
+  "difficulty": "non-hard",
+  "intent": "Create a post in f/headphones. Title it \"noise-cancelling headphones recommendations?\" and in post details ask \"Hey, looking for good noise-cancelling headphones under $200, any suggestions?\"",
+  "official_score": 1.0,
+  "run_status": "agent_stopped",
+  "reported_steps": 7,
+  "final_url": "https://reddit.example/f/headphones/2/noise-cancelling-headphones-recommendations",
+  "trajectory": [
+    {
+      "record": 1,
+      "num_actions": 1,
+      "budget_steps": 1,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/",
+      "observation_description": "- Current page is the Postmill homepage (RootWebArea 'Postmill').\n- Visible controls include 'Forums' link [45], 'Submit' link [106], and user menu button [124].\n- The page shows \"You are not subscribed to any forum. Showing featured forums instead.\"",
+      "reason": "Clicking the 'Submit' link [106] will navigate to the submission form where I can select the 'headphones' forum and enter the required title and post details.",
+      "action": "click [106]",
+      "note": "",
+      "observation_highlight_idxs": "[106]",
+      "done": false,
+      "matching_observation_lines": [
+        "link [106] 'Submit' [url: https://reddit.example/submit]"
+      ]
+    },
+    {
+      "record": 2,
+      "num_actions": 2,
+      "budget_steps": 2,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The 'Create submission' page is loaded. Visible elements include:\n- Title textbox [762]\n- Body textbox [770]\n- Forum combobox [1616] with 'Choose one...'\n- 'Create submission' button [1199]",
+      "reason": "I need to fill in the Title field first with the required title text. I'll type the title into textbox [762].",
+      "action": "type [762] [noise-cancelling headphones recommendations?]",
+      "note": "Title field is [762], Body is [770], Forum is [1616]. After typing title, I will fill body and select forum.",
+      "observation_highlight_idxs": "[762]",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [762] 'Title This field is required.' [required: True]"
+      ]
+    },
+    {
+      "record": 3,
+      "num_actions": 3,
+      "budget_steps": 3,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The 'Create submission' page is loaded. Title field [762] contains \"noise-cancelling headphones recommendations?\". Body textbox [770] is empty. Forum combobox [1616] shows 'Choose one...'. 'Create submission' button [1199] is visible.",
+      "reason": "The title has been entered. Next, I need to type the post details into the Body textbox [770].",
+      "action": "type [770] [Hey, looking for good noise-cancelling headphones under $200, any suggestions?]",
+      "note": "",
+      "observation_highlight_idxs": "",
+      "done": false,
+      "matching_observation_lines": [
+        "textbox [770] 'Body' [required: False] [describedby: submission_body_help]"
+      ]
+    },
+    {
+      "record": 4,
+      "num_actions": 4,
+      "budget_steps": 4,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The submission form is filled with the title and body. The body text currently reads \"Hey, looking for good noise-cancelling headphones under 200, any suggestions?\" missing the '$' sign. The Forum combobox [1616] is open or needs to be clicked to select 'headphones'. The 'Create submission' button [1199] is visible.",
+      "reason": "The title and body are entered (though body is missing '$', I will proceed to select the forum first, then fix the body if needed, or just select the forum now). Clicking the combobox [1616] will allow me to select 'headphones'.",
+      "action": "click [1616]",
+      "note": "",
+      "observation_highlight_idxs": "[1616] 'Choose one' combobox, [1199] 'Create submission' button, [770] Body textbox.",
+      "done": false,
+      "matching_observation_lines": [
+        "combobox [1616] 'Choose one' [required: False]"
+      ]
+    },
+    {
+      "record": 5,
+      "num_actions": 5,
+      "budget_steps": 5,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The forum combobox [1616] is open with listbox [1627] showing options. The 'headphones' option is visible as [2700]. The title is correctly filled. The body is missing the '$' sign in \"under $200\".",
+      "reason": "The dropdown is open and 'headphones' is available as option [2700]. I will select it to set the forum to f/headphones. Afterward, I'll fix the missing '$' in the body text.",
+      "action": "click [2700]",
+      "note": "",
+      "observation_highlight_idxs": "[2700] 'headphones' [selected: False]",
+      "done": false,
+      "matching_observation_lines": [
+        "listbox [1627] \"[2668] 'Choose one' [selected: True]; [2669] 'allentown' [selected: False]; [2670] 'arlingtonva' [selected: False]; [2671] 'Art' [selected: False]; [2672] 'AskReddit' [selected: False]; [2673] 'askscience' [selected: False]; [2674] 'aww' [selected: False]; [2675] 'baltimore' [selected: False]; [2676] 'books' [selected: False]; [2677] 'boston' [selected: False]; [2678] 'BridgeportCT' [selected: False]; [2679] 'BuyItForLife' [selected: False]; [2680] 'CambridgeMA' [selected: False]; [2681] 'ColumbiaMD' [selected: False]; [2682] 'Connecticut' [selected: False]; [2683] 'consoles' [selected: False]; [2684] 'coolgithubprojects' [selected: False]; [2685] 'creepy' [selected: False]; [2686] 'dataisbeautiful' [selected: False]; [2687] 'deeplearning' [selected: False]; [2688] 'DIY' [selected: False]; [2689] 'Documentaries' [selected: False]; [2690] 'EarthPorn' [selected: False]; [2691] 'explainlikeimfive' [selected: False]; [2692] 'food' [selected: False]; [2693] 'funny' [selected: False]; [2694] 'Futurology' [selected: False]; [2695] 'gadgets' [selected: False]; [2696] 'gaming' [selected: False]; [2697] 'GetMotivated' [selected: False]; [2698] 'gifs' [selected: False]; [2699] 'Hartford' [selected: False]; [2700] 'headphones' [selected: False]; [2701] 'history' [selected: False]; [2702] 'IAmA' [selected: False]; [2703] 'InternetIsBeautiful' [selected: False]; [2704] 'iphone' [selected: False]; [2705] 'jerseycity' [selected: False]; [2706] 'Jokes' [selected: False]; [2707] 'lakewood' [selected: False]; [2708] 'LifeProTips' [selected: False]; [2709] 'listentothis' [selected: False]; [2710] 'LowellMA' [selected: False]; [2711] 'MachineLearning' [selected: False]; [2712] 'Maine' [selected: False]; [2713] 'ManchesterNH' [selected: False]; [2714] 'massachusetts' [selected: False]; [2715] 'MechanicalKeyboards' [selected: False]; [2716] 'memes' [selected: False]; [2717] 'mildlyinteresting' [selected: False]; [2718] 'monitor' [selected: False]; [2719] 'movies' [selected: False]; [2720] 'Music' [selected: False]; [2721] 'Newark' [selected: False]; [2722] 'newhampshire' [selected: False]; [2723] 'newhaven' [selected: False]; [2724] 'newjersey' [selected: False]; [2725] 'news' [selected: False]; [2726] 'nosleep' [selected: False]; [2727] 'nottheonion' [selected: False]; [2728] 'nyc' [selected: False]; [2729] 'OldSchoolCool' [selected: False]; [2730] 'Paterson' [selected: False]; [2731] 'Pennsylvania' [selected: False]; [2732] 'personalfinance' [selected: False]; [2733] 'philadelphia' [selected: False]; [2734] 'philosophy' [selected: False]; [2735] 'photoshopbattles' [selected: False]; [2736] 'pics' [selected: False]; [2737] 'pittsburgh' [selected: False]; [2738] 'providence' [selected: False]; [2739] 'relationship_advice' [selected: False]; [2740] 'RhodeIsland' [selected: False]; [2741] 'rva' [selected: False]; [2742] 'science' [selected: False]; [2743] 'Showerthoughts' [selected: False]; [2744] 'singularity' [selected: False]; [2745] 'space' [selected: False]; [2746] 'sports' [selected: False]; [2747] 'springfieldMO' [selected: False]; [2748] 'StamfordCT' [selected: False]; [2749] 'technology' [selected: False]; [2750] 'television' [selected: False]; [2751] 'tifu' [selected: False]; [2752] 'todayilearned' [selected: False]; [2753] 'UpliftingNews' [selected: False]; [2754] 'vermont' [selected: False]; [2755] 'videos' [selected: False]; [2756] 'wallstreetbets' [selected: False]; [2757] 'Washington' [selected: False]; [2758] 'washingtondc' [selected: False]; [2759] 'WaterburyCT' [selected: False]; [2760] 'WorcesterMA' [selected: False]; [2761] 'worldnews' [selected: False]; [2762] 'WritingPrompts' [selected: False]; [2763] 'yonkers' [selected: False]\" [required: False]"
+      ]
+    },
+    {
+      "record": 6,
+      "num_actions": 6,
+      "budget_steps": 6,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/submit",
+      "observation_description": "The submission form is fully filled. Title is \"noise-cancelling headphones recommendations?\", body is \"Hey, looking for good noise-cancelling headphones under $200, any suggestions?\" (confirmed in visual observation), and forum is set to \"headphones\". The 'Create submission' button [1199] is visible and ready to be clicked.",
+      "reason": "The form is complete with the correct title, body (including the '$' sign as seen in the visual observation), and forum selection. Clicking 'Create submission' will publish the post.",
+      "action": "click [1199]",
+      "note": "Visual observation confirms body text contains \"$200\" correctly despite AX text extraction missing the '$' symbol. Forum is correctly set to 'headphones'. Form is ready to submit.",
+      "observation_highlight_idxs": "[1199]",
+      "done": false,
+      "matching_observation_lines": [
+        "button [1199] 'Create submission'"
+      ]
+    },
+    {
+      "record": 7,
+      "num_actions": 7,
+      "budget_steps": 7,
+      "refunded_steps": 0,
+      "url": "https://reddit.example/f/headphones/2/noise-cancelling-headphones-recommendations",
+      "observation_description": "The current page displays the newly created post detail page for \"noise-cancelling headphones recommendations?\" in the headphones forum. The post content matches the required title and body text, and it was submitted by the user 4 seconds ago.",
+      "reason": "All requirements of the task have been fulfilled. The post is visible with the correct title, body, and forum association. No further actions are needed.",
+      "action": "stop [{\"task_type\":\"MUTATE\",\"status\":\"SUCCESS\",\"retrieved_data\":null}]",
+      "note": "Post successfully created in f/headphones with correct title and body content.",
+      "observation_highlight_idxs": "4584",
+      "done": true
+    }
+  ]
+}
